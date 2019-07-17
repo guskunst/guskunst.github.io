@@ -1,17 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <title>Mi primer CSS</title>
         <!--Aqui definimos los estilos CSS para esta pagina-->
         <style>
+            body{
+                background-color: #efefef;
+            }
             h1{
                 color: red;
+                /*background: url(resources/img/fondo-encabezado.jpg);*/
+                background-color: aqua
             }
+            li{
+                list-style: square outside;
+                /*list-style: none;
+                list-style-image: url("punto.jpg");*/
+                list-style-type: upper-roman;
+            }
+
         </style>
         <!--Fin del CSS-->
     </head>
     <body>
         <h1>Encabezado 1</h1>
+        <p>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </p>
     </body>
 </html>
