@@ -1,0 +1,26 @@
+/*Aqui definimos los estilos CSS para esta pagina*/
+body{
+    font-family: "Open Sans", sans-serif, arial;
+    background-color: #efefef;
+}
+h1{
+    color: red;
+    /*background: url(resources/img/fondo-encabezado.jpg);*/
+    background-color: aqua
+}
+li{
+    list-style: square outside;
+    /*list-style: none;
+    list-style-image: url("punto.jpg");*/
+    list-style-type: upper-roman;
+}
+#experiencia{ /*Sintaxis para identificador <h1 id="experiencia"...>*/
+    font-size: large;
+}
+.destacado{ /*Sintaxis para clase <p class="destacado"...>*/
+    color: blue;
+}
+strong{ /*Override de etiqueta <strong>*/
+    font-weight: normal;
+}
+/*Fin del CSS*/
