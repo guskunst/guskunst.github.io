@@ -1,0 +1,80 @@
+{
+  "_version": "1.9.0",
+  "sap.app": {
+    "id": "sap.ui.demokit",
+    "type": "library",
+    "embeds": [
+      "demoapps",
+      "explored"
+    ],
+    "applicationVersion": {
+      "version": "1.66.0"
+    },
+    "title": "Non-public controls that should be used in a UI5 demokit (SDK) only.",
+    "description": "Non-public controls that should be used in a UI5 demokit (SDK) only.",
+    "ach": "CA-UI5-CTR",
+    "resources": "resources.json",
+    "offline": true,
+    "openSourceComponents": [
+      {
+        "name": "esprima",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "google-code-prettify",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      }
+    ]
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "supportedThemes": [
+      "base",
+      "sap_belize",
+      "sap_belize_plus",
+      "sap_bluecrystal",
+      "sap_goldreflection",
+      "sap_hcb"
+    ]
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.66",
+      "libs": {
+        "sap.ui.core": {
+          "minVersion": "1.66.0"
+        },
+        "sap.ui.commons": {
+          "minVersion": "1.66.0"
+        }
+      }
+    },
+    "library": {
+      "i18n": false,
+      "content": {
+        "controls": [
+          "sap.ui.demokit.CodeSampleContainer",
+          "sap.ui.demokit.CodeViewer",
+          "sap.ui.demokit.FileUploadIntrospector",
+          "sap.ui.demokit.HexagonButton",
+          "sap.ui.demokit.HexagonButtonGroup",
+          "sap.ui.demokit.IndexLayout",
+          "sap.ui.demokit.SimpleTree",
+          "sap.ui.demokit.TagCloud",
+          "sap.ui.demokit.UI5EntityCueCard"
+        ],
+        "elements": [
+          "sap.ui.demokit.SimpleTreeNode",
+          "sap.ui.demokit.Tag",
+          "sap.ui.demokit.UIAreaSubstitute"
+        ],
+        "types": [
+          "sap.ui.demokit.UI5EntityCueCardStyle"
+        ],
+        "interfaces": []
+      }
+    }
+  }
+}

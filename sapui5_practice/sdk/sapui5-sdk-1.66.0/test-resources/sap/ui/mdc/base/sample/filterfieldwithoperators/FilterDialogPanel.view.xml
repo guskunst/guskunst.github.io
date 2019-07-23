@@ -1,0 +1,10 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mdc="sap.ui.mdc.experimental" controllerName="my.FilterDialogPanel">
+	<!--<mdc:P13nFilterPanel items="{path:'metaModel>/filterItems', factory:'.itemsFactory}"/>-->
+	<mdc:P13nFilterPanel id="IDP13nFilterPanel" items="{metaModel>/filterItems}">
+		<mdc:items>
+			<mdc:P13nFilterItem columnKey="{metaModel>name}" text="{metaModel>label}" tooltip="{metaModel>label}"
+								position="{metaModel>position}" selected="{metaModel>visibleOnFilterbar}"
+								required="{metaModel>required}"/>
+		</mdc:items>
+	</mdc:P13nFilterPanel>
+</core:View>

@@ -1,0 +1,38 @@
+<core:View
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns="sap.m" controllerName="view.Main"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:fe="sap.fe"
+	xmlns:core="sap.ui.core">
+	<core:Fragment fragmentName="view.Header" type="XML"/>
+
+	<title text="1) Wrong meta model name" />
+	<fe:Table
+			id="error1"
+			metadataContexts="{ model: 'wrong', path: '/Artists',  name: 'entitySet'}"
+			type="ResponsiveTable"
+			listBindingName="sap.fe.tableBinding"
+			requestFailed="handleMessagePopoverPress"
+			autoActionHandling="true"
+	/>
+
+	<title text="2) Wrong meta context path" />
+	<fe:Table
+			id="error2"
+			metadataContexts="{ path: '/C_AIVS_MDBU_ArtistTxP',  name: 'entitySet'}"
+			type="ResponsiveTable"
+			listBindingName="sap.fe.tableBinding"
+			requestFailed="handleMessagePopoverPress"
+			autoActionHandling="true"
+	/>
+
+	<Button icon="sap-icon://message-popup" text="{= ${message>/}.length}" type="Emphasized"
+			press="handleMessagePopoverPress">
+			<dependents>
+				<MessagePopover id="messagePopover" items="{message>/}">
+					<MessagePopoverItem type="{message>type}" title="{message>message}" description="{message>message}" subtitle="{message>additionalText}" counter="{message>counter}" />
+				</MessagePopover>
+			</dependents>
+	</Button>
+
+</core:View>

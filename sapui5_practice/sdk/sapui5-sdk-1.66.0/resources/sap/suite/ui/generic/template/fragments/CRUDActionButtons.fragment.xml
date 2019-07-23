@@ -1,0 +1,164 @@
+<core:FragmentDefinition
+    xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+    xmlns="sap.m" xmlns:build="sap.build" xmlns:core="sap.ui.core"
+	template:require="{AH: 'sap/suite/ui/generic/template/js/AnnotationHelper'}">
+
+	<template:if test="{path: 'parameter>/settings/routeConfig/', formatter: 'AH.isListReportTemplate'}">
+		<template:then>
+			<template:if test="{= ${parameter>/settings/tableType} === 'ResponsiveTable' || ${parameter>/settings/tableType} !== 'AnalyticalTable' &amp;&amp; ${parameter>/settings/tableType} !== 'GridTable' &amp;&amp; ${listEntityType>sap:semantics} !== 'aggregate' &amp;&amp; !${parameter>/settings/gridTable}}">
+				<template:if test="{parts: [{path: 'listEntitySet>Org.OData.Capabilities.V1.DeleteRestrictions'}, {path: 'listEntitySet>entityType'}, {value: 'Deletable'}], formatter: 'AH.areBooleanRestrictionsValidAndPossible'}">
+					<Button 
+	        			id="deleteEntry{= ${parameter>/settings/quickVariantSelectionX} ? ${path: 'tabItem>', formatter: 'AH.getSuffixFromIconTabFilterKey'} : ''}"
+	                	text="{i18n>DELETE}"
+	                	press="._templateEventHandlers.deleteEntries" 
+	                	type="Transparent" 
+	                	enabled="{_templPriv>/listReport/deleteEnabled}">
+						<customData>
+	                    	<core:CustomData key="Type" value="CRUDActionDelete"/>
+	                	</customData>
+					</Button>
+				</template:if>
+	        </template:if>
+			<template:if test="{= ${listEntitySet>Org.OData.Capabilities.V1.InsertRestrictions/Insertable/Bool} !== 'false' || ${parts: [{path: 'listEntitySet>name'}, {path: 'parameter>/settings/subPages/'}, {path: 'facet>Target/AnnotationPath'}], formatter: 'AH.getCreateNavigationIntent'}}">
+				<template:then>
+					<template:if test="{= !!${parameter>/settings/createWithFilters} }">
+						<template:then>
+							<template:if test="{= ${parameter>/isFiori3Enabled}}">
+								<template:then>
+									<MenuButton text="{i18n>CREATE_OBJECT}" type="Transparent" id="{:= ${parameter>/stableId}.getStableId({type: 'ListReportAction', subType: 'CreateMenu', sQuickVariantKey: ${tabItem>key}})}">
+									<menu>
+										<Menu>
+											<items>
+												<MenuItem text="{i18n>CREATE_NEW_OBJECT}" tooltip="{i18n>CREATE_NEW_OBJECT}"
+													id="{:= ${parameter>/stableId}.getStableId({type: 'ListReportAction', subType: 'Create', sQuickVariantKey: ${tabItem>key}})}"
+													press="._templateEventHandlers.addEntry" >
+													<customData>
+														<core:CustomData key="CrossNavigation"
+															value="{parts: [{path: 'listEntitySet>name'}, {path: 'parameter>/settings/subPages/'}, {path: 'facet>Target/AnnotationPath'}], formatter: 'AH.getCreateNavigationIntent'}" />
+													</customData>
+												</MenuItem>
+												<MenuItem text="{i18n>ST_CREATE_WITH_FILTERS}" tooltip="{i18n>ST_CREATE_WITH_FILTERS}"
+													id="{:= ${parameter>/stableId}.getStableId({type: 'ListReportAction', subType: 'CreateWithFilter', sQuickVariantKey: ${tabItem>key}})}"
+													enabled="{= ${_templPriv>/generic/bDataAreShownInTable}}"
+													press="._templateEventHandlers.addEntryWithFilters" >
+													<customData>
+														<core:CustomData key="CrossNavigation"
+															value="{parts: [{path: 'listEntitySet>name'}, {path: 'parameter>/settings/subPages/'}, {path: 'facet>Target/AnnotationPath'}], formatter: 'AH.getCreateNavigationIntent'}" />
+													</customData>
+												</MenuItem>
+											</items>
+										</Menu>
+									</menu>
+									</MenuButton>
+								</template:then>
+								<template:else>
+									<MenuButton icon="sap-icon://add" id="{:= ${parameter>/stableId}.getStableId({type: 'ListReportAction', subType: 'CreateMenu', sQuickVariantKey: ${tabItem>key}})}">
+										<menu>
+											<Menu>
+												<items>
+													<MenuItem text="{i18n>CREATE_NEW_OBJECT}" tooltip="{i18n>CREATE_NEW_OBJECT}"
+														id="{:= ${parameter>/stableId}.getStableId({type: 'ListReportAction', subType: 'Create', sQuickVariantKey: ${tabItem>key}})}"
+														press="._templateEventHandlers.addEntry" >
+														<customData>
+															<core:CustomData key="CrossNavigation"
+																value="{parts: [{path: 'listEntitySet>name'}, {path: 'parameter>/settings/subPages/'}, {path: 'facet>Target/AnnotationPath'}], formatter: 'AH.getCreateNavigationIntent'}" />
+														</customData>
+													</MenuItem>
+													<MenuItem text="{i18n>ST_CREATE_WITH_FILTERS}" tooltip="{i18n>ST_CREATE_WITH_FILTERS}"
+														id="{:= ${parameter>/stableId}.getStableId({type: 'ListReportAction', subType: 'CreateWithFilter', sQuickVariantKey: ${tabItem>key}})}"
+														enabled="{= ${_templPriv>/generic/bDataAreShownInTable}}"
+														press="._templateEventHandlers.addEntryWithFilters" >
+														<customData>
+															<core:CustomData key="CrossNavigation"
+																value="{parts: [{path: 'listEntitySet>name'}, {path: 'parameter>/settings/subPages/'}, {path: 'facet>Target/AnnotationPath'}], formatter: 'AH.getCreateNavigationIntent'}" />
+														</customData>
+													</MenuItem>
+												</items>
+											</Menu>
+										</menu>
+									</MenuButton>
+								</template:else>
+						</template:if>
+						</template:then>
+						<template:else>
+							<template:if test="{= ${parameter>/isFiori3Enabled}}">
+								<template:then>
+									<Button
+										id="{:= ${parameter>/stableId}.getStableId({type: 'ListReportAction', subType: 'Create', sQuickVariantKey: ${tabItem>key}})}"
+										text="{i18n>CREATE_OBJECT}"
+										press="._templateEventHandlers.addEntry"
+										type="Transparent"
+										visible="true">
+										<customData>
+											<core:CustomData key="CrossNavigation"
+												value="{parts: [{path: 'listEntitySet>name'}, {path: 'parameter>/settings/subPages/'}, {path: 'facet>Target/AnnotationPath'}], formatter: 'AH.getCreateNavigationIntent'}" />
+										</customData>
+									</Button>
+								</template:then>
+								<template:else>
+									<OverflowToolbarButton
+										id="{:= ${parameter>/stableId}.getStableId({type: 'ListReportAction', subType: 'Create', sQuickVariantKey: ${tabItem>key}})}"
+										icon="sap-icon://add"
+										tooltip="{i18n>CREATE_NEW_OBJECT}"
+										text="{i18n>CREATE_NEW_OBJECT}"
+										press="._templateEventHandlers.addEntry"
+										type="Transparent"
+										visible="true">
+										<customData>
+											<core:CustomData key="CrossNavigation"
+												value="{parts: [{path: 'listEntitySet>name'}, {path: 'parameter>/settings/subPages/'}, {path: 'facet>Target/AnnotationPath'}], formatter: 'AH.getCreateNavigationIntent'}" />
+										</customData>
+									</OverflowToolbarButton>
+								</template:else>
+							</template:if>
+						</template:else>
+					</template:if>
+				</template:then>
+			</template:if>
+		</template:then>
+		<template:else>
+			<template:with path="parameter>/" helper="sap.suite.ui.generic.template.js.StableIdHelper.preparePathForStableId" var="facetId">
+				<template:if test="{= ${facetId>}.buildFacetId(${facet>})}" />
+				<template:if test="{parts: [{path: 'listEntitySet>Org.OData.Capabilities.V1.DeleteRestrictions'}, {path: 'listEntitySet>entityType'}, {value: 'Deletable'}], formatter: 'AH.areBooleanRestrictionsValidAndPossible'}">
+					<template:with path="parameter>/" helper="sap.suite.ui.generic.template.js.StableIdHelper.preparePathForStableId" var="deleteButtonId">
+					<template:if test="{= ${deleteButtonId>}.buildStableId({type: 'ObjectPageAction', subType: 'Delete', sFacet: ${facetId>id}})}" />
+					<Button
+						id="{deleteButtonId>id}"
+			            text="{i18n>DELETE}"
+		                press="._templateEventHandlers.deleteEntries" type="Transparent"
+						enabled="{= '{_templPriv>/generic/controlProperties/' + ${deleteButtonId>id} + '/enabled}' }"
+						visible="{= ${parameter>/isDraftEnabled} ? '{ui>/editable}' : '{= !${ui>/editable} }' }">
+						<customData>
+	                    	<core:CustomData key="Type" value="CRUDActionDelete"/>
+	                	</customData>
+	           		</Button>
+					</template:with>
+				</template:if>
+				<template:if test="{parts: [{path: 'entitySet>'}, {path: 'listEntitySet>'}, {path: 'parameter>/'}], formatter: 'AH.isNavigationPropertyInsertable'}">
+					<template:if test="{= ${parameter>/isFiori3Enabled}}">
+						<template:then>
+							<Button
+								id="{:= ${parameter>/stableId}.getStableId({ type:'ObjectPageAction', subType:'Create', sFacet: ${facetId>id}}) }"
+								text="{i18n>CREATE_OBJECT}"
+								type="Transparent"
+								press="._templateEventHandlers.addEntry"
+								visible="{parts: [{path: 'entitySet>'}, {path: 'listEntitySet>'}, {path: 'parameter>/settings/subPages/'}, {path: 'facet>'}, {path: 'parameter>/settings/sections'},{path: 'parameter>/isDraftEnabled'}], formatter: 'AH.isRelatedEntityCreatable'}">
+							</Button>
+						</template:then>
+						<template:else>
+							<OverflowToolbarButton
+								id="{:= ${parameter>/stableId}.getStableId({ type:'ObjectPageAction', subType:'Create', sFacet: ${facetId>id}}) }"
+								icon="sap-icon://add"
+								press="._templateEventHandlers.addEntry"
+								tooltip="{i18n>ADD}"
+								text="{i18n>ADD}"
+								visible="{parts: [{path: 'entitySet>'}, {path: 'listEntitySet>'}, {path: 'parameter>/settings/subPages/'}, {path: 'facet>'}, {path: 'parameter>/settings/sections'},{path: 'parameter>/isDraftEnabled'}], formatter: 'AH.isRelatedEntityCreatable'}">
+							</OverflowToolbarButton>
+						</template:else>
+					</template:if>
+				</template:if>
+			</template:with>
+		</template:else>
+	</template:if>
+
+</core:FragmentDefinition>

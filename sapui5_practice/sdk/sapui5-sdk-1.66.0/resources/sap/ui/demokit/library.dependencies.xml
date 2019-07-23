@@ -1,0 +1,1153 @@
+<?xml version="1.0" ?>
+<library  version="2.0" name="sap.ui.demokit">
+  <module name="sap/ui/demokit/CodeSampleContainer.js" size="6189" compressedSize="3181">
+    <description>Provides control sap.ui.demokit.CodeSampleContainer.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/commons/Link.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/demokit/CodeSampleContainerRenderer.js"/>
+      <module name="sap/ui/demokit/CodeViewer.js"/>
+      <module name="sap/ui/demokit/UIAreaSubstitute.js"/>
+      <module name="sap/ui/demokit/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/CodeSampleContainerRenderer.js" size="1782" compressedSize="845">
+    <description>Provides default renderer for control sap.ui.demokit.CodeSampleContainer</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/CodeViewer.js" size="5599" compressedSize="2458">
+    <description>Provides control sap.ui.demokit.CodeViewer.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="jquery.sap.keycodes.js"/>
+      <module name="sap/ui/commons/Button.js"/>
+      <module name="sap/ui/commons/Dialog.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/demokit/CodeViewerRenderer.js"/>
+      <module name="sap/ui/demokit/js/google-code-prettify/prettify.js" conditional="true"/>
+      <module name="sap/ui/demokit/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/CodeViewerRenderer.js" size="1719" compressedSize="750">
+    <description>Provides default renderer for control sap.ui.demokit.CodeViewer</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/DemokitApp.js" size="46184" compressedSize="24439">
+    <description>Main class for Demokit-like applications</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="jquery.sap.script.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/commons/Button.js"/>
+      <module name="sap/ui/commons/Dialog.js"/>
+      <module name="sap/ui/commons/DropdownBox.js"/>
+      <module name="sap/ui/commons/FormattedTextView.js"/>
+      <module name="sap/ui/commons/Image.js"/>
+      <module name="sap/ui/commons/Label.js"/>
+      <module name="sap/ui/commons/Link.js"/>
+      <module name="sap/ui/commons/SearchField.js"/>
+      <module name="sap/ui/commons/Splitter.js"/>
+      <module name="sap/ui/commons/TextView.js"/>
+      <module name="sap/ui/commons/Tree.js"/>
+      <module name="sap/ui/commons/TreeNode.js"/>
+      <module name="sap/ui/commons/layout/AbsoluteLayout.js"/>
+      <module name="sap/ui/commons/library.js"/>
+      <module name="sap/ui/core/CustomData.js"/>
+      <module name="sap/ui/core/HTML.js"/>
+      <module name="sap/ui/core/ListItem.js"/>
+      <module name="sap/ui/core/Title.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/core/mvc/View.js"/>
+      <module name="sap/ui/core/search/OpenSearchProvider.js"/>
+      <module name="sap/ui/core/util/LibraryInfo.js"/>
+      <module name="sap/ui/demokit/FeedbackClient.js"/>
+      <module name="sap/ui/demokit/Tag.js"/>
+      <module name="sap/ui/demokit/TagCloud.js"/>
+      <module name="sap/ui/demokit/library.js"/>
+      <module name="sap/ui/layout/VerticalLayout.js"/>
+      <module name="sap/ui/layout/form/Form.js"/>
+      <module name="sap/ui/layout/form/FormContainer.js"/>
+      <module name="sap/ui/layout/form/FormElement.js"/>
+      <module name="sap/ui/layout/form/GridElementData.js"/>
+      <module name="sap/ui/layout/form/GridLayout.js"/>
+      <module name="sap/ui/model/Filter.js"/>
+      <module name="sap/ui/model/FilterOperator.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="sap/ui/ux3/DataSet.js"/>
+      <module name="sap/ui/ux3/DataSetItem.js"/>
+      <module name="sap/ui/ux3/DataSetSimpleView.js"/>
+      <module name="sap/ui/ux3/NavigationItem.js"/>
+      <module name="sap/ui/ux3/Shell.js"/>
+      <module name="sap/ui/ux3/ToolPopup.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/EntityInfo.js" size="8699" compressedSize="4598">
+    <description>Provides reuse functionality for reading documentation from metamodel entities</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/demokit/util/APIInfo.js"/>
+      <module name="sap/ui/demokit/util/jsanalyzer/ModuleAnalyzer.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/FeedbackClient.js" size="11908" compressedSize="6665">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/commons/Button.js"/>
+      <module name="sap/ui/commons/CheckBox.js"/>
+      <module name="sap/ui/commons/FormattedTextView.js"/>
+      <module name="sap/ui/commons/Label.js"/>
+      <module name="sap/ui/commons/Link.js"/>
+      <module name="sap/ui/commons/SegmentedButton.js"/>
+      <module name="sap/ui/commons/TextArea.js"/>
+      <module name="sap/ui/commons/TextView.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/layout/HorizontalLayout.js"/>
+      <module name="sap/ui/layout/VerticalLayout.js"/>
+      <module name="sap/ui/layout/form/SimpleForm.js"/>
+      <module name="sap/ui/layout/library.js"/>
+      <module name="sap/ui/ux3/ToolPopup.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/FileUploadIntrospector.js" size="3877" compressedSize="1697">
+    <description>Provides control sap.ui.demokit.FileUploadIntrospector.</description>
+    <requires>
+      <module name="jquery.sap.act.js"/>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/demokit/FileUploadIntrospectorRenderer.js"/>
+      <module name="sap/ui/demokit/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/FileUploadIntrospectorRenderer.js" size="3119" compressedSize="1781">
+    <description>Provides default renderer for control sap.ui.demokit.FileUploadIntrospector</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/HexagonButton.js" size="2725" compressedSize="1107">
+    <description>Provides control sap.ui.demokit.HexagonButton.</description>
+    <requires>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/demokit/HexagonButtonRenderer.js"/>
+      <module name="sap/ui/demokit/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/HexagonButtonGroup.js" size="1372" compressedSize="523">
+    <description>Provides control sap.ui.demokit.HexagonButtonGroup.</description>
+    <requires>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/demokit/HexagonButtonGroupRenderer.js"/>
+      <module name="sap/ui/demokit/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/HexagonButtonGroupRenderer.js" size="1748" compressedSize="659">
+    <description>Provides default renderer for control sap.ui.demokit.HexagonButtonGroup</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/HexagonButtonRenderer.js" size="1997" compressedSize="962">
+    <description>Provides default renderer for control sap.ui.demokit.HexagonButton</description>
+    <requires>
+      <module name="jquery.sap.encoder.js"/>
+      <module name="jquery.sap.global.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/IndexLayout.js" size="9615" compressedSize="5388">
+    <description>Provides control sap.ui.demokit.IndexLayout.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/IntervalTrigger.js"/>
+      <module name="sap/ui/demokit/IndexLayoutRenderer.js"/>
+      <module name="sap/ui/demokit/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/IndexLayoutPage.js" size="3923" compressedSize="2530">
+    <description>Creates Index Page within the Demokit</description>
+    <requires>
+      <module name="jquery.sap.encoder.js"/>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/demokit/IndexLayout.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/IndexLayoutRenderer.js" size="1457" compressedSize="730">
+    <description>Provides default renderer for control sap.ui.demokit.IndexLayout</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/IndexPage.js" size="2959" compressedSize="1877">
+    <description>Provides a pseudo control for index pages within the Demokit</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/commons/RichTooltip.js"/>
+      <module name="sap/ui/demokit/DemokitApp.js"/>
+      <module name="sap/ui/demokit/HexagonButton.js"/>
+      <module name="sap/ui/demokit/HexagonButtonGroup.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/SimpleTree.js" size="4591" compressedSize="2703">
+    <description>This is internal control dedicated for Demo Kit application usage</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/SearchField.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/delegate/ItemNavigation.js"/>
+      <module name="sap/ui/demokit/SimpleTreeRenderer.js"/>
+      <module name="sap/ui/model/Filter.js"/>
+      <module name="sap/ui/model/FilterOperator.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/SimpleTreeNode.js" size="8512" compressedSize="5050">
+    <description>This is internal control dedicated for Demo Kit application usage</description>
+    <requires>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/core/Icon.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/SimpleTreeRenderer.js" size="5591" compressedSize="3041">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="jquery.sap.encoder.js"/>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/demokit/SimpleTreeNode.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/Tag.js" size="1252" compressedSize="497">
+    <description>Provides control sap.ui.demokit.Tag.</description>
+    <requires>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/demokit/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/TagCloud.js" size="1865" compressedSize="699">
+    <description>Provides control sap.ui.demokit.TagCloud.</description>
+    <requires>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/demokit/TagCloudRenderer.js"/>
+      <module name="sap/ui/demokit/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/TagCloudRenderer.js" size="2258" compressedSize="1069">
+    <description>Provides default renderer for control sap.ui.demokit.TagCloud</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/UI5EntityCueCard.js" size="7618" compressedSize="3091">
+    <description>Provides control sap.ui.demokit.UI5EntityCueCard.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/commons/Link.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/demokit/EntityInfo.js"/>
+      <module name="sap/ui/demokit/UI5EntityCueCardRenderer.js"/>
+      <module name="sap/ui/demokit/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/UI5EntityCueCardRenderer.js" size="7857" compressedSize="4750">
+    <description>Provides default renderer for control sap.ui.demokit.UI5EntityCueCard</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/demokit/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/UIAreaSubstitute.js" size="1212" compressedSize="471">
+    <description>Provides control sap.ui.demokit.UIAreaSubstitute.</description>
+    <requires>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/demokit/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/demoapps/Component.js" size="739" compressedSize="489">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/ui/core/UIComponent.js"/>
+      <module name="sap/ui/demokit/demoapps/model/libraryData.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/demoapps/all.js" size="426" compressedSize="326" raw="true">
+  </module>
+  <module name="sap/ui/demokit/demoapps/controller/App.controller.js" size="6442" compressedSize="2588">
+    <description>global JSZip, Promise</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/MessageBox.js"/>
+      <module name="sap/m/MessageToast.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/ui/core/mvc/Controller.js"/>
+      <module name="sap/ui/demokit/demoapps/model/formatter.js"/>
+      <module name="sap/ui/demokit/demoapps/model/sourceFileDownloader.js"/>
+      <module name="sap/ui/model/Filter.js"/>
+      <module name="sap/ui/model/FilterOperator.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/demoapps/i18n/i18n.properties" size="1394">
+  </module>
+  <module name="sap/ui/demokit/demoapps/manifest.json" size="1102">
+  </module>
+  <module name="sap/ui/demokit/demoapps/model/formatter.js" size="1711" compressedSize="682">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/demoapps/model/libraryData.js" size="5495" compressedSize="1547">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/demokit/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/demoapps/model/sourceFileDownloader.js" size="861" compressedSize="545">
+    <description>global Promise</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/demoapps/view/App.view.xml" size="2326">
+    <requires>
+      <module name="sap/ui/core/CustomData.js"/>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+      <module name="sap/ui/demokit/demoapps/controller/App.controller.js"/>
+      <module name="sap/ui/layout/BlockLayout.js"/>
+      <module name="sap/ui/layout/BlockLayoutCell.js"/>
+      <module name="sap/ui/layout/BlockLayoutRow.js"/>
+      <module name="sap/ui/layout/Grid.js"/>
+      <module name="sap/ui/layout/VerticalLayout.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/demoapps/view/BlockLayoutCell.fragment.xml" size="1437">
+    <requires>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/core/Icon.js"/>
+      <module name="sap/ui/layout/BlockLayoutCell.js"/>
+      <module name="sap/ui/layout/HorizontalLayout.js"/>
+      <module name="sap/ui/layout/VerticalLayout.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/demoapps/view/BlockLayoutHeadlineCell.fragment.xml" size="378">
+    <requires>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/layout/BlockLayoutCell.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/demoapps/view/BlockLayoutTeaserCell.fragment.xml" size="1523">
+    <requires>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/core/Icon.js"/>
+      <module name="sap/ui/layout/BlockLayoutCell.js"/>
+      <module name="sap/ui/layout/Grid.js"/>
+      <module name="sap/ui/layout/HorizontalLayout.js"/>
+      <module name="sap/ui/layout/VerticalLayout.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/Bootstrap.js" size="10792" compressedSize="5841">
+    <description>Bootstrap for the 'explored' app.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/Shell.js"/>
+      <module name="sap/ui/core/ComponentContainer.js"/>
+      <module name="sap/ui/core/util/LibraryInfo.js" conditional="true"/>
+      <module name="sap/ui/demokit/explored/data.js"/>
+      <module name="sap/ui/demokit/library.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/Component.js" size="4254" compressedSize="2521">
+    <description>Root component for the 'explored' app.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/routing/RouteMatchedHandler.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/core/UIComponent.js"/>
+      <module name="sap/ui/core/mvc/View.js"/>
+      <module name="sap/ui/demokit/explored/data.js"/>
+      <module name="sap/ui/demokit/explored/util/MyRouter.js"/>
+      <module name="sap/ui/demokit/explored/util/ToggleFullScreenHandler.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="sap/ui/model/resource/ResourceModel.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/data.js" size="293" compressedSize="207">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/i18n/messageBundle.properties" size="696">
+  </module>
+  <module name="sap/ui/demokit/explored/util/MyRouter.js" size="1171" compressedSize="644">
+    <description>Provides acustomized router class for the 'explored' app.</description>
+    <requires>
+      <module name="sap/ui/core/Core.js"/>
+      <module name="sap/ui/core/routing/History.js"/>
+      <module name="sap/ui/core/routing/Router.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/util/ObjectSearch.js" size="624" compressedSize="400">
+    <description>Provides a simple search feature</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/util/ToggleFullScreenHandler.js" size="1580" compressedSize="1096">
+    <description>Provides a simple search feature</description>
+    <requires>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/view/app.controller.js" size="2044" compressedSize="1460">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Component.js"/>
+      <module name="sap/ui/core/Core.js"/>
+      <module name="sap/ui/core/mvc/Controller.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/view/app.view.js" size="705" compressedSize="497">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/m/SplitApp.js"/>
+      <module name="sap/ui/core/mvc/JSView.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/view/appSettingsDialog.fragment.xml" size="1784">
+    <requires>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/core/Item.js"/>
+      <module name="sap/ui/layout/Grid.js"/>
+      <module name="sap/ui/layout/GridData.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/view/base.controller.js" size="4740" compressedSize="2439">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="jquery.sap.storage.js"/>
+      <module name="sap/ui/core/mvc/Controller.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/view/code.controller.js" size="9197" compressedSize="5136">
+    <description>global JSZip, URI</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Component.js"/>
+      <module name="sap/ui/core/UIComponent.js"/>
+      <module name="sap/ui/core/mvc/Controller.js"/>
+      <module name="sap/ui/core/routing/History.js"/>
+      <module name="sap/ui/demokit/explored/data.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/view/code.view.xml" size="1252">
+    <requires>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+      <module name="sap/ui/demokit/CodeViewer.js"/>
+      <module name="sap/ui/demokit/explored/view/code.controller.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/view/entity.controller.js" size="17665" compressedSize="9881">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/core/Component.js"/>
+      <module name="sap/ui/core/UIComponent.js"/>
+      <module name="sap/ui/core/routing/History.js"/>
+      <module name="sap/ui/demokit/EntityInfo.js"/>
+      <module name="sap/ui/demokit/explored/data.js"/>
+      <module name="sap/ui/demokit/explored/util/ObjectSearch.js"/>
+      <module name="sap/ui/demokit/explored/util/ToggleFullScreenHandler.js"/>
+      <module name="sap/ui/demokit/explored/view/base.controller.js"/>
+      <module name="sap/ui/demokit/util/JSDocUtil.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/view/entity.view.xml" size="11773">
+    <requires>
+      <module name="sap/ui/core/CustomData.js"/>
+      <module name="sap/ui/core/HTML.js"/>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+      <module name="sap/ui/demokit/explored/view/entity.controller.js"/>
+      <module name="sap/ui/layout/VerticalLayout.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/view/master.controller.js" size="12214" compressedSize="6692">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="jquery.sap.storage.js"/>
+      <module name="sap/m/GroupHeaderListItem.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/core/Component.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/core/UIComponent.js"/>
+      <module name="sap/ui/demokit/explored/util/ToggleFullScreenHandler.js"/>
+      <module name="sap/ui/demokit/explored/view/base.controller.js"/>
+      <module name="sap/ui/model/Filter.js"/>
+      <module name="sap/ui/model/Sorter.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/view/master.view.xml" size="1841">
+    <requires>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+      <module name="sap/ui/demokit/explored/view/master.controller.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/view/notFound.controller.js" size="1101" compressedSize="886">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="sap/ui/core/UIComponent.js"/>
+      <module name="sap/ui/core/mvc/Controller.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/view/notFound.view.xml" size="467">
+    <requires>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+      <module name="sap/ui/demokit/explored/view/notFound.controller.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/view/sample.controller.js" size="8662" compressedSize="4824">
+    <description>! OpenUI5 (c) Copyright 2009-2019 SAP SE or an SAP affiliate company. Licensed under the Apache License, Version 2.0 - see LICENSE.txt.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/core/Component.js"/>
+      <module name="sap/ui/core/ComponentContainer.js"/>
+      <module name="sap/ui/core/HTML.js"/>
+      <module name="sap/ui/core/UIComponent.js"/>
+      <module name="sap/ui/core/routing/History.js"/>
+      <module name="sap/ui/demokit/explored/data.js"/>
+      <module name="sap/ui/demokit/explored/util/ToggleFullScreenHandler.js"/>
+      <module name="sap/ui/demokit/explored/view/base.controller.js"/>
+      <module name="sap/ui/fl/FakeLrepConnectorLocalStorage.js"/>
+      <module name="sap/ui/fl/Utils.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/view/sample.view.xml" size="1543">
+    <requires>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+      <module name="sap/ui/demokit/explored/view/sample.controller.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/view/viewSettingsDialog.fragment.xml" size="1898">
+    <requires>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/explored/view/welcome.view.xml" size="460">
+    <requires>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/library-h2-preload.js" size="16855">
+    <requires>
+      <module name="jquery.sap.act.js"/>
+      <module name="jquery.sap.encoder.js"/>
+      <module name="jquery.sap.global.js"/>
+      <module name="jquery.sap.keycodes.js"/>
+      <module name="jquery.sap.script.js"/>
+      <module name="jquery.sap.storage.js"/>
+      <module name="jquery.sap.strings.js"/>
+      <module name="sap/m/GroupHeaderListItem.js"/>
+      <module name="sap/m/MessageBox.js"/>
+      <module name="sap/m/MessageToast.js"/>
+      <module name="sap/m/SearchField.js"/>
+      <module name="sap/m/Shell.js"/>
+      <module name="sap/m/SplitApp.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/m/routing/RouteMatchedHandler.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/Global.js"/>
+      <module name="sap/ui/base/ManagedObjectMetadata.js"/>
+      <module name="sap/ui/commons/Button.js"/>
+      <module name="sap/ui/commons/CheckBox.js"/>
+      <module name="sap/ui/commons/Dialog.js"/>
+      <module name="sap/ui/commons/DropdownBox.js"/>
+      <module name="sap/ui/commons/FormattedTextView.js"/>
+      <module name="sap/ui/commons/Image.js"/>
+      <module name="sap/ui/commons/Label.js"/>
+      <module name="sap/ui/commons/Link.js"/>
+      <module name="sap/ui/commons/RichTooltip.js"/>
+      <module name="sap/ui/commons/SearchField.js"/>
+      <module name="sap/ui/commons/SegmentedButton.js"/>
+      <module name="sap/ui/commons/Splitter.js"/>
+      <module name="sap/ui/commons/TextArea.js"/>
+      <module name="sap/ui/commons/TextView.js"/>
+      <module name="sap/ui/commons/Tree.js"/>
+      <module name="sap/ui/commons/TreeNode.js"/>
+      <module name="sap/ui/commons/layout/AbsoluteLayout.js"/>
+      <module name="sap/ui/commons/library.js"/>
+      <module name="sap/ui/core/Component.js"/>
+      <module name="sap/ui/core/ComponentContainer.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/Core.js"/>
+      <module name="sap/ui/core/CustomData.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/core/HTML.js"/>
+      <module name="sap/ui/core/Icon.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/core/IntervalTrigger.js"/>
+      <module name="sap/ui/core/Item.js"/>
+      <module name="sap/ui/core/ListItem.js"/>
+      <module name="sap/ui/core/Title.js"/>
+      <module name="sap/ui/core/UIComponent.js"/>
+      <module name="sap/ui/core/delegate/ItemNavigation.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/core/mvc/Controller.js"/>
+      <module name="sap/ui/core/mvc/JSView.js"/>
+      <module name="sap/ui/core/mvc/View.js"/>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+      <module name="sap/ui/core/routing/History.js"/>
+      <module name="sap/ui/core/routing/Router.js"/>
+      <module name="sap/ui/core/search/OpenSearchProvider.js"/>
+      <module name="sap/ui/core/util/LibraryInfo.js"/>
+      <module name="sap/ui/demokit/js/esprima.js"/>
+      <module name="sap/ui/demokit/js/google-code-prettify/prettify.js" conditional="true"/>
+      <module name="sap/ui/demokit/js/highlight-query-terms.js"/>
+      <module name="sap/ui/fl/FakeLrepConnectorLocalStorage.js"/>
+      <module name="sap/ui/fl/Utils.js"/>
+      <module name="sap/ui/layout/BlockLayout.js"/>
+      <module name="sap/ui/layout/BlockLayoutCell.js"/>
+      <module name="sap/ui/layout/BlockLayoutRow.js"/>
+      <module name="sap/ui/layout/Grid.js"/>
+      <module name="sap/ui/layout/GridData.js"/>
+      <module name="sap/ui/layout/HorizontalLayout.js"/>
+      <module name="sap/ui/layout/VerticalLayout.js"/>
+      <module name="sap/ui/layout/form/Form.js"/>
+      <module name="sap/ui/layout/form/FormContainer.js"/>
+      <module name="sap/ui/layout/form/FormElement.js"/>
+      <module name="sap/ui/layout/form/GridElementData.js"/>
+      <module name="sap/ui/layout/form/GridLayout.js"/>
+      <module name="sap/ui/layout/form/SimpleForm.js"/>
+      <module name="sap/ui/layout/library.js"/>
+      <module name="sap/ui/model/Filter.js"/>
+      <module name="sap/ui/model/FilterOperator.js"/>
+      <module name="sap/ui/model/Sorter.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="sap/ui/model/resource/ResourceModel.js"/>
+      <module name="sap/ui/ux3/DataSet.js"/>
+      <module name="sap/ui/ux3/DataSetItem.js"/>
+      <module name="sap/ui/ux3/DataSetSimpleView.js"/>
+      <module name="sap/ui/ux3/NavigationItem.js"/>
+      <module name="sap/ui/ux3/Shell.js"/>
+      <module name="sap/ui/ux3/ToolPopup.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/ui/demokit/library.js"/>
+      <module name="sap/ui/demokit/manifest.json"/>
+      <module name="sap/ui/demokit/CodeSampleContainer.js"/>
+      <module name="sap/ui/demokit/CodeSampleContainerRenderer.js"/>
+      <module name="sap/ui/demokit/CodeViewer.js"/>
+      <module name="sap/ui/demokit/CodeViewerRenderer.js"/>
+      <module name="sap/ui/demokit/DemokitApp.js"/>
+      <module name="sap/ui/demokit/EntityInfo.js"/>
+      <module name="sap/ui/demokit/FeedbackClient.js"/>
+      <module name="sap/ui/demokit/FileUploadIntrospector.js"/>
+      <module name="sap/ui/demokit/FileUploadIntrospectorRenderer.js"/>
+      <module name="sap/ui/demokit/HexagonButton.js"/>
+      <module name="sap/ui/demokit/HexagonButtonGroup.js"/>
+      <module name="sap/ui/demokit/HexagonButtonGroupRenderer.js"/>
+      <module name="sap/ui/demokit/HexagonButtonRenderer.js"/>
+      <module name="sap/ui/demokit/IndexLayout.js"/>
+      <module name="sap/ui/demokit/IndexLayoutPage.js"/>
+      <module name="sap/ui/demokit/IndexLayoutRenderer.js"/>
+      <module name="sap/ui/demokit/IndexPage.js"/>
+      <module name="sap/ui/demokit/SimpleTree.js"/>
+      <module name="sap/ui/demokit/SimpleTreeNode.js"/>
+      <module name="sap/ui/demokit/SimpleTreeRenderer.js"/>
+      <module name="sap/ui/demokit/Tag.js"/>
+      <module name="sap/ui/demokit/TagCloud.js"/>
+      <module name="sap/ui/demokit/TagCloudRenderer.js"/>
+      <module name="sap/ui/demokit/UI5EntityCueCard.js"/>
+      <module name="sap/ui/demokit/UI5EntityCueCardRenderer.js"/>
+      <module name="sap/ui/demokit/UIAreaSubstitute.js"/>
+      <module name="sap/ui/demokit/demoapps/Component.js"/>
+      <module name="sap/ui/demokit/demoapps/all.js"/>
+      <module name="sap/ui/demokit/demoapps/controller/App.controller.js"/>
+      <module name="sap/ui/demokit/demoapps/manifest.json"/>
+      <module name="sap/ui/demokit/demoapps/model/formatter.js"/>
+      <module name="sap/ui/demokit/demoapps/model/libraryData.js"/>
+      <module name="sap/ui/demokit/demoapps/model/sourceFileDownloader.js"/>
+      <module name="sap/ui/demokit/demoapps/view/App.view.xml"/>
+      <module name="sap/ui/demokit/demoapps/view/BlockLayoutCell.fragment.xml"/>
+      <module name="sap/ui/demokit/demoapps/view/BlockLayoutHeadlineCell.fragment.xml"/>
+      <module name="sap/ui/demokit/demoapps/view/BlockLayoutTeaserCell.fragment.xml"/>
+      <module name="sap/ui/demokit/explored/Bootstrap.js"/>
+      <module name="sap/ui/demokit/explored/Component.js"/>
+      <module name="sap/ui/demokit/explored/data.js"/>
+      <module name="sap/ui/demokit/explored/util/MyRouter.js"/>
+      <module name="sap/ui/demokit/explored/util/ObjectSearch.js"/>
+      <module name="sap/ui/demokit/explored/util/ToggleFullScreenHandler.js"/>
+      <module name="sap/ui/demokit/explored/view/app.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/app.view.js"/>
+      <module name="sap/ui/demokit/explored/view/appSettingsDialog.fragment.xml"/>
+      <module name="sap/ui/demokit/explored/view/base.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/code.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/code.view.xml"/>
+      <module name="sap/ui/demokit/explored/view/entity.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/entity.view.xml"/>
+      <module name="sap/ui/demokit/explored/view/master.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/master.view.xml"/>
+      <module name="sap/ui/demokit/explored/view/notFound.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/notFound.view.xml"/>
+      <module name="sap/ui/demokit/explored/view/sample.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/sample.view.xml"/>
+      <module name="sap/ui/demokit/explored/view/viewSettingsDialog.fragment.xml"/>
+      <module name="sap/ui/demokit/explored/view/welcome.view.xml"/>
+      <module name="sap/ui/demokit/util/APIInfo.js"/>
+      <module name="sap/ui/demokit/util/JSDocUtil.js"/>
+      <module name="sap/ui/demokit/util/jsanalyzer/ASTUtils.js"/>
+      <module name="sap/ui/demokit/util/jsanalyzer/Doclet.js"/>
+      <module name="sap/ui/demokit/util/jsanalyzer/ModuleAnalyzer.js"/>
+    </includes>
+  </module>
+  <module name="sap/ui/demokit/library-preload.js" size="173858">
+    <requires>
+      <module name="jquery.sap.act.js"/>
+      <module name="jquery.sap.encoder.js"/>
+      <module name="jquery.sap.global.js"/>
+      <module name="jquery.sap.keycodes.js"/>
+      <module name="jquery.sap.script.js"/>
+      <module name="jquery.sap.storage.js"/>
+      <module name="jquery.sap.strings.js"/>
+      <module name="sap/m/GroupHeaderListItem.js"/>
+      <module name="sap/m/MessageBox.js"/>
+      <module name="sap/m/MessageToast.js"/>
+      <module name="sap/m/SearchField.js"/>
+      <module name="sap/m/Shell.js"/>
+      <module name="sap/m/SplitApp.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/m/routing/RouteMatchedHandler.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/Global.js"/>
+      <module name="sap/ui/base/ManagedObjectMetadata.js"/>
+      <module name="sap/ui/commons/Button.js"/>
+      <module name="sap/ui/commons/CheckBox.js"/>
+      <module name="sap/ui/commons/Dialog.js"/>
+      <module name="sap/ui/commons/DropdownBox.js"/>
+      <module name="sap/ui/commons/FormattedTextView.js"/>
+      <module name="sap/ui/commons/Image.js"/>
+      <module name="sap/ui/commons/Label.js"/>
+      <module name="sap/ui/commons/Link.js"/>
+      <module name="sap/ui/commons/RichTooltip.js"/>
+      <module name="sap/ui/commons/SearchField.js"/>
+      <module name="sap/ui/commons/SegmentedButton.js"/>
+      <module name="sap/ui/commons/Splitter.js"/>
+      <module name="sap/ui/commons/TextArea.js"/>
+      <module name="sap/ui/commons/TextView.js"/>
+      <module name="sap/ui/commons/Tree.js"/>
+      <module name="sap/ui/commons/TreeNode.js"/>
+      <module name="sap/ui/commons/layout/AbsoluteLayout.js"/>
+      <module name="sap/ui/commons/library.js"/>
+      <module name="sap/ui/core/Component.js"/>
+      <module name="sap/ui/core/ComponentContainer.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/Core.js"/>
+      <module name="sap/ui/core/CustomData.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/core/HTML.js"/>
+      <module name="sap/ui/core/Icon.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/core/IntervalTrigger.js"/>
+      <module name="sap/ui/core/Item.js"/>
+      <module name="sap/ui/core/ListItem.js"/>
+      <module name="sap/ui/core/Title.js"/>
+      <module name="sap/ui/core/UIComponent.js"/>
+      <module name="sap/ui/core/delegate/ItemNavigation.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/core/mvc/Controller.js"/>
+      <module name="sap/ui/core/mvc/JSView.js"/>
+      <module name="sap/ui/core/mvc/View.js"/>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+      <module name="sap/ui/core/routing/History.js"/>
+      <module name="sap/ui/core/routing/Router.js"/>
+      <module name="sap/ui/core/search/OpenSearchProvider.js"/>
+      <module name="sap/ui/core/util/LibraryInfo.js"/>
+      <module name="sap/ui/demokit/js/esprima.js"/>
+      <module name="sap/ui/demokit/js/google-code-prettify/prettify.js" conditional="true"/>
+      <module name="sap/ui/demokit/js/highlight-query-terms.js"/>
+      <module name="sap/ui/fl/FakeLrepConnectorLocalStorage.js"/>
+      <module name="sap/ui/fl/Utils.js"/>
+      <module name="sap/ui/layout/BlockLayout.js"/>
+      <module name="sap/ui/layout/BlockLayoutCell.js"/>
+      <module name="sap/ui/layout/BlockLayoutRow.js"/>
+      <module name="sap/ui/layout/Grid.js"/>
+      <module name="sap/ui/layout/GridData.js"/>
+      <module name="sap/ui/layout/HorizontalLayout.js"/>
+      <module name="sap/ui/layout/VerticalLayout.js"/>
+      <module name="sap/ui/layout/form/Form.js"/>
+      <module name="sap/ui/layout/form/FormContainer.js"/>
+      <module name="sap/ui/layout/form/FormElement.js"/>
+      <module name="sap/ui/layout/form/GridElementData.js"/>
+      <module name="sap/ui/layout/form/GridLayout.js"/>
+      <module name="sap/ui/layout/form/SimpleForm.js"/>
+      <module name="sap/ui/layout/library.js"/>
+      <module name="sap/ui/model/Filter.js"/>
+      <module name="sap/ui/model/FilterOperator.js"/>
+      <module name="sap/ui/model/Sorter.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="sap/ui/model/resource/ResourceModel.js"/>
+      <module name="sap/ui/ux3/DataSet.js"/>
+      <module name="sap/ui/ux3/DataSetItem.js"/>
+      <module name="sap/ui/ux3/DataSetSimpleView.js"/>
+      <module name="sap/ui/ux3/NavigationItem.js"/>
+      <module name="sap/ui/ux3/Shell.js"/>
+      <module name="sap/ui/ux3/ToolPopup.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/ui/demokit/CodeSampleContainer.js"/>
+      <module name="sap/ui/demokit/CodeSampleContainerRenderer.js"/>
+      <module name="sap/ui/demokit/CodeViewer.js"/>
+      <module name="sap/ui/demokit/CodeViewerRenderer.js"/>
+      <module name="sap/ui/demokit/DemokitApp.js"/>
+      <module name="sap/ui/demokit/EntityInfo.js"/>
+      <module name="sap/ui/demokit/FeedbackClient.js"/>
+      <module name="sap/ui/demokit/FileUploadIntrospector.js"/>
+      <module name="sap/ui/demokit/FileUploadIntrospectorRenderer.js"/>
+      <module name="sap/ui/demokit/HexagonButton.js"/>
+      <module name="sap/ui/demokit/HexagonButtonGroup.js"/>
+      <module name="sap/ui/demokit/HexagonButtonGroupRenderer.js"/>
+      <module name="sap/ui/demokit/HexagonButtonRenderer.js"/>
+      <module name="sap/ui/demokit/IndexLayout.js"/>
+      <module name="sap/ui/demokit/IndexLayoutPage.js"/>
+      <module name="sap/ui/demokit/IndexLayoutRenderer.js"/>
+      <module name="sap/ui/demokit/IndexPage.js"/>
+      <module name="sap/ui/demokit/SimpleTree.js"/>
+      <module name="sap/ui/demokit/SimpleTreeNode.js"/>
+      <module name="sap/ui/demokit/SimpleTreeRenderer.js"/>
+      <module name="sap/ui/demokit/Tag.js"/>
+      <module name="sap/ui/demokit/TagCloud.js"/>
+      <module name="sap/ui/demokit/TagCloudRenderer.js"/>
+      <module name="sap/ui/demokit/UI5EntityCueCard.js"/>
+      <module name="sap/ui/demokit/UI5EntityCueCardRenderer.js"/>
+      <module name="sap/ui/demokit/UIAreaSubstitute.js"/>
+      <module name="sap/ui/demokit/demoapps/Component.js"/>
+      <module name="sap/ui/demokit/demoapps/all.js"/>
+      <module name="sap/ui/demokit/demoapps/controller/App.controller.js"/>
+      <module name="sap/ui/demokit/demoapps/manifest.json"/>
+      <module name="sap/ui/demokit/demoapps/model/formatter.js"/>
+      <module name="sap/ui/demokit/demoapps/model/libraryData.js"/>
+      <module name="sap/ui/demokit/demoapps/model/sourceFileDownloader.js"/>
+      <module name="sap/ui/demokit/demoapps/view/App.view.xml"/>
+      <module name="sap/ui/demokit/demoapps/view/BlockLayoutCell.fragment.xml"/>
+      <module name="sap/ui/demokit/demoapps/view/BlockLayoutHeadlineCell.fragment.xml"/>
+      <module name="sap/ui/demokit/demoapps/view/BlockLayoutTeaserCell.fragment.xml"/>
+      <module name="sap/ui/demokit/explored/Bootstrap.js"/>
+      <module name="sap/ui/demokit/explored/Component.js"/>
+      <module name="sap/ui/demokit/explored/data.js"/>
+      <module name="sap/ui/demokit/explored/util/MyRouter.js"/>
+      <module name="sap/ui/demokit/explored/util/ObjectSearch.js"/>
+      <module name="sap/ui/demokit/explored/util/ToggleFullScreenHandler.js"/>
+      <module name="sap/ui/demokit/explored/view/app.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/app.view.js"/>
+      <module name="sap/ui/demokit/explored/view/appSettingsDialog.fragment.xml"/>
+      <module name="sap/ui/demokit/explored/view/base.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/code.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/code.view.xml"/>
+      <module name="sap/ui/demokit/explored/view/entity.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/entity.view.xml"/>
+      <module name="sap/ui/demokit/explored/view/master.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/master.view.xml"/>
+      <module name="sap/ui/demokit/explored/view/notFound.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/notFound.view.xml"/>
+      <module name="sap/ui/demokit/explored/view/sample.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/sample.view.xml"/>
+      <module name="sap/ui/demokit/explored/view/viewSettingsDialog.fragment.xml"/>
+      <module name="sap/ui/demokit/explored/view/welcome.view.xml"/>
+      <module name="sap/ui/demokit/library.js"/>
+      <module name="sap/ui/demokit/manifest.json"/>
+      <module name="sap/ui/demokit/util/APIInfo.js"/>
+      <module name="sap/ui/demokit/util/JSDocUtil.js"/>
+      <module name="sap/ui/demokit/util/jsanalyzer/ASTUtils.js"/>
+      <module name="sap/ui/demokit/util/jsanalyzer/Doclet.js"/>
+      <module name="sap/ui/demokit/util/jsanalyzer/ModuleAnalyzer.js"/>
+    </includes>
+  </module>
+  <module name="sap/ui/demokit/library-preload.json" size="0">
+    <requires>
+      <module name="jquery.sap.act.js"/>
+      <module name="jquery.sap.encoder.js"/>
+      <module name="jquery.sap.global.js"/>
+      <module name="jquery.sap.keycodes.js"/>
+      <module name="jquery.sap.script.js"/>
+      <module name="jquery.sap.storage.js"/>
+      <module name="jquery.sap.strings.js"/>
+      <module name="sap/m/GroupHeaderListItem.js"/>
+      <module name="sap/m/MessageBox.js"/>
+      <module name="sap/m/MessageToast.js"/>
+      <module name="sap/m/SearchField.js"/>
+      <module name="sap/m/Shell.js"/>
+      <module name="sap/m/SplitApp.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/m/routing/RouteMatchedHandler.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/Global.js"/>
+      <module name="sap/ui/base/ManagedObjectMetadata.js"/>
+      <module name="sap/ui/commons/Button.js"/>
+      <module name="sap/ui/commons/CheckBox.js"/>
+      <module name="sap/ui/commons/Dialog.js"/>
+      <module name="sap/ui/commons/DropdownBox.js"/>
+      <module name="sap/ui/commons/FormattedTextView.js"/>
+      <module name="sap/ui/commons/Image.js"/>
+      <module name="sap/ui/commons/Label.js"/>
+      <module name="sap/ui/commons/Link.js"/>
+      <module name="sap/ui/commons/RichTooltip.js"/>
+      <module name="sap/ui/commons/SearchField.js"/>
+      <module name="sap/ui/commons/SegmentedButton.js"/>
+      <module name="sap/ui/commons/Splitter.js"/>
+      <module name="sap/ui/commons/TextArea.js"/>
+      <module name="sap/ui/commons/TextView.js"/>
+      <module name="sap/ui/commons/Tree.js"/>
+      <module name="sap/ui/commons/TreeNode.js"/>
+      <module name="sap/ui/commons/layout/AbsoluteLayout.js"/>
+      <module name="sap/ui/commons/library-preload.json"/>
+      <module name="sap/ui/commons/library.js"/>
+      <module name="sap/ui/core/Component.js"/>
+      <module name="sap/ui/core/ComponentContainer.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/Core.js"/>
+      <module name="sap/ui/core/CustomData.js"/>
+      <module name="sap/ui/core/Element.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/core/HTML.js"/>
+      <module name="sap/ui/core/Icon.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/core/IntervalTrigger.js"/>
+      <module name="sap/ui/core/Item.js"/>
+      <module name="sap/ui/core/ListItem.js"/>
+      <module name="sap/ui/core/Title.js"/>
+      <module name="sap/ui/core/UIComponent.js"/>
+      <module name="sap/ui/core/delegate/ItemNavigation.js"/>
+      <module name="sap/ui/core/library-preload.json"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/core/mvc/Controller.js"/>
+      <module name="sap/ui/core/mvc/JSView.js"/>
+      <module name="sap/ui/core/mvc/View.js"/>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+      <module name="sap/ui/core/routing/History.js"/>
+      <module name="sap/ui/core/routing/Router.js"/>
+      <module name="sap/ui/core/search/OpenSearchProvider.js"/>
+      <module name="sap/ui/core/util/LibraryInfo.js"/>
+      <module name="sap/ui/demokit/js/esprima.js"/>
+      <module name="sap/ui/demokit/js/google-code-prettify/prettify.js" conditional="true"/>
+      <module name="sap/ui/demokit/js/highlight-query-terms.js"/>
+      <module name="sap/ui/fl/FakeLrepConnectorLocalStorage.js"/>
+      <module name="sap/ui/fl/Utils.js"/>
+      <module name="sap/ui/layout/BlockLayout.js"/>
+      <module name="sap/ui/layout/BlockLayoutCell.js"/>
+      <module name="sap/ui/layout/BlockLayoutRow.js"/>
+      <module name="sap/ui/layout/Grid.js"/>
+      <module name="sap/ui/layout/GridData.js"/>
+      <module name="sap/ui/layout/HorizontalLayout.js"/>
+      <module name="sap/ui/layout/VerticalLayout.js"/>
+      <module name="sap/ui/layout/form/Form.js"/>
+      <module name="sap/ui/layout/form/FormContainer.js"/>
+      <module name="sap/ui/layout/form/FormElement.js"/>
+      <module name="sap/ui/layout/form/GridElementData.js"/>
+      <module name="sap/ui/layout/form/GridLayout.js"/>
+      <module name="sap/ui/layout/form/SimpleForm.js"/>
+      <module name="sap/ui/layout/library.js"/>
+      <module name="sap/ui/model/Filter.js"/>
+      <module name="sap/ui/model/FilterOperator.js"/>
+      <module name="sap/ui/model/Sorter.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="sap/ui/model/resource/ResourceModel.js"/>
+      <module name="sap/ui/ux3/DataSet.js"/>
+      <module name="sap/ui/ux3/DataSetItem.js"/>
+      <module name="sap/ui/ux3/DataSetSimpleView.js"/>
+      <module name="sap/ui/ux3/NavigationItem.js"/>
+      <module name="sap/ui/ux3/Shell.js"/>
+      <module name="sap/ui/ux3/ToolPopup.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+    <includes>
+      <module name="sap/ui/demokit/CodeSampleContainer.js"/>
+      <module name="sap/ui/demokit/CodeSampleContainerRenderer.js"/>
+      <module name="sap/ui/demokit/CodeViewer.js"/>
+      <module name="sap/ui/demokit/CodeViewerRenderer.js"/>
+      <module name="sap/ui/demokit/DemokitApp.js"/>
+      <module name="sap/ui/demokit/EntityInfo.js"/>
+      <module name="sap/ui/demokit/FeedbackClient.js"/>
+      <module name="sap/ui/demokit/FileUploadIntrospector.js"/>
+      <module name="sap/ui/demokit/FileUploadIntrospectorRenderer.js"/>
+      <module name="sap/ui/demokit/HexagonButton.js"/>
+      <module name="sap/ui/demokit/HexagonButtonGroup.js"/>
+      <module name="sap/ui/demokit/HexagonButtonGroupRenderer.js"/>
+      <module name="sap/ui/demokit/HexagonButtonRenderer.js"/>
+      <module name="sap/ui/demokit/IndexLayout.js"/>
+      <module name="sap/ui/demokit/IndexLayoutPage.js"/>
+      <module name="sap/ui/demokit/IndexLayoutRenderer.js"/>
+      <module name="sap/ui/demokit/IndexPage.js"/>
+      <module name="sap/ui/demokit/SimpleTree.js"/>
+      <module name="sap/ui/demokit/SimpleTreeNode.js"/>
+      <module name="sap/ui/demokit/SimpleTreeRenderer.js"/>
+      <module name="sap/ui/demokit/Tag.js"/>
+      <module name="sap/ui/demokit/TagCloud.js"/>
+      <module name="sap/ui/demokit/TagCloudRenderer.js"/>
+      <module name="sap/ui/demokit/UI5EntityCueCard.js"/>
+      <module name="sap/ui/demokit/UI5EntityCueCardRenderer.js"/>
+      <module name="sap/ui/demokit/UIAreaSubstitute.js"/>
+      <module name="sap/ui/demokit/demoapps/Component.js"/>
+      <module name="sap/ui/demokit/demoapps/all.js"/>
+      <module name="sap/ui/demokit/demoapps/controller/App.controller.js"/>
+      <module name="sap/ui/demokit/demoapps/manifest.json"/>
+      <module name="sap/ui/demokit/demoapps/model/formatter.js"/>
+      <module name="sap/ui/demokit/demoapps/model/libraryData.js"/>
+      <module name="sap/ui/demokit/demoapps/model/sourceFileDownloader.js"/>
+      <module name="sap/ui/demokit/demoapps/view/App.view.xml"/>
+      <module name="sap/ui/demokit/demoapps/view/BlockLayoutCell.fragment.xml"/>
+      <module name="sap/ui/demokit/demoapps/view/BlockLayoutHeadlineCell.fragment.xml"/>
+      <module name="sap/ui/demokit/demoapps/view/BlockLayoutTeaserCell.fragment.xml"/>
+      <module name="sap/ui/demokit/explored/Bootstrap.js"/>
+      <module name="sap/ui/demokit/explored/Component.js"/>
+      <module name="sap/ui/demokit/explored/data.js"/>
+      <module name="sap/ui/demokit/explored/util/MyRouter.js"/>
+      <module name="sap/ui/demokit/explored/util/ObjectSearch.js"/>
+      <module name="sap/ui/demokit/explored/util/ToggleFullScreenHandler.js"/>
+      <module name="sap/ui/demokit/explored/view/app.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/app.view.js"/>
+      <module name="sap/ui/demokit/explored/view/appSettingsDialog.fragment.xml"/>
+      <module name="sap/ui/demokit/explored/view/base.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/code.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/code.view.xml"/>
+      <module name="sap/ui/demokit/explored/view/entity.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/entity.view.xml"/>
+      <module name="sap/ui/demokit/explored/view/master.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/master.view.xml"/>
+      <module name="sap/ui/demokit/explored/view/notFound.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/notFound.view.xml"/>
+      <module name="sap/ui/demokit/explored/view/sample.controller.js"/>
+      <module name="sap/ui/demokit/explored/view/sample.view.xml"/>
+      <module name="sap/ui/demokit/explored/view/viewSettingsDialog.fragment.xml"/>
+      <module name="sap/ui/demokit/explored/view/welcome.view.xml"/>
+      <module name="sap/ui/demokit/library.js"/>
+      <module name="sap/ui/demokit/manifest.json"/>
+      <module name="sap/ui/demokit/util/APIInfo.js"/>
+      <module name="sap/ui/demokit/util/JSDocUtil.js"/>
+      <module name="sap/ui/demokit/util/jsanalyzer/ASTUtils.js"/>
+      <module name="sap/ui/demokit/util/jsanalyzer/Doclet.js"/>
+      <module name="sap/ui/demokit/util/jsanalyzer/ModuleAnalyzer.js"/>
+    </includes>
+  </module>
+  <module name="sap/ui/demokit/library.js" size="8137" compressedSize="4034">
+    <description>Initialization Code and shared classes of library sap.ui.demokit.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/Global.js"/>
+      <module name="sap/ui/commons/library.js"/>
+      <module name="sap/ui/core/Core.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/core/util/LibraryInfo.js" conditional="true"/>
+      <module name="sap/ui/demokit/js/highlight-query-terms.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/manifest.json" size="1928">
+  </module>
+  <module name="sap/ui/demokit/util/APIInfo.js" size="10652" compressedSize="5082">
+    <description>Provides reuse functionality for reading documentation from api.json files (as created by the UI5 JSDoc3 template/plugin)</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/util/JSDocUtil.js" size="2782" compressedSize="1082">
+    <description>Provides reuse functionality for reading documentation from api.json files (as created by the UI5 JSDoc3 template/plugin)</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="jquery.sap.strings.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/util/jsanalyzer/ASTUtils.js" size="5804" compressedSize="2533">
+    <description>Provides implementation of sap.ui.demokit.util.jsanalyzer.ASTUtils</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/demokit/js/esprima.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/util/jsanalyzer/Doclet.js" size="2561" compressedSize="1198">
+    <description>Provides implementation of sap.ui.demokit.util.jsanalyzer.Doclet</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+  <module name="sap/ui/demokit/util/jsanalyzer/ModuleAnalyzer.js" size="23099" compressedSize="10813">
+    <description>Provides implementation of sap.ui.demokit.util.jsanalyzer.EntityParser</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/base/ManagedObjectMetadata.js"/>
+      <module name="sap/ui/demokit/js/esprima.js"/>
+      <module name="sap/ui/demokit/util/jsanalyzer/ASTUtils.js"/>
+      <module name="sap/ui/demokit/util/jsanalyzer/Doclet.js"/>
+      <module name="ui5loader-autoconfig.js"/>
+    </requires>
+  </module>
+</library>

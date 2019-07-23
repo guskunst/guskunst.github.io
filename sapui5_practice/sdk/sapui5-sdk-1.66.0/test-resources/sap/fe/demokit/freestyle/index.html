@@ -1,0 +1,33 @@
+<html>
+	<body>
+		<h1>Freestyle Applications</h1>
+		<ol>
+			<li><a href="Freestyle.html">Freestyle Application using the DraftModel and sap.fe.controllerextensions</a></li>
+			<li><a href="Freestyle.html?viewName=NoActions">Freestyle Application using Draft Model only</a></li>
+		</ol>
+		<h1>Freestyle Applications using sap.ui.mdc Controls</h1>
+		<ol>
+			<li><a href="Freestyle.html?viewName=FEFilterBarAndFETable">sap.fe.FilterBar and sap.fe.Table</a></li>
+			<li><a href="Freestyle.html?viewName=FEFilterBarAndFreestyleTable">sap.fe.FilterBar and <em>sap.m.Table</em></a></li>
+			<li><a href="Freestyle.html?viewName=FreeStyleFilterAndFETable"><em>Freestyle Filter</em> and sap.fe.Table</a></li>
+			<li><a href="Freestyle.html?viewName=FEFilterBarAndFETableWithFreestyleColumns">sap.fe.FilterBar and sap.fe.Table with <em>Freestyle Columns</em></a></li>
+		</ol>
+		<h1>Error Testing</h1>
+		<ol>
+			<li><a href="Freestyle.html?viewName=ErrorTestFETable">Errors responses in sap.fe.Table</a></li>
+		</ol>
+	</body>
+	<script>
+		var sQuery = location.search,
+			sBackendParameter = 'useBackendUrl',
+			sParamRegex = new RegExp(sBackendParameter + '\=([^&]+)'),
+			aMatch = sQuery.match(sParamRegex),
+			sBackend = aMatch && aMatch[1];
+			if (sBackend) {
+				document.querySelectorAll("a").forEach(function(element) {
+					element.href += ( element.href.indexOf('?') > -1 ? '&' : '?' )
+					+ sBackendParameter + "=" + sBackend;
+				});
+			}
+	</script>
+</html>

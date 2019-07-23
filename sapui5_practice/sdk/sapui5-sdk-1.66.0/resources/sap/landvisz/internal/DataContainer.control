@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>internal/DataContainer</name>
+    <derived/>
+    <documentation>A control that renders the data container section in a system</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property group="Data" type="sap.ui.core/string" name="header">
+            <documentation>Text of Navigation Header</documentation>
+        </property>
+        <property group="Identification" defaultValue="true" type="sap.ui.core/boolean" name="selected">
+            <documentation>selected property of data header</documentation>
+        </property>
+        <property group="Dimension" defaultValue="Regular" type="sap.landvisz/EntityCSSSize" name="renderingSize">
+            <documentation>rendering size of the control</documentation>
+        </property>
+        <property group="Identification" type="sap.landvisz/LandscapeObject" name="type">
+            <documentation>type of landscape object</documentation>
+        </property>
+    </properties>
+    <events>
+        <event allowPreventDefault="false" name="select">
+            <documentation>the action to be carried out on selection of a tab</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation cardinality="0..n" type="sap.ui.core/Control" name="properties">
+            <documentation>test</documentation>
+        </aggregation>
+    </aggregations>
+</control>

@@ -1,0 +1,17 @@
+<core:View
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns="sap.m" controllerName="view.Main"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:mdc="sap.ui.mdc"
+	xmlns:core="sap.ui.core">
+	<core:Fragment fragmentName="view.Header" type="XML"/>
+
+	 <mdc:FilterBar id="template::FilterBar"
+		metadataContexts="{ path: '/Artists',  name: 'entitySet'}"
+		listBindingNames="sap.fe.tableBinding"
+		filterSummary="Toll"/>
+
+	<!-- Freestyle Table -->
+	<core:Fragment fragmentName="view.Table" type="XML"/>
+
+</core:View>

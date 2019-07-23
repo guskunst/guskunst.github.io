@@ -1,0 +1,47 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:mdc="sap.ui.mdc"
+	xmlns:macro="sap.ui.mdc.odata.v4"
+	xmlns:core="sap.ui.core"
+	xmlns:log="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	template:require="{
+		MODEL: 'sap/ui/model/odata/v4/AnnotationHelper',
+		COMMON: 'sap/ui/mdc/odata/v4/CommonHelper',
+		FORM: 'sap/ui/mdc/odata/v4/form/FormHelper'
+	}">
+
+	<template:if test="{= ${facet>Target/$AnnotationPath} &amp;&amp; ${facet>Target/$AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.LineItem') === -1 &amp;&amp; ${facet>Target/$AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.Chart') === -1 }">
+		<template:if test="{= MODEL.getNavigationPath(${facet>Target/$AnnotationPath}) }">
+			<template:then>
+				<template:with path="facet>Target/$AnnotationPath" helper="FORM.resolveAnnotationPathForForm" var="annotationPath">
+					<template:with path="annotationPath>" helper="FORM.getTargetEntitySet" var="targetEntitySet">
+						<template:with path="annotationPath>" helper="FORM.getDataFieldCollection" var="dataFieldCollection">
+							<macro:FormContainer
+								id="{= COMMON.getStableId([${this>id}, (${facet>} ? { Facet: ${facet>} } : ''), 'FormC']) }"
+								idPrefix="{= ${this>idPrefix} ? COMMON.getStableId([${this>idPrefix}, { Facet: ${facet>} }]) : undefined }"
+								title="{= ${this>useFormContainerLabels} === 'true' &amp;&amp; ${facet>} &amp;&amp; ${facet>@@MODEL.label} ? ${facet>@@MODEL.label} : '' }"
+								metadataContexts="{ model: 'targetEntitySet', path:'',  name: 'entitySet'},{ model: 'dataFieldCollection', path:'',  name: 'dataFieldCollection'}"
+								navigationPath="{= MODEL.getNavigationPath(${facet>Target/$AnnotationPath}) ? MODEL.getNavigationPath(${facet>Target/$AnnotationPath}) : ''}"
+								visibilityPath="{= ${facet>./@com.sap.vocabularies.UI.v1.Hidden/$Path} ? ${facet>./@com.sap.vocabularies.UI.v1.Hidden/$Path} : '' }"
+								editMode="{= ${this>editMode} || 'Display'}" />
+						</template:with>
+					</template:with>
+				</template:with>
+			</template:then>
+			<template:else>
+				<template:with path="facet>Target/$AnnotationPath" var="annotationPath">
+					<template:with path="annotationPath>" helper="FORM.getDataFieldCollection" var="dataFieldCollection">
+						<macro:FormContainer
+							id="{= COMMON.getStableId([${this>id}, (${facet>} ? { Facet: ${facet>} } : ''), 'FormC']) }"
+							idPrefix="{= ${this>idPrefix} ? COMMON.getStableId([${this>idPrefix}, { Facet: ${facet>} }]) : undefined }"
+							title="{= ${this>useFormContainerLabels} === 'true' &amp;&amp; ${facet>} &amp;&amp; ${facet>@@MODEL.label} ? ${facet>@@MODEL.label} : '' }"
+							metadataContexts="{ model: 'entitySet', path:'',  name: 'entitySet'},{ model: 'dataFieldCollection', path:'',  name: 'dataFieldCollection'}"
+							visibilityPath="{= ${facet>./@com.sap.vocabularies.UI.v1.Hidden/$Path} ? ${facet>./@com.sap.vocabularies.UI.v1.Hidden/$Path} : '' }"
+							editMode="{= ${this>editMode} || 'Display'}" />
+					</template:with>
+				</template:with>
+			</template:else>
+		</template:if>
+	</template:if>
+
+</core:FragmentDefinition>

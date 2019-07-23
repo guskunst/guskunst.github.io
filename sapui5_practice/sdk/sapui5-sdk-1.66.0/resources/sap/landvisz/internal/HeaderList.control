@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>internal/HeaderList</name>
+    <derived/>
+    <documentation>A control to render headers of a control</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property group="Data" type="sap.ui.core/string" name="headerTooltip">
+            <documentation>ToolTip for headers</documentation>
+        </property>
+        <property group="Dimension" type="sap.ui.core/string" name="entitySize">
+            <documentation>Size of the headers</documentation>
+        </property>
+        <property group="Identification" defaultValue="false" type="sap.ui.core/boolean" name="selected">
+            <documentation>to select/deselect a header</documentation>
+        </property>
+        <property group="Identification" type="sap.landvisz/LandscapeObject" name="type">
+            <documentation>type of system</documentation>
+        </property>
+    </properties>
+    <events>
+        <event allowPreventDefault="false" name="press">
+            <documentation>Event triggered when header is clicked</documentation>
+        </event>
+    </events>
+</control>

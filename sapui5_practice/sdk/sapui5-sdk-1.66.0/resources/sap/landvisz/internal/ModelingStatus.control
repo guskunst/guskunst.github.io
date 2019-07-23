@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>internal/ModelingStatus</name>
+    <derived/>
+    <documentation>Modeling Status of entity</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property group="Data" type="sap.ui.core/string" name="status">
+            <documentation>status determines the state of the system namely correct, warning, error</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="statusTooltip">
+            <documentation>Tooltip for status that determines the state of the system namely correct, warning, error</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="stateIconSrc">
+            <documentation>icon source for status</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/any" name="stateIconTooltip">
+            <documentation>tooltip for the icon</documentation>
+        </property>
+    </properties>
+</control>

@@ -1,0 +1,145 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "sap.ushell.playground",
+        "type": "application",
+        "title": "Controls Playground"
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "sap.ushell.playground.view.App",
+            "type": "XML",
+            "async": true
+        },
+        "routing": {
+            "config": {
+                    "routerClass": "sap.m.routing.Router",
+                    "viewPath": "sap.ushell.playground.view",
+                    "controlId": "rootControl",
+                    "viewType": "JS",
+                    "async": true
+            },
+            "routes": [
+                {
+                    "name": "welcome",
+                    "pattern": "",
+                    "target": ["navigationList", "welcomeMessage"]
+                },
+                {
+                    "name": "shellHeader",
+                    "pattern": "shellHeader",
+                    "target": ["navigationList", "shellHeader"]
+                },
+                {
+                    "name": "shellAppTitle",
+                    "pattern": "shellAppTitle",
+                    "target": ["navigationList", "shellAppTitle"]
+                },
+                {
+                    "name": "shellNavigationMenu",
+                    "pattern": "shellNavigationMenu",
+                    "target": ["navigationList", "shellNavigationMenu"]
+                },
+                {
+                    "name": "navigationMiniTile",
+                    "pattern": "navigationMiniTile",
+                    "target": ["navigationList", "navigationMiniTile"]
+                },
+                {
+                    "name": "rightFloatingContainer",
+                    "pattern": "rightFloatingContainer",
+                    "target": ["navigationList", "rightFloatingContainer"]
+                },
+                {
+                    "name": "toolArea",
+                    "pattern": "toolArea",
+                    "target": ["navigationList", "toolArea"]
+                },
+                {
+                    "name": "toolAreaItem",
+                    "pattern": "toolAreaItem",
+                    "target": ["navigationList", "toolAreaItem"]
+                },
+                {
+                    "name": "tile",
+                    "pattern": "tile",
+                    "target": ["navigationList", "tile"]
+                },
+                {
+                    "name": "tileBase",
+                    "pattern": "tileBase",
+                    "target": ["navigationList", "tileBase"]
+                },
+                {
+                    "name": "gridContainer",
+                    "pattern": "gridContainer",
+                    "target": ["navigationList", "gridContainer"]
+                }
+            ],
+            "targets": {
+                "navigationList": {
+                    "viewName": "NavigationList",
+                    "viewType": "XML",
+                    "controlAggregation": "masterPages",
+                    "viewLevel": 0
+                },
+                "welcomeMessage": {
+                    "viewName": "WelcomeMessage",
+                    "viewType": "XML",
+                    "controlAggregation": "detailPages",
+                    "viewLevel": 1
+                },
+                "shellHeader": {
+                    "viewName": "ShellHeaderPlayground",
+                    "controlAggregation": "detailPages",
+                    "viewLevel": 1
+                },
+                "shellAppTitle": {
+                    "viewName": "ShellAppTitlePlayground",
+                    "controlAggregation": "detailPages",
+                    "viewLevel": 1
+                },
+                "shellNavigationMenu": {
+                    "viewName": "ShellNavigationMenuPlayground",
+                    "controlAggregation": "detailPages",
+                    "viewLevel": 1
+                },
+                "navigationMiniTile": {
+                    "viewName": "NavigationMiniTilePlayground",
+                    "controlAggregation": "detailPages",
+                    "viewLevel": 1
+                },
+                "rightFloatingContainer": {
+                    "viewName": "RightFloatingContainerPlayground",
+                    "controlAggregation": "detailPages",
+                    "viewLevel": 1
+                },
+                "toolArea": {
+                    "viewName": "ToolAreaPlayground",
+                    "controlAggregation": "detailPages",
+                    "viewLevel": 1
+                },
+                "toolAreaItem": {
+                    "viewName": "ToolAreaItemPlayground",
+                    "controlAggregation": "detailPages",
+                    "viewLevel": 1
+                },
+                "tile": {
+                    "viewName": "TilePlayground",
+                    "controlAggregation": "detailPages",
+                    "viewLevel": 1
+                },
+                "tileBase": {
+                    "viewName": "TileBasePlayground",
+                    "controlAggregation": "detailPages",
+                    "viewLevel": 1
+                },
+                "gridContainer": {
+                    "viewName": "GridContainerPlayground",
+                    "controlAggregation": "detailPages",
+                    "viewLevel": 1
+                }
+            }
+        }
+    }
+}

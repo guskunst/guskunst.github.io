@@ -1,0 +1,47 @@
+<mvc:View xmlns:mdc="sap.ui.mdc" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:variants="sap.ui.fl.variants" xmlns:unified="sap.ui.unified">
+	<Page title="MDC Table with Products" enableScrolling="true">
+		<VBox renderType="Bare" fitContainer="true">
+			<OverflowToolbar design="Transparent">
+				<variants:VariantManagement id="onlyTableView" for="mdcTable"/>
+				<ToolbarSpacer/>
+				<ToggleButton text= "CreationRow" press="sap.ui.getCore().byId('onlyTableView').byId('mdcTable').getCreationRow().setVisible(!sap.ui.getCore().byId('onlyTableView').byId('mdcTable').getCreationRow().getVisible())"/>
+				<Button text= "Responsive table with Scroll"  press="sap.ui.getCore()._switchToScrollableResponsiveTable()"/>
+				<layoutData>
+						<FlexItemData shrinkFactor="0"/>
+				</layoutData>
+			</OverflowToolbar>
+			<!-- The metadataContexts with {name: 'ignoreField', model: 'collection'} is a hack to switch to non mdc.Field (m.Text) based controls only, NOT for productive usage!  -->
+			<mdc:Table id="mdcTable" header="Products" metadataDelegate="sap/ui/mdc/odata/v4/TableDelegate" metadataContexts="[{ path: '/ProductList',  name: 'collection', model: 'collection'},{ name: 'ignoreField', model: 'collection'}]"
+				rows="{path: '/ProductList'}" selectionMode="Multi" height="100%" p13nMode="Column,Sort" noDataText="This text is shown when nothing no data is present in the table">
+				<mdc:type>
+					<mdc:GridTableType rowCountMode="Fixed" rowCount="20"/>
+				</mdc:type>
+				<mdc:actions>
+					<Button text= "Responsive table"  press="sap.ui.getCore().byId('onlyTableView').byId('mdcTable').setType('ResponsiveTable')"/>
+					<Button text= "   Grid Table   "  press="sap.ui.getCore().byId('onlyTableView').byId('mdcTable').setType('Table')"/>
+					<Button text= "Single Selection"  press="sap.ui.getCore().byId('onlyTableView').byId('mdcTable').setSelectionMode('Single')"/>
+					<Button text= " Multi Selection"  press="sap.ui.getCore().byId('onlyTableView').byId('mdcTable').setSelectionMode('Multi')"/>
+					<Button text= "  No Selection  "  press="sap.ui.getCore().byId('onlyTableView').byId('mdcTable').setSelectionMode('None')"/>
+					<Button text= "  Navigation on  " press="sap.ui.getCore().byId('onlyTableView').byId('mdcTable').setRowAction(['Navigation'])"/>
+					<Button text= "  Navigation off " press="sap.ui.getCore().byId('onlyTableView').byId('mdcTable').setRowAction()"/>
+					<Button text= "   Enable P13n   " press="sap.ui.getCore().byId('onlyTableView').byId('mdcTable').setP13nMode(['Column','Sort'])"/>
+					<Button text= "   Disable P13n  " press="sap.ui.getCore().byId('onlyTableView').byId('mdcTable').setP13nMode()"/>
+				</mdc:actions>
+				<mdc:columns>
+					<mdc:Column id="creation" header="Created At" initialIndex="3" dataProperties="CreatedAt">
+						<Text text="{CreatedAt}" />
+					</mdc:Column>
+					<mdc:Column id="price" header="Unit Price" initialIndex="5" dataProperties="Price,CurrencyCode">
+						<unified:Currency value="{Price}" currency="{CurrencyCode}"/>
+					</mdc:Column>
+				</mdc:columns>
+				<mdc:layoutData>
+					<FlexItemData growFactor="1" baseSize="0%"/>
+				</mdc:layoutData>
+				<mdc:creationRow>
+					<mdc:CreationRow visible="false" apply="sap.m.MessageToast.show('Apply fired')"/>
+				</mdc:creationRow>
+			</mdc:Table>
+		</VBox>
+	</Page>
+</mvc:View>

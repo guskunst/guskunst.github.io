@@ -1,0 +1,223 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"module": "sap/ushell/components/shell/MeArea/fiori3/Component.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/UIComponent.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/components/applicationIntegration/AppLifeCycle.js",
+				"sap/ushell/components/shell/MeArea/fiori3/MeArea.controller.js"
+			]
+		},
+		{
+			"name": "Component-h2-preload-dbg.js",
+			"module": "Component-h2-preload.js",
+			"isDebug": true,
+			"merged": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/ButtonType.js",
+				"sap/m/List.js",
+				"sap/m/ListType.js",
+				"sap/m/Popover.js",
+				"sap/m/StandardListItem.js",
+				"sap/m/Title.js",
+				"sap/m/Toolbar.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/components/applicationIntegration/AppLifeCycle.js",
+				"sap/ushell/resources.js",
+				"sap/ushell/ui/fiori3/QuickAccess.js",
+				"sap/ushell/ui/footerbar/AboutButton.js",
+				"sap/ushell/ui/footerbar/ContactSupportButton.js",
+				"sap/ushell/ui/footerbar/EndUserFeedback.js",
+				"sap/ushell/ui/launchpad/ActionItem.js"
+			],
+			"included": [
+				"sap/ushell/components/shell/MeArea/fiori3/Component.js",
+				"sap/ushell/components/shell/MeArea/fiori3/MeArea.controller.js",
+				"sap/ushell/components/shell/MeArea/fiori3/MeAreaPopover.fragment.xml"
+			]
+		},
+		{
+			"name": "Component-h2-preload.js",
+			"module": "Component-h2-preload.js",
+			"merged": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/ButtonType.js",
+				"sap/m/List.js",
+				"sap/m/ListType.js",
+				"sap/m/Popover.js",
+				"sap/m/StandardListItem.js",
+				"sap/m/Title.js",
+				"sap/m/Toolbar.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/components/applicationIntegration/AppLifeCycle.js",
+				"sap/ushell/resources.js",
+				"sap/ushell/ui/fiori3/QuickAccess.js",
+				"sap/ushell/ui/footerbar/AboutButton.js",
+				"sap/ushell/ui/footerbar/ContactSupportButton.js",
+				"sap/ushell/ui/footerbar/EndUserFeedback.js",
+				"sap/ushell/ui/launchpad/ActionItem.js"
+			],
+			"included": [
+				"sap/ushell/components/shell/MeArea/fiori3/Component.js",
+				"sap/ushell/components/shell/MeArea/fiori3/MeArea.controller.js",
+				"sap/ushell/components/shell/MeArea/fiori3/MeAreaPopover.fragment.xml"
+			]
+		},
+		{
+			"name": "Component-preload-dbg.js",
+			"module": "Component-preload.js",
+			"isDebug": true,
+			"merged": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/ButtonType.js",
+				"sap/m/List.js",
+				"sap/m/ListType.js",
+				"sap/m/Popover.js",
+				"sap/m/StandardListItem.js",
+				"sap/m/Title.js",
+				"sap/m/Toolbar.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/components/applicationIntegration/AppLifeCycle.js",
+				"sap/ushell/resources.js",
+				"sap/ushell/ui/fiori3/QuickAccess.js",
+				"sap/ushell/ui/footerbar/AboutButton.js",
+				"sap/ushell/ui/footerbar/ContactSupportButton.js",
+				"sap/ushell/ui/footerbar/EndUserFeedback.js",
+				"sap/ushell/ui/launchpad/ActionItem.js"
+			],
+			"included": [
+				"sap/ushell/components/shell/MeArea/fiori3/Component.js",
+				"sap/ushell/components/shell/MeArea/fiori3/MeArea.controller.js",
+				"sap/ushell/components/shell/MeArea/fiori3/MeAreaPopover.fragment.xml"
+			]
+		},
+		{
+			"name": "Component-preload.js",
+			"module": "Component-preload.js",
+			"merged": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/ButtonType.js",
+				"sap/m/List.js",
+				"sap/m/ListType.js",
+				"sap/m/Popover.js",
+				"sap/m/StandardListItem.js",
+				"sap/m/Title.js",
+				"sap/m/Toolbar.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/components/applicationIntegration/AppLifeCycle.js",
+				"sap/ushell/resources.js",
+				"sap/ushell/ui/fiori3/QuickAccess.js",
+				"sap/ushell/ui/footerbar/AboutButton.js",
+				"sap/ushell/ui/footerbar/ContactSupportButton.js",
+				"sap/ushell/ui/footerbar/EndUserFeedback.js",
+				"sap/ushell/ui/launchpad/ActionItem.js"
+			],
+			"included": [
+				"sap/ushell/components/shell/MeArea/fiori3/Component.js",
+				"sap/ushell/components/shell/MeArea/fiori3/MeArea.controller.js",
+				"sap/ushell/components/shell/MeArea/fiori3/MeAreaPopover.fragment.xml"
+			]
+		},
+		{
+			"name": "Component.js",
+			"module": "sap/ushell/components/shell/MeArea/fiori3/Component.js",
+			"required": [
+				"sap/ui/core/UIComponent.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/components/applicationIntegration/AppLifeCycle.js",
+				"sap/ushell/components/shell/MeArea/fiori3/MeArea.controller.js"
+			]
+		},
+		{
+			"name": "MeArea-dbg.controller.js",
+			"module": "sap/ushell/components/shell/MeArea/fiori3/MeArea.controller.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/ButtonType.js",
+				"sap/m/ListType.js",
+				"sap/m/StandardListItem.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/components/applicationIntegration/AppLifeCycle.js",
+				"sap/ushell/resources.js",
+				"sap/ushell/ui/fiori3/QuickAccess.js",
+				"sap/ushell/ui/footerbar/AboutButton.js",
+				"sap/ushell/ui/footerbar/ContactSupportButton.js",
+				"sap/ushell/ui/footerbar/EndUserFeedback.js",
+				"sap/ushell/ui/launchpad/ActionItem.js"
+			]
+		},
+		{
+			"name": "MeArea.controller.js",
+			"module": "sap/ushell/components/shell/MeArea/fiori3/MeArea.controller.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/ButtonType.js",
+				"sap/m/ListType.js",
+				"sap/m/StandardListItem.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/components/applicationIntegration/AppLifeCycle.js",
+				"sap/ushell/resources.js",
+				"sap/ushell/ui/fiori3/QuickAccess.js",
+				"sap/ushell/ui/footerbar/AboutButton.js",
+				"sap/ushell/ui/footerbar/ContactSupportButton.js",
+				"sap/ushell/ui/footerbar/EndUserFeedback.js",
+				"sap/ushell/ui/launchpad/ActionItem.js"
+			]
+		},
+		{
+			"name": "MeAreaPopover.fragment.xml",
+			"module": "sap/ushell/components/shell/MeArea/fiori3/MeAreaPopover.fragment.xml",
+			"required": [
+				"sap/m/List.js",
+				"sap/m/Popover.js",
+				"sap/m/Title.js",
+				"sap/m/Toolbar.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "resources.json"
+		}
+	]
+}

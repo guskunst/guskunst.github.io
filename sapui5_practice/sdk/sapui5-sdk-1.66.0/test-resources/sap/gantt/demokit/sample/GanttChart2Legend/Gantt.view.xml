@@ -1,0 +1,92 @@
+<mvc:View
+		controllerName="sap.gantt.sample.GanttChart2Legend.Gantt"
+		height="100%"
+		xmlns="sap.gantt.simple"
+		xmlns:axistime="sap.gantt.axistime"
+		xmlns:config="sap.gantt.config"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:table="sap.ui.table">
+	<GanttChartContainer>
+		<toolbar>
+			<ContainerToolbar showLegendButton="true">
+				<legendContainer>
+					<LegendContainer height="400px" width="300px">
+						<ListLegend title="List Legend">
+							<ListLegendItem legendName="task">
+								<BaseChevron title="Main Task" fill="@sapUiChartPaletteQualitativeHue5"/>
+							</ListLegendItem>
+							<ListLegendItem legendName="task">
+								<BaseChevron title="Sub Task" fill="@sapUiChartPaletteQualitativeHue6"/>
+							</ListLegendItem>
+							<ListLegendItem legendName="action">
+								<BaseRectangle title="Main Action" showTitle="false" fill="@sapUiChartPaletteQualitativeHue5"/>
+							</ListLegendItem>
+							<ListLegendItem legendName="action">
+								<BaseRectangle title="Sub Action" showTitle="false" fill="@sapUiChartPaletteQualitativeHue6"/>
+							</ListLegendItem>
+						</ListLegend>
+						<DimensionLegend title="Dimension Legend">
+							<rowConfigs>
+								<LegendRowConfig shapeClass="sap.gantt.simple.BaseChevron" text="Task" />
+								<LegendRowConfig shapeClass="sap.gantt.simple.BaseRectangle" text="Action" />
+							</rowConfigs>
+							<columnConfigs>
+								<LegendColumnConfig fill="@sapUiChartPaletteQualitativeHue5" text="Main" />
+								<LegendColumnConfig fill="@sapUiChartPaletteQualitativeHue6" text="Sub" />
+							</columnConfigs>
+						</DimensionLegend>
+					</LegendContainer>
+				</legendContainer>
+			</ContainerToolbar>
+		</toolbar>
+		<GanttChartWithTable id="gantt" shapeSelectionMode="Single">
+			<axisTimeStrategy>
+				<axistime:ProportionZoomStrategy>
+					<axistime:totalHorizon>
+						<config:TimeHorizon
+								startTime="20171001000000"
+								endTime="20191129000000"/>
+					</axistime:totalHorizon>
+					<axistime:visibleHorizon>
+						<config:TimeHorizon
+								startTime="20181001000000"
+								endTime="20181129000000"/>
+					</axistime:visibleHorizon>
+				</axistime:ProportionZoomStrategy>
+			</axisTimeStrategy>
+			<table>
+				<table:TreeTable
+						selectionMode="Single"
+						visibleRowCountMode="Auto"
+						minAutoRowCount="12"
+						selectionBehavior="RowSelector"
+						enableColumnReordering="true"
+						rows="{
+						path: '/root',
+						parameters: {
+							arrayNames: ['children'],
+							numberOfExpandedLevels: 1
+						}
+					}">
+					<table:columns>
+						<table:Column label="" template="text" />
+					</table:columns>
+					<table:rowSettingsTemplate>
+						<GanttRowSettings rowId="{id}" shapes1="{tasks}" shapes2="{actions}">
+							<shapes1>
+								<BaseChevron time="{path: 'startTime', formatter: '.fnTimeConverter'}"
+											 endTime="{path: 'endTime', formatter: '.fnTimeConverter'}"
+											 fill="{= (${type} === 1) ? '@sapUiChartPaletteQualitativeHue5' : '@sapUiChartPaletteQualitativeHue6' }"/>
+							</shapes1>
+							<shapes2>
+								<BaseRectangle time="{path: 'startTime', formatter: '.fnTimeConverter'}"
+											 endTime="{path: 'endTime', formatter: '.fnTimeConverter'}"
+											 fill="{= (${type} === 1) ? '@sapUiChartPaletteQualitativeHue5' : '@sapUiChartPaletteQualitativeHue6' }"/>
+							</shapes2>
+						</GanttRowSettings>
+					</table:rowSettingsTemplate>
+				</table:TreeTable>
+			</table>
+		</GanttChartWithTable>
+	</GanttChartContainer>
+</mvc:View>

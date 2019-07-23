@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="/sap/bc/ui5_ui5/ui2/ushell/resources/sap/ushell/components/factsheet/vocabularies/UI.xml">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="sap/opu/odata4/IWBEP/V4_SAMPLE/default/IWBEP/V4_GW_SAMPLE_BASIC/0001/$metadata">
+		<edmx:Include Alias="GWSAMPLE_BASIC" Namespace="com.sap.gateway.default.iwbep.v4_gw_sample_basic.v0001"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/bc/ui5_ui5/ui2/ushell/resources/sap/ushell/components/factsheet/vocabularies/Communication.xml">
+		<edmx:Include Alias="vCard" Namespace="com.sap.vocabularies.Communication.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/bc/ui5_ui5/ui2/ushell/resources/sap/ushell/components/factsheet/vocabularies/Common.xml">
+		<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/vocabularies/Org.OData.Core.V1.xml">
+		<edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Measures.V1.xml">
+		<edmx:Include Alias="CQP" Namespace="Org.OData.Measures.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Capabilities.V1.xml">
+		<edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="asd.GWSAMPLE_BASIC">
+			<Annotations Target="GWSAMPLE_BASIC.SalesOrder">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>SalesOrderID</PropertyPath>
+					</Collection>
+				</Annotation>
+
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.CollectionFacet">
+							<PropertyValue Property="ID" String="GeneralInformation"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;@GeneralInfoFacetLabel}"/>
+							<PropertyValue Property="Facets">
+								<Collection>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Label" String="{@i18n&gt;@GeneralInfoFacetLabel}"/>
+										<PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+									</Record>
+								</Collection>
+							</PropertyValue>
+						</Record>
+					</Collection>
+				</Annotation>
+
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+                        <PropertyPath>SalesOrderID</PropertyPath>
+						<PropertyPath>CreatedAt</PropertyPath>
+						<PropertyPath>SO_2_BP/LegalForm</PropertyPath>
+						<PropertyPath>SO_2_SOITEM/SOITEM_2_PRODUCT/ProductID</PropertyPath>
+					</Collection>
+				</Annotation>
+
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="SalesOrderID"/>
+						</Record>
+
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Note"/>
+						</Record>
+
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="BuyerID"/>
+						</Record>
+
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="GrossAmount"/>
+						</Record>
+
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="LifecycleStatus"/>
+						</Record>
+
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="BillingStatus"/>
+						</Record>
+
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="DeliveryStatus"/>
+						</Record>
+
+						<Record Type="UI.DataFieldForAction">
+							<PropertyValue Property="Label" String="Confirm Sales Order"/>
+							<PropertyValue Property="Action" String="com.sap.gateway.default.iwbep.v4_gw_sample_basic.v0001.SalesOrder_Confirm"/>
+							<PropertyValue Property="Determining" Bool="true"/>
+						</Record>
+
+						<Record Type="UI.DataFieldForAction">
+							<PropertyValue Property="Label" String="Cancel Sales Order"/>
+							<PropertyValue Property="Action" String="com.sap.gateway.default.iwbep.v4_gw_sample_basic.v0001.SalesOrder_Cancel"/>
+						</Record>
+
+						<Record Type="UI.DataFieldForAction">
+							<PropertyValue Property="Label" String="Invoice Created"/>
+							<PropertyValue Property="Action" String="com.sap.gateway.default.iwbep.v4_gw_sample_basic.v0001.SalesOrder_InvoiceCreated"/>
+						</Record>
+
+						<Record Type="UI.DataFieldForAction">
+							<PropertyValue Property="Label" String="Goods Issue Created"/>
+							<PropertyValue Property="Action" String="com.sap.gateway.default.iwbep.v4_gw_sample_basic.v0001.SalesOrder_GoodsIssueCreated"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+
+			<Annotations Target="GWSAMPLE_BASIC.SOLineItem">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>SalesOrderID</PropertyPath>
+						<PropertyPath>ItemPosition</PropertyPath>
+					</Collection>
+				</Annotation>
+
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>CurrencyCode</PropertyPath>
+					</Collection>
+				</Annotation>
+
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="SalesOrderID"/>
+						</Record>
+
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ItemPosition"/>
+						</Record>
+
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Note"/>
+						</Record>
+
+
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="GrossAmount"/>
+						</Record>
+
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="DeliveryDate"/>
+						</Record>
+
+					</Collection>
+				</Annotation>
+			</Annotations>
+
+			<Annotations Target="GWSAMPLE_BASIC.SalesOrder/SalesOrderID">
+				<Annotation Term="Common.Label" String="Sales Order" />
+			</Annotations>
+
+			<Annotations Target="GWSAMPLE_BASIC.SOLineItem/SalesOrderID">
+				<Annotation Term="Common.Label" String="Sales Order" />
+			</Annotations>
+
+			<Annotations Target="GWSAMPLE_BASIC.SalesOrder/CreatedAt">
+				<Annotation Term="Common.Label" String="Created At" />
+			</Annotations>
+
+			<Annotations Target="GWSAMPLE_BASIC.SalesOrder/GrossAmount">
+				<Annotation Term="CQP.ISOCurrency" Path="CurrencyCode"></Annotation>
+			</Annotations>
+
+			<Annotations Target="GWSAMPLE_BASIC.SalesOrder/NetAmount">
+				<Annotation Term="CQP.ISOCurrency" Path="CurrencyCode"></Annotation>
+			</Annotations>
+
+			<Annotations Target="GWSAMPLE_BASIC.SalesOrder/TaxAmount">
+				<Annotation Term="CQP.ISOCurrency" Path="CurrencyCode"></Annotation>
+			</Annotations>
+
+			<Annotations Target="GWSAMPLE_BASIC.SalesOrder/BuyerID">
+				<Annotation Term="Common.Text" Path="BuyerName"></Annotation>
+
+			</Annotations>
+
+			<Annotations Target="GWSAMPLE_BASIC.SalesOrder/LifecycleStatus">
+				<Annotation Term="Common.Text" Path="LifecycleStatusDesc"></Annotation>
+				<Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/>
+			</Annotations>
+
+			<Annotations Target="GWSAMPLE_BASIC.SalesOrder/BillingStatus">
+				<Annotation Term="Common.Text" Path="BillingStatusDesc"></Annotation>
+				<Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/>
+			</Annotations>
+
+			<Annotations Target="GWSAMPLE_BASIC.SalesOrder/DeliveryStatus">
+				<Annotation Term="Common.Text" Path="DeliveryStatusDesc"></Annotation>
+				<Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/>
+			</Annotations>
+
+
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

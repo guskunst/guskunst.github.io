@@ -1,0 +1,77 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+<!-- by sorting the table on ChangedAt descending one always gets the newly changed or created entries on top of the table in this simplified UI -->
+	<Table id="mainTable" inset="false" growing="true" items="{path: '/Artists',
+				parameters : {$count : true, id: 'sap.fe.tableBinding'},
+				sorter : [
+					{ path: 'ChangedAt', descending: false,  group : false}
+				],
+				events : {dataReceived : '.onDataReceived'}
+			}" mode="MultiSelect" busyIndicatorDelay="0">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="{sap.fe.tableBinding:$count} Artists" level="H2"/>
+				<Button text="Create" press=".draft.createDocument(${$source>}.getModel().getBindingForReference('sap.fe.tableBinding'))" />
+				<Button text="Save" press="activateDocument" />
+				<Button type="Transparent" text="Break up" press=".draft.callBoundAction('com.sap.gateway.srvd.sadl_gw_appmusicdr_definition.v0001.BREAK_UP', ${$view>/#mainTable/getSelectedContexts})"/>
+				<Button type="Transparent" text="Reunion" press=".draft.callBoundAction('com.sap.gateway.srvd.sadl_gw_appmusicdr_definition.v0001.REUNION', ${$view>/#mainTable/getSelectedContexts})"/>
+				<Button text="Delete Selected" press=".draft.deleteDocument(${$view>/#mainTable/getSelectedContexts})"/>
+				<Button text="Toggle custom static filter" press="toggleStaticFilter" />
+				<Button icon="sap-icon://message-popup" text="{= ${message>/}.length}" type="Emphasized"
+						press="handleMessagePopoverPress">
+						<dependents>
+							<MessagePopover id="messagePopover" items="{message>/}">
+								<MessagePopoverItem type="{message>type}" title="{message>message}" description="{message>message}" subtitle="{message>additionalText}" counter="{message>counter}" />
+							</MessagePopover>
+						</dependents>
+				</Button>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column width="26em">
+				<Text text="Actions" />
+			</Column>
+			<Column minScreenWidth="Phone">
+				<Text text="Name" />
+			</Column>
+			<Column minScreenWidth="Phone" width="5em">
+				<Text text="Country" />
+			</Column>
+			<Column minScreenWidth="Tablet" width="5em" demandPopin="true">
+				<Text text="Founding Year" />
+			</Column>
+			<Column minScreenWidth="Tablet" width="5em" demandPopin="true" hAlign="Right">
+				<Text text="Breakup Year" />
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+				<Text text="Created by" />
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+				<Text text="Changed at" />
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+				<Text text="Draft Changed at" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<OverflowToolbar design="Transparent">
+						<Button text="Edit" press="onEdit" enabled="{= ${IsActiveEntity}}"/>
+						<Button text="Delete" press=".draft.cancelDocument({context:${$source>}.getBindingContext()})"/>
+						<Button type="Transparent" text="Make Draft" press=".draft.editDocument({context:${$source>}.getBindingContext()})" enabled="{= ${IsActiveEntity}}"/>
+						<Button type="Transparent" text="Break up" press=".draft.callBoundAction('com.sap.gateway.srvd.sadl_gw_appmusicdr_definition.v0001.BREAK_UP', ${$source>}.getBindingContext())"/>
+						<Button type="Transparent" text="Reunion" press=".draft.callBoundAction('com.sap.gateway.srvd.sadl_gw_appmusicdr_definition.v0001.REUNION', ${$source>}.getBindingContext())"/>
+						<Button type="Transparent" text="Save" press=".draft.saveDocument({context:${$source>}.getBindingContext()})" enabled="{= !${IsActiveEntity}}"/>
+					</OverflowToolbar>
+					<Input value="{Name}" editable="{= !${IsActiveEntity}}" enabled="{= !${IsActiveEntity}}" placeholder="Name for {ArtistUUID}&lt;=&gt;{ActiveUUID}" tooltip="{ArtistUUID}&lt;=&gt;{ActiveUUID}" />
+					<Input value="{CountryOfOrigin}" editable="{= !${IsActiveEntity}}" enabled="{= !${IsActiveEntity}}"/>
+					<Input value="{FoundingYear}" editable="{= !${IsActiveEntity}}" enabled="{= !${IsActiveEntity}}"/>
+					<Text text="{BreakupYear}"/>
+					<Text text="{DraftAdministrativeData/CreatedByUserDescription}"/>
+					<Text text="{ChangedAt}"/>
+					<Text text="{DraftAdministrativeData/LastChangeDateTime}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

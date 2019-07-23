@@ -1,0 +1,14 @@
+<core:View
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns="sap.m" controllerName="view.Main"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<core:Fragment fragmentName="view.Header" type="XML"/>
+
+	<!-- Filter bar-->
+	<core:Fragment fragmentName="view.Filter" type="XML"/>
+
+	<!-- Result area -->
+	<core:Fragment fragmentName="view.Table" type="XML"/>
+
+</core:View>

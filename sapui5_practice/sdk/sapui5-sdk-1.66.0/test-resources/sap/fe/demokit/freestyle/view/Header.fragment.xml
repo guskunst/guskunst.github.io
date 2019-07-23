@@ -1,0 +1,9 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<VBox>
+		<Title level="H1" text="{ui>/title}" class="sapUiMediumMarginTop sapUiMediumMarginLeft"/>
+		<Text text="{ui>/subtitle}" visible="{ui>/mock}" />
+		<MessageStrip id="messageStrip" text="editState={$draft>/entitySets/Artists/editState}" tooltip="Test" type="Information" showIcon="true" />
+	</VBox>
+</core:FragmentDefinition>

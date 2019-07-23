@@ -1,0 +1,5 @@
+<FragmentDefinition xmlns:mdc="sap.ui.mdc" xmlns="sap.ui.core">
+	<mdc:Column id="col1" header="Column A" />
+	<mdc:Column id="col2" header="Column B" />
+	<mdc:Column header="Column C" />
+</FragmentDefinition>

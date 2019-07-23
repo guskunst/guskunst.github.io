@@ -1,0 +1,6 @@
+/*
+ * ! SAP UI development toolkit for HTML5 (SAPUI5)
+        (c) Copyright 2009-2017 SAP SE. All rights reserved
+    
+ */
+sap.ui.define(['jquery.sap.global','sap/fe/core/TemplateComponent','sap/ui/model/odata/v4/ODataListBinding'],function(q,T,O){"use strict";var a=T.extend("sap.fe.templates.ObjectPage.Component",{metadata:{properties:{_templateName:{type:"string",defaultValue:"sap.fe.templates.ObjectPage.ObjectPage"},_tableType:{type:"string",defaultValue:"ResponsiveTable"},_creationMode:{type:"string",defaultValue:""}},library:"sap.fe",manifest:"json"},onBeforeBinding:function(c,p){var t=this;return this.oViewPromise.then(function(){return t.getRootControl().getController().onBeforeBinding(c,p);});},onAfterBinding:function(c){this.getRootControl().getController().onAfterBinding(c);},createDeferredContext:function(p){var l,t=this;l=new O(this.getModel(),p.replace('(...)',''));this.oViewPromise.then(function(v){var n=v.getController().getOwnerComponent().getRootControl();n.setBusy(true);t.getRootControl().getController().editFlow.createDocument(l,{creationMode:'Sync',noHistoryEntry:true,busyHandling:false}).catch(function(){n.setBusy(false);window.history.back();});});},getViewData:function(){var v={};v._tableType=this.get_tableType();v._creationMode=this.get_creationMode();return v;}});return a;},true);

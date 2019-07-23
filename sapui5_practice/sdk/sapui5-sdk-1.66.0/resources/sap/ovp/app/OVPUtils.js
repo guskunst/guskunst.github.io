@@ -1,0 +1,1 @@
+sap.ui.define(function(){"use strict";var o={bCRTLPressed:false};o.constants={explace:"explace",inplace:"inplace"};o.Annotations={dataPoint:"dataPoint"};o.Layers={vendor:"VENDOR",customer:"CUSTOMER",customer_base:"CUSTOMER_BASE"};return o;},true);

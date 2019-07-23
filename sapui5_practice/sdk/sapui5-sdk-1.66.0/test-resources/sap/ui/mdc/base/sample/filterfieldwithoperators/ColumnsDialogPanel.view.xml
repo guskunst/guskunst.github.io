@@ -1,0 +1,9 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mdc="sap.ui.mdc.experimental" controllerName="my.ColumnsDialogPanel">
+	<mdc:P13nColumnPanel id="IDColumnPanel" items="{metaModel>/items}">
+			<mdc:items>
+				<mdc:P13nColumnItem columnKey="{metaModel>columnKey}" text="{metaModel>text}" position="{metaModel>position}"
+									tooltip="{metaModel>tooltip}"
+									selected="{metaModel>selected}"/>
+			</mdc:items>
+	</mdc:P13nColumnPanel>	
+</core:View>

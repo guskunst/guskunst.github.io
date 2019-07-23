@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>simple/ContainerToolbarPlaceholder</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Placeholder is used to represent some of the buttons in a &lt;code&gt;sap.gantt.simple.ContainerToolbar&lt;/code&gt; control.</documentation>
+    <since>1.66.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property type="sap.gantt/simple/ContainerToolbarPlaceholderType" name="type">
+            <documentation>Defines the type of represented control.</documentation>
+        </property>
+        <property defaultValue="false" type="sap.ui.core/boolean" name="_show">
+            <documentation>Shows or hides the represented control.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation cardinality="0..1" type="sap.ui.core/Control" name="_control">
+            <documentation>Represented control.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

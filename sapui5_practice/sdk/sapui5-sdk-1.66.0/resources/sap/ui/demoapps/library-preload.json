@@ -1,0 +1,7 @@
+{
+"version":"2.0",
+"name":"sap.ui.demoapps.library-preload",
+"dependencies":["sap.ui.core.library-preload","sap.m.library-preload","sap.ui.layout.library-preload","sap.ushell.library-preload"],
+"modules":{
+	"sap/ui/demoapps/manifest.json":"{\n  \"_version\": \"1.9.0\",\n  \"sap.app\": {\n    \"id\": \"sap.ui.demoapps\",\n    \"type\": \"library\",\n    \"embeds\": [],\n    \"applicationVersion\": {\n      \"version\": \"1.66.0\"\n    },\n    \"title\": \"SAPUI5 library containing best practice apps derived from the WebIDE templates\",\n    \"description\": \"SAPUI5 library containing best practice apps derived from the WebIDE templates\",\n    \"ach\": \"CA-UI5-FST\",\n    \"resources\": \"resources.json\",\n    \"offline\": true\n  },\n  \"sap.ui\": {\n    \"technology\": \"UI5\",\n    \"supportedThemes\": []\n  },\n  \"sap.ui5\": {\n    \"dependencies\": {\n      \"minUI5Version\": \"1.66\",\n      \"libs\": {\n        \"sap.ui.core\": {\n          \"minVersion\": \"1.66.0\"\n        },\n        \"sap.m\": {\n          \"minVersion\": \"1.66.0\"\n        },\n        \"sap.ui.layout\": {\n          \"minVersion\": \"1.66.0\"\n        },\n        \"sap.ushell\": {\n          \"minVersion\": \"1.66.0\"\n        }\n      }\n    },\n    \"library\": {\n      \"i18n\": false\n    }\n  }\n}"
+}}

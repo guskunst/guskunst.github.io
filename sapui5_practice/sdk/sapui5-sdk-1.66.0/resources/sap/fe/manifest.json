@@ -1,0 +1,77 @@
+{
+  "_version": "1.9.0",
+  "sap.app": {
+    "id": "sap.fe",
+    "type": "library",
+    "embeds": [
+      "templates/ListReport",
+      "templates/ObjectPage"
+    ],
+    "applicationVersion": {
+      "version": "1.66.0"
+    },
+    "title": "UI5 library: sap.fe",
+    "description": "UI5 library: sap.fe",
+    "resources": "resources.json",
+    "offline": true
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "supportedThemes": [
+      "base",
+      "sap_belize",
+      "sap_belize_hcw",
+      "sap_belize_plus",
+      "sap_bluecrystal",
+      "sap_fiori_3",
+      "sap_hcb"
+    ]
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.66",
+      "libs": {
+        "sap.ui.core": {
+          "minVersion": "1.66.0"
+        },
+        "sap.ushell": {
+          "minVersion": "1.66.0"
+        },
+        "sap.m": {
+          "minVersion": "1.66.0"
+        },
+        "sap.f": {
+          "minVersion": "1.66.0",
+          "lazy": true
+        },
+        "sap.ui.mdc": {
+          "minVersion": "1.66.0",
+          "lazy": true
+        },
+        "sap.ui.layout": {
+          "minVersion": "1.66.0",
+          "lazy": true
+        },
+        "sap.ui.fl": {
+          "minVersion": "1.66.0",
+          "lazy": true
+        },
+        "sap.uxap": {
+          "minVersion": "1.66.0",
+          "lazy": true
+        }
+      }
+    },
+    "library": {
+      "i18n": "messagebundle.properties",
+      "content": {
+        "controls": [],
+        "elements": [],
+        "types": [
+          "sap.fe.VariantManagement"
+        ],
+        "interfaces": []
+      }
+    }
+  }
+}

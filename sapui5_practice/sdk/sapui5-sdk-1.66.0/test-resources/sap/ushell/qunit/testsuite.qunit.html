@@ -1,0 +1,285 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>TestSuite for sap.ushell</title>
+    <script type="text/javascript" src="../../../../resources/sap/ui/qunit/qunit-redirect.js"></script>
+    <script language="javascript">
+        /**
+         * Add new test to this test suite function.
+         */
+        function suite() {
+            var suite = new parent.jsUnitTestSuite(),
+                contextPath = window.location.pathname.split("test-resources")[0];
+
+            // alphabetic order please
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/adapters/cdm/ClientSideTargetResolutionAdapter.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/adapters/cdm/CommonDataModelAdapter.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/adapters/cdm/ContainerAdapter.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/adapters/cdm/LaunchPageAdapter.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/adapters/cdm/uri.transform.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/adapters/cdm/LaunchPageAdapter.catalogs.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/adapters/cdm/PersonalizationAdapter.qunit.html");
+
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/adapters/local/AppStateAdapter.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/adapters/local/ClientSideTargetResolutionAdapter.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/adapters/local/ContainerAdapter.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/adapters/local/EndUserFeedbackAdapter.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/adapters/local/NavTargetResolutionAdapter.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/adapters/local/PersonalizationAdapter.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/adapters/local/SupportTicketAdapterTest.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/adapters/local/UserDefaultParameterPersistenceAdapter.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/adapters/local/UserInfoAdapter.qunit.html");
+
+
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/adapters/AppVariantPersonalizationAdapter.qunit.html");
+
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/sandbox.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/common/common.configure.ui5datetimeformat.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/common/common.configure.ui5.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/common/common.configure.ui5.extractLibs.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/common/common.configure.ui5theme.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/common/common.configure.ushell.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/common/common.configure.xhrlogon.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/common/common.create.configcontract.core.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/common/common.read.metatags.noMetaTags.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/common/common.read.metatags.withMetaTags.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/common/common.load.model.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/common/common.load.script.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/common/common.load.splashscreen.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/common/common.load.ui5theme.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/common/common.read.ui5theme.from.config.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/common/common.util.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/_HeaderManager/AddHeadEndItemsStrategy.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/_HeaderManager/AddHeadItemsStrategy.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/_HeaderManager/RemoveItemsStrategy.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/_HeaderManager/SetHeadPropertyStrategy.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/_HomepageManager/DashboardLoadingManager.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/_HomepageManager/PagingManager.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/applicationIntegration/AppLifeCycle.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/applicationIntegration/elements/model.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/container/ApplicationContainer.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/factsheet/annotation/ODataURLTemplating.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/appfinder/AppFinder.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/appfinder/EasyAccess.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/appfinder/GroupListPopover.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/appfinder/HierarchyApps.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/appfinder/HierarchyFolders.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/homepage/ActionMode.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/homepage/DashboardGroupsBox.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/homepage/DashboardContent.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/homepage/DashboardUIActions.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/homepage/ComponentKeysHandler.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/homepage/Component.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/appfinder/Component.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/shell/userImage.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/shell/Notifications/NotificationsComponent.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/shell/Notifications/fiori3/Notifications.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/shell/UserSettings/ThemeSelector.controller.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/shell/MeArea/fiori3/MeArea.controller.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/ShellHeader/fiori3/ShellHeader.controller.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/CatalogsManager.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/DestroyHelper.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/GroupsHelper.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/HomepageManager.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/Override.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/HeaderManager.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/MessagingHelper.qunit.html");
+
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/tiles/applauncher/StaticTile.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/tiles/applauncherdynamic/DynamicTile.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/tiles/cdm/applauncher/StaticTile.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/tiles/cdm/applauncherdynamic/DynamicTile.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/tiles/utils.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/tiles/utilsRT.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/cards/Card.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/cards/ManifestPropertyHelper.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/components/userActivity/userActivityLog.qunit.html");
+
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/opaTests/RTAPersonalizationRestart.opaqunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/opaTests/RTAVariantsNavigation.opaqunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/opaTests/stateLean.opaqunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/opaTests/basicIsolationAppLoad.opaqunit.html");
+
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/plugins/rta-personalize/Component.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/plugins/BaseRTAPlugin.qunit.html");
+
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/renderers/fiori2/AccessKeysHandler.qunit.html");
+            // Temporary switched off until the issue with Jenkins is resolved:
+            // suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/renderers/fiori2/AllMyApps/AllMyApps.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/renderers/fiori2/AllMyApps/AllMyAppsManager.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/renderers/fiori2/DefaultParameters/DefaultParameters.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/renderers/fiori2/UserSettings/UserSettings.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/renderers/fiori2/notifications/Settings.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/renderers/fiori2/userPreferences/LanguageRegionSelector.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/renderers/fiori2/Renderer.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/renderers/fiori2/RendererExtensions.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/renderers/fiori2/Shell.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/renderers/fiori2/UIActions.qunit.html");
+
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/AllMyApps.qunit.html");
+            // Temporary switched off until the issue with Jenkins is resolved:
+            //suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/AppConfiguration.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/AppContext.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/AppLifeCycle.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/AppState.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/Bookmark.qunit.html");
+
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/ClientSideTargetResolution.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/CommonDataModel.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/CommonDataModel/PersonalizationProcessor.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/CommonDataModel/PersonalizationProcessorCDMBlackbox.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/CommonDataModel/PersonalizationProcessorCDMBlackboxV2.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/Configuration.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/Container.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/ContentExtension.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/ContentExtensionAdapterFactory.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/CrossApplicationNavigation.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/EndUserFeedback.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/LaunchPage.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/Message.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/NavTargetResolution.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/NavTargetResolutionCDMBlackbox.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/NavTargetResolutionCDMBlackboxV2.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/Notifications.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/Personalization.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/_PluginManager/Extensions.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/_PluginManager/HeaderExtensions.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/PluginManager.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/ReferenceResolver.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/ShellNavigation.History.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/ShellNavigation.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/_ShellNavigation/NavigationHistoryMonitor.qunit.html");
+            //suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/SmartNavigation.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/SupportTicket.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/URLParsing.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/URLShortening.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/Ui5ComponentLoader.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/UsageAnalytics.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/UserDefaultParameterPersistence.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/UserDefaultParameters.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/UserInfo.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/UserRecents.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/_ClientSideTargetResolution/InboundIndex.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/_ClientSideTargetResolution/Search.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/_ClientSideTargetResolution/StagedLogger.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/_ClientSideTargetResolution/Utils.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/_ClientSideTargetResolution/VirtualInbounds.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/_CrossApplicationNavigation/Utils.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/_Ui5ComponentLoader/Utils.qunit.html");
+
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/appfinder/AppBox.qunit.html");
+
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/footerbar/AboutButton.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/footerbar/AddBookmarkButton.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/footerbar/ContactSupportButton.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/footerbar/EndUserFeedback.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/footerbar/JamDiscussButton.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/footerbar/JamShareButton.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/footerbar/LogoutButton.qunit.html");
+            //suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/footerbar/SaveAsTile.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/footerbar/SettingsButton.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/footerbar/UserPreferencesButton.qunit.html");
+
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/launchpad/AccessibilityCustomData.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/launchpad/ActionItem.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/launchpad/AnchorItem.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/launchpad/AnchorNavigationBar.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/launchpad/CatalogEntryContainer.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/launchpad/CatalogsContainer.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/launchpad/DashboardGroupsContainer.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/launchpad/EmbeddedSupportErrorMessage.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/launchpad/GroupListItem.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/launchpad/LinkTileWrapper.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/launchpad/LoadingDialog.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/launchpad/ShortcutsHelpContainer.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/launchpad/TileContainer.qunit.html");
+
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/shell/FloatingContainer.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/launchpad/GridContainer.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/shell/RightFloatingContainer.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/shell/ShellAppTitle.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/shell/ShellLayout.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/shell/ShellTitle.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/shell/SplitContainer.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/shell/OverflowListItem.qunit.html");
+
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/tile/DynamicTile.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/tile/ImageTile.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/tile/StaticTile.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/tile/TileBase.qunit.html");
+
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui5service/ShellUIService.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui5service/CardNavigation.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui5service/CardUserRecents.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui5service/_CardUserRecents/CardUserRecentsBase.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui5service/CardUserFrequents.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui5service/UserStatusService.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/Ui5ServiceFactory.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/Ui5NativeServiceFactory.qunit.html");
+
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/CanvasShapesManager.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/Config.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/FLPAnalytics.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/Layout.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/navigationMode.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/System.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/SessionHandler.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/User.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/utils.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/testUtils.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/EventHub.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/utils/HttpClient.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/utils/utilsCdm.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ApplicationType.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/TechnicalParameters.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/URLTemplateProcessor.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/_URLTemplateProcessor/DependencyGraph.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/_URLTemplateProcessor/TemplateParameterParser.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/_URLTemplateProcessor/Functions.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/_ApplicationType/guiResolution.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/_ApplicationType/systemAlias.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/_ApplicationType/utils.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/_ApplicationType/wdaResolution.qunit.html");
+
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/support/plugins/flpConfig/FlpConfigurationPlugin.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/OPA/opaTests.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/OPA/opaTestsMeArea.qunit.html");
+
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/_ClientSideTargetResolution/Formatter.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/_ClientSideTargetResolution/InboundProvider.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/_ClientSideTargetResolution/ParameterMapping.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/services/_ClientSideTargetResolution/Search.qunit.html");
+
+            // Fiori 3: Shell Header
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/fiori3/ShellHeader.qunit.html");
+            // Fiori 3
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/fiori3/QuickAccess.qunit.html");
+
+
+            // Scheduling Agent
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/SchedulingAgent.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/SchedulingAgent.integration.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/_SchedulingAgent/FLPScheduler.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/_SchedulingAgent/EventProcessor.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/_SchedulingAgent/FLPLoader.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/_SchedulingAgent/Logger.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/bootstrap/_SchedulingAgent/State.qunit.html");
+
+            // Fiori3: no-viewports AppContainer
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/ui/fiori3/AppContainer.qunit.html");
+
+            //Isolation
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/appRuntime/ui5/AppRuntime.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/appRuntime/ui5/AppRuntimeService.qunit.html");
+            suite.addTestPage(contextPath + "test-resources/sap/ushell/qunit/appRuntime/ui5/AppCommunicationMgr.qunit.html");
+
+            return suite;
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

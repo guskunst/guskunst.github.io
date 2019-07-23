@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="sap.ui.mdc" xmlns:n1="sap.ui.unified" xmlns:n2="sap.m" xmlns:n3="sap.ui.mdc" xmlns:n0="sap.ui.core">
+<xsd:import namespace="sap.ui.unified"/>
+<xsd:import namespace="sap.m"/>
+<xsd:import namespace="sap.ui.core"/>
+<xsd:element name="FilterItemLayout" type="n3:_FilterItemLayoutType" substitutionGroup=":VerticalLayout">
+<xsd:annotation>
+<xsd:documentation>Represents a filter item on the UI.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="SelectOption" type="n3:_SelectOptionType" substitutionGroup="n0:Element">
+<xsd:annotation>
+<xsd:documentation>Type for...</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="UiState" type="n3:_UiStateType" substitutionGroup="n0:Element">
+<xsd:annotation>
+<xsd:documentation>Creates a new instance of an UiState class.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<!--type definition for UIElement 'sap.ui.mdc.base.filterbar.FilterItemLayout'-->
+<xsd:complexType name="_FilterItemLayoutType">
+<xsd:complexContent>
+<xsd:extension base=":_VerticalLayoutType"/>
+</xsd:complexContent>
+</xsd:complexType>
+<!--type definition for UIElement 'sap.ui.mdc.base.state.SelectOption'-->
+<xsd:complexType name="_SelectOptionType">
+<xsd:complexContent>
+<xsd:extension base="n0:_ElementType">
+<xsd:attribute name="propertyName" type="xsd:string">
+<xsd:annotation>
+<xsd:documentation>Name of property</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<!--type definition for UIElement 'sap.ui.mdc.base.state.UiState'-->
+<xsd:complexType name="_UiStateType">
+<xsd:complexContent>
+<xsd:extension base="n0:_ElementType">
+<xsd:sequence>
+<xsd:element name="selectOptions" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Select Options</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:choice minOccurs="0" maxOccurs="unbounded">
+<xsd:element ref="n3:SelectOption"/>
+<xsd:element ref="n0:Fragment"/>
+</xsd:choice>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

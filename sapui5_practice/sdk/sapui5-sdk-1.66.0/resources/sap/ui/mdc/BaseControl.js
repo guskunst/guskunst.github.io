@@ -1,0 +1,7 @@
+/*!
+ * SAPUI5
+
+		(c) Copyright 2009-2019 SAP SE. All rights reserved
+	
+ */
+sap.ui.define(["sap/ui/core/Control","sap/ui/comp/util/FullScreenUtil"],function(C,F){"use strict";var B=C.extend("sap.ui.mdc.BaseControl",{metadata:{library:"sap.ui.mdc",properties:{width:{type:"sap.ui.core.CSSSize",group:"Dimension",defaultValue:"100%",invalidate:true},height:{type:"sap.ui.core.CSSSize",group:"Dimension",defaultValue:"100%",invalidate:true},metadataDelegate:{type:"string",group:"Data"},personalization:{type:"any",multiple:false},fullScreen:{type:"boolean",defaultValue:false}}},renderer:C.renderer});B.prototype.setMetadataDelegate=function(m){this.oDelegatePromise=new Promise(function(r,a){sap.ui.require([m],function(M){this.DELEGATE=M;r(M);}.bind(this),function(){a("Module not found control is not ready to use");});}.bind(this));return this.setProperty("metadataDelegate",m,true);};B.prototype.setFullScreen=function(f){F.toggleFullScreen(this,f,this.oFullScreenButton,this.setFullScreen);if(f){this.iHeight=this.getHeight();this.iWidth=this.getWidth();var d=this._oFullScreenDialog.getDomRef()?this._oFullScreenDialog.getDomRef().offsetHeight:"1000";var t=this.getAggregation("_toolbar");if(t){var T=t.getDomRef()?t.getDomRef().offsetHeight:0;d-=T;}this.setHeight(d+"px");this.setWidth("100%");}else{this.setHeight(this.iHeight);this.setWidth(this.iWidth);}return this.setProperty("fullScreen",f,true);};B.prototype.exit=function(){if(this._oFullScreenDialog){this._oFullScreenDialog.destroy();delete this._oFullScreenDialog;}};return B;},true);

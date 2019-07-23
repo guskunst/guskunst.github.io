@@ -1,0 +1,58 @@
+[{
+	"__metadata": {
+		"id": "smartfield.SmartField/Types('1001')",
+		"uri": "smartfield.SmartField/Types('1001')",
+		"type": "ZEPM_C_SALESORDERITEMQUERYResult"
+	},
+	"ID": "1001",
+	"DATE": "/Date(1414149600000)/",
+	"TIME": "PT11H33M55S",
+	"STRINGDATE": "20001215",
+	"STRING": "SB",
+	"DECIMAL": "45301.236",
+	"DOUBLE": 127890.134,
+	"INT16": 35,
+	"BYTE": 122,
+	"BOOL": true,
+	"GUID": "0050568D-393C-1EE4-A5AE-9AAE85248FF2",
+	"Description": "Set Nr.1"
+},
+{
+ 	"__metadata": {
+		"id": "smartfield.SmartField/Types('1002')",
+		"uri": "smartfield.SmartField/Types('1002')",
+		"type": "ZEPM_C_SALESORDERITEMQUERYResult"
+	},
+	"ID": "1002",
+	"DATE": "/Date(1215349600000)/",
+	"TIME": "PT20H35M25S",
+	"STRINGDATE": "20151024",
+	"STRING": "RS",
+	"DECIMAL": "121.2346",
+	"DOUBLE": 123890.1234,
+	"INT16": 17,
+	"BYTE": 125,
+	"BOOL": false,
+	"GUID": "0050568D-393C-1EE4-A5AE-9AAE85248FF2",
+	"Description": "Set Nr.2"
+},
+{
+	"__metadata": {
+	   "id": "smartfield.SmartField/Types('1003')",
+	   "uri": "smartfield.SmartField/Types('1003')",
+	   "type": "ZEPM_C_SALESORDERITEMQUERYResult"
+   },
+   "ID": "1003",
+   "DATE": "/Date(1211449600000)/",
+   "TIME": "PT12H1425S",
+   "STRINGDATE": "20170103",
+   "STRING": "BL",
+   "DECIMAL": "1234.23456",
+   "DOUBLE": 1237890.12,
+   "INT16": 171,
+   "BYTE": 25,
+   "BOOL": false,
+   "GUID": "0050568D-393C-1EE4-A5AE-9AAE85248FF2",
+   "Description": "Set Nr.3"
+}
+]

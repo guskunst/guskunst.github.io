@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0"
+	xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+	xmlns="http://docs.oasis-open.org/odata/ns/edm">
+	<edmx:Reference Uri="../../../../sadl/sap/c_aivs_mdbu_persassigntp/0001/$metadata">
+		<edmx:Include Namespace="com.sap.gateway.sadl.c_aivs_mdbu_persassigntp.v0001" Alias="REF__C_AIVS_MDBU_PersAssignTP"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="../../../../sadl/sap/c_aivs_mdbu_publicationtp/0001/$metadata">
+		<edmx:Include Namespace="com.sap.gateway.sadl.c_aivs_mdbu_publicationtp.v0001" Alias="REF__C_AIVS_MDBU_PublicationTP"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="../../../../sadl/sap/i_aivs_countrycode_vh/0001/$metadata">
+		<edmx:Include Namespace="com.sap.gateway.sadl.i_aivs_countrycode_vh.v0001" Alias="REF__I_AIVS_CountryCode_Vh"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="Org.OData.Core.V1" Alias="Core"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema Namespace="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001" Alias="SAP__self">
+			<EntityType Name="C_AIVS_MDBU_ArtistTPType">
+				<Key>
+					<PropertyRef Name="ArtistUUID"/>
+					<PropertyRef Name="IsActiveEntity"/>
+				</Key>
+				<Property Name="ArtistUUID" Type="Edm.Guid" Nullable="false"/>
+				<Property Name="ChangedBy" Type="Edm.String" MaxLength="12"/>
+				<Property Name="Name" Type="Edm.String" MaxLength="255"/>
+				<Property Name="CountryOfOrigin" Type="Edm.String" MaxLength="3"/>
+				<Property Name="FoundingYear" Type="Edm.String" MaxLength="4"/>
+				<Property Name="BreakupYear" Type="Edm.String" MaxLength="4"/>
+				<Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+				<Property Name="CreatedBy" Type="Edm.String" MaxLength="12"/>
+				<Property Name="ChangedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+				<Property Name="ActiveUUID" Type="Edm.Guid"/>
+				<Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+				<Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+				<Property Name="HasActiveEntity" Type="Edm.Boolean"/>
+				<Property Name="HasDraftEntity" Type="Edm.Boolean"/>
+				<Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+				<NavigationProperty Name="DraftAdministrativeData" Type="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001.I_DraftAdministrativeDataType"/>
+				<NavigationProperty Name="SiblingEntity" Type="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001.C_AIVS_MDBU_ArtistTPType"/>
+				<NavigationProperty Name="_CountryCode_Vh" Type="com.sap.gateway.sadl.i_aivs_countrycode_vh.v0001.I_AIVS_CountryCode_VhType"/>
+				<NavigationProperty Name="_PersAssign" Type="Collection(com.sap.gateway.sadl.c_aivs_mdbu_persassigntp.v0001.C_AIVS_MDBU_PersAssignTPType)"/>
+				<NavigationProperty Name="_Publication" Type="Collection(com.sap.gateway.sadl.c_aivs_mdbu_publicationtp.v0001.C_AIVS_MDBU_PublicationTPType)"/>
+			</EntityType>
+			<EntityType Name="I_DraftAdministrativeDataType">
+				<Key>
+					<PropertyRef Name="DraftUUID"/>
+				</Key>
+				<Property Name="DraftUUID" Type="Edm.Guid" Nullable="false"/>
+				<Property Name="ProcessingStartDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+				<Property Name="InProcessByUser" Type="Edm.String" MaxLength="12"/>
+				<Property Name="DraftIsKeptByUser" Type="Edm.Boolean"/>
+				<Property Name="EnqueueStartDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+				<Property Name="DraftIsCreatedByMe" Type="Edm.Boolean"/>
+				<Property Name="DraftIsLastChangedByMe" Type="Edm.Boolean"/>
+				<Property Name="DraftIsProcessedByMe" Type="Edm.Boolean"/>
+				<Property Name="CreatedByUserDescription" Type="Edm.String" MaxLength="80"/>
+				<Property Name="LastChangedByUserDescription" Type="Edm.String" MaxLength="80"/>
+				<Property Name="InProcessByUserDescription" Type="Edm.String" MaxLength="80"/>
+				<Property Name="DraftEntityType" Type="Edm.String" MaxLength="30"/>
+				<Property Name="PrincipalDraftEntity" Type="Edm.String" MaxLength="30"/>
+				<Property Name="PrincipalDraftKey" Type="Edm.Guid"/>
+				<Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+				<Property Name="CreatedByUser" Type="Edm.String" MaxLength="12"/>
+				<Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+				<Property Name="LastChangedByUser" Type="Edm.String" MaxLength="12"/>
+				<Property Name="DraftAccessType" Type="Edm.String" MaxLength="1"/>
+			</EntityType>
+			<Action Name="ActivationAction" IsBound="true">
+				<Parameter Name="_it" Type="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001.C_AIVS_MDBU_ArtistTPType" Nullable="false"/>
+				<ReturnType Type="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001.C_AIVS_MDBU_ArtistTPType" Nullable="false"/>
+			</Action>
+			<Action Name="PreparationAction" IsBound="true">
+				<Parameter Name="_it" Type="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001.C_AIVS_MDBU_ArtistTPType" Nullable="false"/>
+				<Parameter Name="SideEffectsQualifier" Type="Edm.String" Nullable="false"/>
+				<ReturnType Type="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001.C_AIVS_MDBU_ArtistTPType" Nullable="false"/>
+			</Action>
+			<Action Name="BreakUp" IsBound="true">
+				<Parameter Name="_it" Type="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001.C_AIVS_MDBU_ArtistTPType" Nullable="false"/>
+				<ReturnType Type="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001.C_AIVS_MDBU_ArtistTPType" Nullable="false"/>
+			</Action>
+			<Action Name="EditAction" IsBound="true">
+				<Parameter Name="_it" Type="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001.C_AIVS_MDBU_ArtistTPType" Nullable="false"/>
+				<Parameter Name="PreserveChanges" Type="Edm.Boolean" Nullable="false"/>
+				<ReturnType Type="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001.C_AIVS_MDBU_ArtistTPType" Nullable="false"/>
+			</Action>
+			<Action Name="AssignPerson" IsBound="true">
+				<Parameter Name="_it" Type="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001.C_AIVS_MDBU_ArtistTPType" Nullable="false"/>
+				<Parameter Name="FromYear" Type="Edm.String" Nullable="false" MaxLength="4"/>
+				<Parameter Name="PersonUuid" Type="Edm.Binary" Nullable="false" MaxLength="16"/>
+				<Parameter Name="ToYear" Type="Edm.String" Nullable="false" MaxLength="4"/>
+				<ReturnType Type="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001.C_AIVS_MDBU_ArtistTPType" Nullable="false"/>
+			</Action>
+			<Function Name="ValidationFunction">
+				<ReturnType Type="Edm.Boolean" Nullable="false"/>
+			</Function>
+			<EntityContainer Name="Container">
+				<EntitySet Name="C_AIVS_MDBU_ArtistTP" EntityType="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001.C_AIVS_MDBU_ArtistTPType">
+					<NavigationPropertyBinding Path="DraftAdministrativeData" Target="I_DraftAdministrativeData"/>
+					<NavigationPropertyBinding Path="SiblingEntity" Target="C_AIVS_MDBU_ArtistTP"/>
+					<NavigationPropertyBinding Path="_CountryCode_Vh" Target="com.sap.gateway.sadl.i_aivs_countrycode_vh.v0001.Container/I_AIVS_CountryCode_Vh"/>
+					<NavigationPropertyBinding Path="_PersAssign" Target="com.sap.gateway.sadl.c_aivs_mdbu_persassigntp.v0001.Container/C_AIVS_MDBU_PersAssignTP"/>
+					<NavigationPropertyBinding Path="_Publication" Target="com.sap.gateway.sadl.c_aivs_mdbu_publicationtp.v0001.Container/C_AIVS_MDBU_PublicationTP"/>
+				</EntitySet>
+				<EntitySet Name="I_DraftAdministrativeData" EntityType="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001.I_DraftAdministrativeDataType"/>
+				<FunctionImport Name="ValidationFunction" Function="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001.ValidationFunction" IncludeInServiceDocument="true"/>
+			</EntityContainer>
+			<Annotations Target="SAP__self.C_AIVS_MDBU_ArtistTPType/ArtistUUID">
+				<Annotation Term="SAP__common.Text" Path="Name"/>
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="UUID"/>
+				<Annotation Term="SAP__common.QuickInfo" String="UUID in X form (binary)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.C_AIVS_MDBU_ArtistTPType/ChangedBy">
+				<Annotation Term="SAP__common.Label" String="Changed By"/>
+				<Annotation Term="SAP__common.FieldControl" EnumMember="SAP__common.FieldControlType/ReadOnly"/>
+				<Annotation Term="SAP__common.Heading" String="User Name"/>
+				<Annotation Term="SAP__common.QuickInfo" String="User Name"/>
+			</Annotations>
+			<Annotations Target="SAP__self.C_AIVS_MDBU_ArtistTPType/Name">
+				<Annotation Term="SAP__common.FieldControl" EnumMember="SAP__common.FieldControlType/Mandatory"/>
+				<Annotation Term="SAP__common.Label" String="Artist Name"/>
+				<Annotation Term="SAP__common.QuickInfo" String="AIS: Artist Name"/>
+			</Annotations>
+			<Annotations Target="SAP__self.C_AIVS_MDBU_ArtistTPType/CountryOfOrigin">
+				<Annotation Term="SAP__common.Label" String="Country of Origin"/>
+				<Annotation Term="SAP__common.FieldControl" EnumMember="SAP__common.FieldControlType/Mandatory"/>
+				<Annotation Term="SAP__common.Heading" String="Country Code"/>
+				<Annotation Term="SAP__common.QuickInfo" String="AIS: Country Code"/>
+			</Annotations>
+			<Annotations Target="SAP__self.C_AIVS_MDBU_ArtistTPType/FoundingYear">
+				<Annotation Term="SAP__common.Label" String="Year of Founding"/>
+				<Annotation Term="SAP__common.FieldControl" EnumMember="SAP__common.FieldControlType/Mandatory"/>
+				<Annotation Term="SAP__common.Heading" String="Year"/>
+				<Annotation Term="SAP__common.QuickInfo" String="AIS: Year"/>
+			</Annotations>
+			<Annotations Target="SAP__self.C_AIVS_MDBU_ArtistTPType/BreakupYear">
+				<Annotation Term="SAP__common.Label" String="Year of Break-up"/>
+				<Annotation Term="SAP__common.Heading" String="Year"/>
+				<Annotation Term="SAP__common.QuickInfo" String="AIS: Year"/>
+			</Annotations>
+			<Annotations Target="SAP__self.C_AIVS_MDBU_ArtistTPType/CreatedAt">
+				<Annotation Term="SAP__common.Label" String="Created At"/>
+				<Annotation Term="SAP__common.FieldControl" EnumMember="SAP__common.FieldControlType/ReadOnly"/>
+				<Annotation Term="SAP__common.Heading" String="Time Stamp"/>
+				<Annotation Term="SAP__common.QuickInfo" String="UTC Time Stamp in Long Form (YYYYMMDDhhmmssmmmuuun)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.C_AIVS_MDBU_ArtistTPType/CreatedBy">
+				<Annotation Term="SAP__common.Label" String="Created By"/>
+				<Annotation Term="SAP__common.FieldControl" EnumMember="SAP__common.FieldControlType/ReadOnly"/>
+				<Annotation Term="SAP__common.Heading" String="User Name"/>
+				<Annotation Term="SAP__common.QuickInfo" String="User Name"/>
+			</Annotations>
+			<Annotations Target="SAP__self.C_AIVS_MDBU_ArtistTPType/ChangedAt">
+				<Annotation Term="SAP__common.Label" String="Changed At"/>
+				<Annotation Term="SAP__common.FieldControl" EnumMember="SAP__common.FieldControlType/ReadOnly"/>
+				<Annotation Term="SAP__common.Heading" String="Time Stamp"/>
+				<Annotation Term="SAP__common.QuickInfo" String="UTC Time Stamp in Long Form (YYYYMMDDhhmmssmmmuuun)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.Container/C_AIVS_MDBU_ArtistTP">
+				<Annotation Term="SAP__common.DraftRoot">
+					<Record>
+						<PropertyValue Property="ActivationAction" String="SAP__self.ActivationAction"/>
+						<PropertyValue Property="PreparationAction" String="SAP__self.PreparationAction"/>
+						<PropertyValue Property="ValidationFunction" String="SAP__self.ValidationFunction"/>
+						<PropertyValue Property="EditAction" String="SAP__self.EditAction"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SearchRestrictions">
+					<Record>
+						<PropertyValue Property="Searchable" Bool="true"/>
+						<PropertyValue Property="UnsupportedExpressions" EnumMember="Capabilities.SearchExpressions/AND Capabilities.SearchExpressions/OR Capabilities.SearchExpressions/NOT Capabilities.SearchExpressions/group Capabilities.SearchExpressions/phrase"/>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SAP__self.C_AIVS_MDBU_ArtistTP/CountryOfOrigin">
+				<Annotation Term="SAP__common.ValueListReferences">
+					<Collection>
+						<String>../../../../sadlf4/sap/i_aivs_countrycode_vh/0001;ps='sadl-c_aivs_mdbu_artisttp-0001';va='not implemented'/$metadata</String>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SAP__self.C_AIVS_MDBU_ArtistTPType">
+				<Annotation Term="UI.HeaderInfo">
+					<Record>
+						<PropertyValue Property="TypeName" String="Artist"/>
+						<PropertyValue Property="TypeNamePlural" String="Artists"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField">
+								<PropertyValue Property="Value" Path="Name"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataFieldForAction">
+							<PropertyValue Property="Label" String="Assign Person"/>
+							<PropertyValue Property="Action" String="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001.AssignPerson"/>
+							<PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+						</Record>
+						<Record Type="UI.DataFieldForAction">
+							<PropertyValue Property="Label" String="Break Up"/>
+							<PropertyValue Property="Action" String="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001.BreakUp"/>
+							<PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Name"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="CountryOfOrigin"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="FoundingYear"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="BreakupYear"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataFieldForAction">
+							<PropertyValue Property="Label" String="Break Up"/>
+							<PropertyValue Property="Action" String="com.sap.gateway.sadl.c_aivs_mdbu_artisttp.v0001.BreakUp"/>
+							<PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Name"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="CountryOfOrigin"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="FoundingYear"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="BreakupYear"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>CountryOfOrigin</PropertyPath>
+						<PropertyPath>FoundingYear</PropertyPath>
+						<PropertyPath>BreakupYear</PropertyPath>
+						<PropertyPath>_Publication/Name</PropertyPath>
+					</Collection>
+				</Annotation>
+				<Annotation Term="Communication.Contact">
+					<Record/>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/InProcessByUser">
+				<Annotation Term="SAP__common.Text" Path="InProcessByUserDescription"/>
+				<Annotation Term="SAP__common.Label" String="Draft In Process By"/>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/CreatedByUser">
+				<Annotation Term="SAP__common.Text" Path="CreatedByUserDescription"/>
+				<Annotation Term="SAP__common.Label" String="Draft Created By"/>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/LastChangedByUser">
+				<Annotation Term="SAP__common.Text" Path="LastChangedByUserDescription"/>
+				<Annotation Term="SAP__common.Label" String="Draft Last Changed By"/>
+			</Annotations>
+			<Annotations Target="SAP__self.Container/I_DraftAdministrativeData">
+				<Annotation Term="Capabilities.SearchRestrictions">
+					<Record>
+						<PropertyValue Property="Searchable" Bool="true"/>
+						<PropertyValue Property="UnsupportedExpressions" EnumMember="Capabilities.SearchExpressions/AND Capabilities.SearchExpressions/OR Capabilities.SearchExpressions/NOT Capabilities.SearchExpressions/group Capabilities.SearchExpressions/phrase"/>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SAP__self.C_AIVS_MDBU_ArtistTPType/ActiveUUID">
+				<Annotation Term="UI.HiddenFilter"/>
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Key"/>
+				<Annotation Term="SAP__common.QuickInfo" String="UUID serving as key (parent key, root key)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.C_AIVS_MDBU_ArtistTPType/HasActiveEntity">
+				<Annotation Term="UI.HiddenFilter"/>
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Has active"/>
+				<Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has active document"/>
+			</Annotations>
+			<Annotations Target="SAP__self.C_AIVS_MDBU_ArtistTPType/HasDraftEntity">
+				<Annotation Term="UI.HiddenFilter"/>
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Has Draft"/>
+				<Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has draft document"/>
+			</Annotations>
+			<Annotations Target="SAP__self.C_AIVS_MDBU_ArtistTPType/IsActiveEntity">
+				<Annotation Term="UI.HiddenFilter"/>
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Is active"/>
+				<Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Is active document"/>
+			</Annotations>
+			<Annotations Target="SAP__self.C_AIVS_MDBU_ArtistTPType/DraftEntityCreationDateTime">
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Draft Created On"/>
+			</Annotations>
+			<Annotations Target="SAP__self.C_AIVS_MDBU_ArtistTPType/DraftEntityLastChangeDateTime">
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Draft Last Changed On"/>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftUUID">
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Draft (Technical ID)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/ProcessingStartDateTime">
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Draft In Process Since"/>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsKeptByUser">
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Draft Is Kept By User"/>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/EnqueueStartDateTime">
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Draft Locked Since"/>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsCreatedByMe">
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Draft Created By Me"/>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsLastChangedByMe">
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Draft Last Changed By Me"/>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsProcessedByMe">
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Draft In Process By Me"/>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/CreatedByUserDescription">
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Draft Created By (Description)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/LastChangedByUserDescription">
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Draft Last Changed By (Description)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/InProcessByUserDescription">
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Draft In Process By (Description)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftEntityType">
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Draft Entity ID"/>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/PrincipalDraftKey">
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Draft (Technical ID)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftAccessType">
+				<Annotation Term="UI.Hidden"/>
+				<Annotation Term="SAP__common.Label" String="Draft Access Type"/>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/PrincipalDraftEntity">
+				<Annotation Term="SAP__common.Label" String="Draft Entity ID"/>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/CreationDateTime">
+				<Annotation Term="SAP__common.Label" String="Draft Created On"/>
+			</Annotations>
+			<Annotations Target="SAP__self.I_DraftAdministrativeDataType/LastChangeDateTime">
+				<Annotation Term="SAP__common.Label" String="Draft Last Changed On"/>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,30 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:u="sap.ui.unified"	template:require="sap.ui.model.odata.v4.AnnotationHelper">
+	<template:alias name=".MODEL" value="sap.ui.model.odata.v4.AnnotationHelper">
+		<template:with path="dataField>Value" var="property">
+			<template:if test="{= ${dataField>$Type} === 'com.sap.vocabularies.UI.v1.DataFieldWithUrl'}">
+				<template:then>
+					<Link text="{$field>/@custom/formattedValue}" href="{dataField>Url@@.MODEL.value}" />
+				</template:then>
+				<template:elseif test="{= ${dataField>$Type} === 'com.sap.vocabularies.UI.v1.DataField'}">
+					<!-- Unit/Currency is not yet supported by MDC control therefore we add it as inner control -->
+					<template:if test="{property>$Path@Org.OData.Measures.V1.Unit}">
+						<template:then>
+							<ObjectNumber number="{= ${property>@@.MODEL.value} || '{' + ${dataField>@sapui.name} + '}'}"
+								emphasized="false" textAlign="End" unit="{property>$Path@Org.OData.Measures.V1.Unit@@.MODEL.value}" />
+						</template:then>
+						<template:elseif test="{property>$Path@Org.OData.Measures.V1.ISOCurrency}">
+							<!-- should work with "{path:'$field>value'}", but this is limited 
+								to type String -->
+							<u:Currency value="{= ${property>@@.MODEL.value} || '{' + ${dataField>@sapui.name} + '}'}"
+								currency="{property>$Path@Org.OData.Measures.V1.ISOCurrency@@.MODEL.value}" useSymbol="false" />
+						</template:elseif>
+						<template:else>
+							<Text text="{= ${property>$Path@com.sap.vocabularies.Common.v1.Text} ? ${property>$Path@com.sap.vocabularies.Common.v1.Text@@.MODEL.value} + ' ('+  ${property>@@.MODEL.value} +')' : ${property>@@.MODEL.value} }"/>
+						</template:else>
+					</template:if>
+				</template:elseif>
+			</template:if>
+		</template:with>
+	</template:alias>
+</core:FragmentDefinition>

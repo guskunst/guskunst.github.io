@@ -1,0 +1,27 @@
+<f:SimpleForm
+		xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+		xmlns="sap.m"
+		xmlns:core="sap.ui.core"
+		xmlns:f="sap.ui.layout.form"
+		id="Details"
+		minWidth="1024"
+		maxContainerCols="2"
+		editable="true"
+		layout="ResponsiveGridLayout"
+		title="Details"
+		labelSpanL="3"
+		labelSpanM="3"
+		emptySpanL="4"
+		emptySpanM="4"
+		columnsL="1"
+		columnsM="1"
+>
+	<f:content>
+		<template:repeat list="{path:'entitySet>./@com.sap.vocabularies.UI.v1.Identification'}" var="field">
+			<template:if test="{= ${field>$Type} === 'com.sap.vocabularies.UI.v1.DataField' || ${field>$Type} === 'com.sap.vocabularies.UI.v1.DataFieldForAnnotation'}">
+				<Label text="{field>Label}"></Label>
+				<core:Fragment fragmentName="sap.fe.controls.Field.Field" type="XML"/>
+			</template:if>
+		</template:repeat>
+	</f:content>
+</f:SimpleForm>

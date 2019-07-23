@@ -1,0 +1,61 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.f"
+	xmlns:v="sap.ui.fl.variants"
+	xmlns:macro="sap.ui.mdc.odata.v4"
+	xmlns:core="sap.ui.core"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	template:require="{
+		CORE: 'sap/fe/core/AnnotationHelper',
+		COMMON: 'sap/ui/mdc/odata/v4/CommonHelper'
+	}"
+	controllerName="sap.fe.templates.ListReport.ListReportController">
+
+	<f:DynamicPage showFooter="{= CORE.hasDeterminingActions(${entitySet>$Type/@})}">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="{= ${manifest>/sap.app/appSubTitle} || ${manifest>/sap.app/title} }" />
+				</f:heading>
+				<f:snappedContent>
+					<Text text="{sap.fe.templates.ListReport>/filterSummary}"></Text>
+				</f:snappedContent>
+			</f:DynamicPageTitle>
+		</f:title>
+		<template:with path="entitySet>" helper="CORE.getPresentationContext" var="annotationPath">
+			<f:header>
+				<f:DynamicPageHeader pinnable="true">
+					<macro:FilterBar
+						id="{= COMMON.getStableId(['fe', 'fb', ${entitySet>@sapui.name}]) }"
+						metadataContexts="{model: 'entitySet', path:'',  name: 'entitySet'}"
+						listBindingNames="{= COMMON.getStableId(['fe', 'table', ${entitySet>@sapui.name}, ${annotationPath>@sapui.name}.replace(RegExp('.*\\.'), '')]) }"
+						search=".handlers.onSearch"
+						draftEditStateModelName="{= (${entitySet>@com.sap.vocabularies.Common.v1.DraftRoot} || ${entitySet>@com.sap.vocabularies.Common.v1.DraftNode}) ? '$draft' : '' }"
+						liveMode="{= ${viewData>/filterLiveUpdate} === false ? false : true }"
+					/>
+				</f:DynamicPageHeader>
+			</f:header>
+			<f:content>
+				<core:Fragment fragmentName="sap.fe.controls.ViewSwitchContainer.ViewSwitchContainer" type="XML"/>
+			</f:content>
+		</template:with>
+		<f:footer>
+			<OverflowToolbar>
+				<template:with path="entitySet>$Type" var="entityType">
+				<ToolbarSpacer />
+					<template:repeat list="{entityType>./@com.sap.vocabularies.UI.v1.LineItem}" var="dataField">
+						<template:if test="{= ${dataField>$Type} === 'com.sap.vocabularies.UI.v1.DataFieldForAction' &amp;&amp; ${dataField>Determining} === true}">
+							<Button
+								text="{dataField>Label}"
+								press="{= '.transaction.onCallAction(\'' + ${dataField>Action} + '\',
+								{ model: ${$source>}.getModel(), label: \'' + ${dataField>Label} + '\'})'}"
+								visible="{= ${dataField>Action@OperationAvailable} === false ? false : true}"
+								hideText="false" importance="Medium" type="Default"/>
+						</template:if>
+					</template:repeat>
+				</template:with>
+			</OverflowToolbar>
+		</f:footer>
+	</f:DynamicPage>
+</mvc:View>

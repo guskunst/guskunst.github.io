@@ -1,0 +1,107 @@
+<mvc:View
+    controllerName="sap.ushell.components.shell.UserSettings"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core">
+
+    <Dialog id="userSettingsDialog"
+        class="sapUshellUserSetting"
+        showHeader="false"
+        contentHeight="42rem"
+        contentWidth="58rem"
+        afterClose="._afterClose"
+        stretch="{device>/system/phone}">
+        <buttons>
+            <Button id="userSettingSaveButton"
+                text="{i18n>saveBtn}"
+                press="._handleSettingsSave"/>
+            <Button id="userSettingCancelButton"
+                text="{i18n>cancelBtn}"
+                press="._dialogCancelButtonHandler"/>
+        </buttons>
+        <content>
+            <Page
+                class="sapUshellSettingsPage"
+                showHeader="true">
+                <customHeader>
+                    <Bar id="settingsBar">
+                        <contentLeft>
+                            <ToggleButton id="userSettingsNavBackButton"
+                                icon="{= ${device>/system/phone} ? 'sap-icon://nav-back' : 'sap-icon://menu2'}"
+                                press="._navBackButtonPressHandler"
+                                tooltip="{i18n>ToggleButtonShow}"
+                                visible="false"/>
+                        </contentLeft>
+                        <contentMiddle>
+                            <Text
+                                text="{i18n>userSettings}"/>
+                        </contentMiddle>
+                    </Bar>
+                </customHeader>
+                <content>
+                    <SplitApp id="settingsApp"
+                        defaultTransitionNameDetail="show"
+                        afterMasterClose="._handleNavButton"
+                        afterMasterOpen="._handleNavButton">
+                        <detailPages>
+                            <Page id="userSettingsErrorPage"
+                                class="sapUsheUserSettingDetaildPage"
+                                showHeader="false">
+                                <content>
+                                    <ObjectHeader
+                                        class="sapUshellUserSettingDetailHeader"
+                                        title="{entries>title}"
+                                        backgroundDesign="Solid"/>
+                                    <FlexBox id="userPrefErrorFlexBox"
+                                        height="5rem"
+                                        alignItems="Center"
+                                        justifyContent="Center">
+                                        <items>
+                                            <Text id="userPrefErrorText"
+                                                text="{i18n>loadingErrorMessage}"/>
+                                        </items>
+                                    </FlexBox>
+                                </content>
+                            </Page>
+                        </detailPages>
+                        <masterPages>
+                            <Page id="userSettingMaster"
+                                class="sapUshellUserSettingMaster"
+                                showHeader="false">
+                                <content>
+                                    <List id="userSettingEntryList"
+                                        items="{entries>/entries}"
+                                        mode="SingleSelectMaster"
+                                        select="._itemPress">
+                                        <items>
+                                            <StandardListItem
+                                                class="sapUshellUserSettingMasterListItem"
+                                                title="{entries>title}"
+                                                description="{entries>valueResult}"
+                                                icon="{
+                                                    parts: [
+                                                        {path: 'entries>icon'},
+                                                        {path: '/userImage/account'}
+                                                    ],
+                                                    formatter: '._getEntryIcon'
+                                                }"
+                                                type="{= ${device>/system/phone} ? 'Navigation' : 'Inactive'}"
+                                                visible="{
+                                                    parts: [
+                                                        {path: 'entries>visible'},
+                                                        {path: 'entries>defaultVisibility'},
+                                                        {path: 'entries>title'}
+                                                    ],
+                                                    formatter: '._getEntryVisible'
+                                                }"/>
+                                        </items>
+                                    </List>
+                                </content>
+                            </Page>
+                        </masterPages>
+                    </SplitApp>
+                </content>
+            </Page>
+        </content>
+    </Dialog>
+</mvc:View>

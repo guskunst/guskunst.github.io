@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>internal/LinearRowField</name>
+    <derived/>
+    <documentation>A control to render linear row fields in data container region of a system</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property group="Data" type="sap.ui.core/string" name="label">
+            <documentation>text to be displayed in the row field</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="value">
+            <documentation>value to be displayed in the row field</documentation>
+        </property>
+        <property group="Dimension" defaultValue="Regular" type="sap.landvisz/EntityCSSSize" name="renderingSize">
+            <documentation>rendering size of system</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="iconType">
+            <documentation>text of the icon dislayed in the row field</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="iconTitle">
+            <documentation>title of the icon displayed in the row field</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="rightIconSrc">
+            <documentation>Image source of the icon on right</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="linkSource">
+            <documentation>source from which two or more systems are dependent</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="rightIconTooltip">
+            <documentation>tool tip for the right icon</documentation>
+        </property>
+        <property group="Identification" type="sap.ui.core/boolean" name="invalidName">
+            <documentation>determines if the product version are valid/invalid</documentation>
+        </property>
+    </properties>
+</control>

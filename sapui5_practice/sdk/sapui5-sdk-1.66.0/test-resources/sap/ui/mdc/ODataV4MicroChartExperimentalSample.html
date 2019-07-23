@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta charset="UTF-8">
+
+	<title>Testpage - sap.suite.ui.microchart.TestOdatav4MicroChart</title>
+
+	<base href="../../../../">
+
+	<script src="test-resources/sap/ui/mdc/shared-config.js"></script>
+	<script id="sap-ui-bootstrap"
+			data-sap-ui-xx-bindingSyntax="complex"
+			data-sap-ui-libs="sap.m, sap.ui.mdc"
+			src="resources/sap-ui-core.js">
+	</script>
+
+	<script id="view1" type="sapui5/xmlview">
+	<core:View controllerName="test" xmlns="sap.ui.mdc.odata.v4.microchart" xmlns:core="sap.ui.core" xmlns:m="sap.m">
+		<m:VBox id="idBox"/>
+	</core:View>
+
+	</script>
+	<script>
+		sap.ui.require([
+			"sap/ui/core/util/MockServer",
+			"sap/ui/core/mvc/ViewType",
+			"sap/m/MessageBox",
+			"sap/ui/model/odata/v4/ODataModel",
+			"sap/ui/model/odata/v4/AnnotationHelper" // TODO why does this has to be imported
+		], function (MockServer, ViewType, MessageBox, ODataModel, AnnotationHelper) {
+			// define a new (simple) Controller type
+			sap.ui.controller("test", {
+				onInit: function () {
+					var that = this;
+					var oModel = new ODataModel({
+						serviceUrl: "http://localhost:4004/my_model/",
+						synchronizationMode: "None"
+					});
+
+					var oMetaModel = oModel.getMetaModel();
+
+					var aEntitySets = ["ValuesArea", "ValuesLine", "ValuesColumn"];
+
+					aEntitySets.forEach(function(sEntitySet) {
+						var sPath = "/" + sEntitySet + "/@com.sap.vocabularies.UI.v1.Chart";
+
+						this.getView().setModel(oModel);
+
+						oMetaModel.requestObject("/").then(function(oMetaData) {
+							sap.ui.core.mvc.XMLView.create({
+								async : true,
+								models : oModel,
+								preprocessors : {
+									xml : {
+										bindingContexts : {
+											chartAnnotationModel: oMetaModel.getMetaContext(sPath)
+										},
+										models : {
+											chartAnnotationModel: oMetaModel
+										}
+									}
+								},
+								definition : "<core:View xmlns=\"sap.ui.mdc.odata.v4.microchart\" xmlns:core=\"sap.ui.core\" xmlns:m=\"sap.m\"><MicroChart/></core:View>"
+							}).then(function (oTemplateView) {
+								debugger;
+								var oMicroChart = oTemplateView.getContent()[0];
+								that.getView().byId("idBox").addItem(oMicroChart);
+							}, function (oError) {
+								debugger;
+								MessageBox.alert(oError.message, {
+									icon : MessageBox.Icon.ERROR,
+									title : "Missing Proxy?"});
+							});
+						});
+					}, this);
+				}
+			});
+
+			// instantiate the View
+			var oView = sap.ui.xmlview({
+				viewContent: jQuery('#view1').html()
+			});
+
+			oView.placeAt("content");
+		});
+
+	</script>
+</head>
+
+<body class="sapUiBody" role="application">
+<div id="content"></div>
+</body>
+</html>

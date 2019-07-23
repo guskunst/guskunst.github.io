@@ -1,0 +1,66 @@
+<!-- * 	 @param idPrefix default 'F' Prefix for the id
+* 	 @param vhIdPrefix default 'FVH' Prefix for the value help id -->
+<core:FragmentDefinition
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mdc="sap.ui.mdc.base"
+	xmlns:form="sap.ui.layout.form"
+	template:require="{
+		MODEL: 'sap/ui/model/odata/v4/AnnotationHelper',
+		COMMON: 'sap/ui/mdc/odata/v4/CommonHelper',
+		FIELD: 'sap/ui/mdc/odata/v4/field/FieldHelper'
+	}">
+	<template:with path="entitySet>" var="esName">
+		<form:SimpleForm>
+			<template:repeat list="{action>$Parameter}" var="parameter">
+
+				<template:with path="parameter>" helper="COMMON.gotoActionParameter" var="actionParameter">
+
+				<!-- In case of bound actions the first parameter shall be ignored -->
+				<template:if test="{= !${action>$IsBound} || ${parameter>$Name} !== ${action>$Parameter/0/$Name} }">
+
+				<Label text="{actionParameter>@com.sap.vocabularies.Common.v1.Label}"/>
+				<!--
+                    TODOs: 	edit mode, can there be also field control?
+                            value help
+                            additional value? (= text annotation)
+                            text arrangement?
+                            multipleLines?
+                -->
+               <!-- paramsModel>/ + parameter>$Name + : + value -->
+
+				<!-- TODO: use new value helper -->
+				<mdc:Field
+						value="{= '{paramsModel>/' + ${parameter>$Name@@FIELD.value} + '}' }"
+						editMode="Editable"
+						width="100%"
+						display="{parameter>@@FIELD.displayMode}"
+						required="{= FIELD.isRequired(${actionParameter>@@FIELD.fieldControl}, 'Editable')}"
+						change="{= '.handleChange($event, \'' + ${parameter>$Name} + '\')' }"
+						valueState="{= '{paramsModel>/$valueState/' + ${parameter>$Name} + '}' }"
+						valueStateText="{= '{paramsModel>/$valueStateText/' + ${parameter>$Name} + '}' }"
+						fieldHelp="{= (${actionParameter>@com.sap.vocabularies.Common.v1.ValueListReferences} || ${actionParameter>@com.sap.vocabularies.Common.v1.ValueListMapping} || ${actionParameter>@com.sap.vocabularies.Common.v1.ValueList}) ? COMMON.getStableId([${actionName>@sapui.name},${parameter>$Name}]) : undefined }"
+						>
+						<template:if test="{= ${actionParameter>@com.sap.vocabularies.Common.v1.ValueListReferences} || ${actionParameter>@com.sap.vocabularies.Common.v1.ValueListMapping} || ${actionParameter>@com.sap.vocabularies.Common.v1.ValueList} }">
+							<template:then>
+								<mdc:dependents>
+									<mdc:FieldValueHelp
+										id="{= COMMON.getStableId([${actionName>@sapui.name},${parameter>$Name}]) }"
+										showConditionPanel="true"
+										noDialog="{= ${actionParameter>@com.sap.vocabularies.Common.v1.ValueListWithFixedValues} &amp;&amp; ${actionParameter>@com.sap.vocabularies.Common.v1.ValueListWithFixedValues} !== false }"
+										open="sap.ui.mdc.odata.v4.ValueListHelper.showValueListInfo('/{esName>@sapui.name}/{actionName>@sapui.name}/{parameter>$Name}',$\{$source>\},$\{$parameters>/suggestion\})">
+										<mdc:FieldValueHelpMTableWrapper />
+									</mdc:FieldValueHelp>
+								</mdc:dependents>
+							</template:then>
+						</template:if>
+					</mdc:Field>
+				</template:if>
+
+				</template:with>
+
+			</template:repeat>
+		</form:SimpleForm>
+	</template:with>
+</core:FragmentDefinition>

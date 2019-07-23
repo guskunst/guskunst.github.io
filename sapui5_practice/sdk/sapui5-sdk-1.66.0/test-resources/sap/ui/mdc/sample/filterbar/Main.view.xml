@@ -1,0 +1,36 @@
+<core:View 
+    xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" 
+    xmlns="sap.m" controllerName="sap.ui.mdc.sample.filterbar.Main" 
+    xmlns:mdc="sap.ui.mdc" 
+    xmlns:comp="sap.ui.comp.smarttable" 
+    xmlns:core="sap.ui.core">
+
+    <mdc:FilterBar id="idFilterBar" liveUpdate="false" metadataContexts="{ path: '/Artists',  name: 'entitySet'}" search="onSearch" />
+
+    <Table id="idTable" items="{path: '/Artists'}">
+        <columns>
+            <Column>
+                <Text text="Name" />
+            </Column>
+            <Column>
+                <Text text="Country" />
+            </Column>
+            <Column>
+                <Text text="City" />
+            </Column>
+            <Column>
+                <Text text="Founding Year" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{Name}" />
+                    <Text text="{CountryOfOrigin_Text}" />
+                    <Text text="{RegionOfOrigin_Text}" />
+                    <Text text="{FoundingYear}" />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</core:View>

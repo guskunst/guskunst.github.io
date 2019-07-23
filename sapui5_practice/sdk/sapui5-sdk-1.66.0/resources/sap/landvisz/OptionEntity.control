@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>OptionEntity</name>
+    <derived/>
+    <documentation>Options for solution entities</documentation>
+    <baseType>sap.landvisz/OptionSource</baseType>
+    <properties>
+        <property group="Data" type="sap.ui.core/string" name="label">
+            <documentation>label for option entity</documentation>
+        </property>
+        <property group="Accessibility" defaultValue="false" type="sap.ui.core/boolean" name="selected">
+            <documentation>determines current selected option</documentation>
+        </property>
+        <property group="Identification" defaultValue="true" type="sap.ui.core/boolean" name="enable">
+            <documentation>enabling/disabling options</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="optionTextTooltip">
+            <documentation>tooltip for options</documentation>
+        </property>
+    </properties>
+    <events>
+        <event allowPreventDefault="false" name="selectOption">
+            <documentation>Select event for option entity</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation cardinality="0..n" type="sap.landvisz/OptionSource" name="optionSources">
+            <documentation>Option Renderer Control</documentation>
+        </aggregation>
+    </aggregations>
+</control>

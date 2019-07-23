@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form"	xmlns:core="sap.ui.core">
+	<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="Filter" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false">
+		<core:Title text="Build-in Filter Edit State" />
+		<Label text="Edit State through model" />
+		<ComboBox selectedKey="{$draft>/entitySets/Artists/editState}" items="{path: '$draft>/editStates'}" selectionChange="updateTable">
+			<core:Item key="{$draft>id}" text="{$draft>name}" />
+		</ComboBox>
+		<core:Title text="Regular Filter" />
+		<Label text="Search" />
+		<Input value="{filter>/search}" submit=".search(${$source>}.getModel().getBindingForReference('sap.fe.tableBinding'), ${$parameters>/value})" />
+		<Label text="Founding Year" />
+		<Input value="{filter>/FoundingYear}" />
+		<Button text="How many lines are selected" press="toastIt(${$view>/#mainTable/getSelectedContexts}.length + ' lines are selected')" />
+		<Button text="(sap.m.MessageToast.show)" press="sap.m.MessageToast.show(${$view>/#mainTable/getSelectedContexts}.length + ' lines are selected')" />
+	</f:SimpleForm>
+</core:FragmentDefinition>

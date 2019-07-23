@@ -1,0 +1,90 @@
+<core:View
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns="sap.m" controllerName="view.NoActions"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<core:Fragment fragmentName="view.Header" type="XML"/>
+	<!-- Filter bar-->
+	<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="Filter" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false">
+		<core:Title text="Build-in Filter Edit State" />
+		<Label text="Edit State through model" />
+		<ComboBox selectedKey="{$draft>/entitySets/Artists/editState}" items="{path: '$draft>/editStates'}" selectionChange="updateTable">
+			<core:Item key="{$draft>id}" text="{$draft>name}" />
+		</ComboBox>
+		<core:Title text="Regular Filter" />
+		<Label text="Founding Year" />
+		<Input value="{filter>/FoundingYear}" />
+	</f:SimpleForm>
+	<!-- Result area -->
+	<!-- by sorting the table on ChangedAt descending one always gets the newly changed or created entries on top of the table in this simplified UI -->
+	<Table id="mainTable" inset="false" items="{path: '/Artists',
+				parameters : {$count : true, id: 'sap.fe.tableBinding'},
+				sorter : [
+					{ path: 'ChangedAt', descending: false,  group : false}
+				],
+				events : {dataReceived : '.onDataReceived'}
+			}" mode="SingleSelectMaster" busyIndicatorDelay="0">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="{sap.fe.tableBinding:$count} Artists" level="H2"/>
+				<Button text="Create" press="createNewDocument" />
+				<Button text="Save" press="activateDocument" />
+				<Button text="Toggle custom static filter" press="toggleStaticFilter" />
+				<Button icon="sap-icon://message-popup" text="{= ${message>/}.length}" type="Emphasized"
+						press="handleMessagePopoverPress">
+						<dependents>
+							<MessagePopover id="messagePopover" items="{message>/}">
+								<MessagePopoverItem type="{message>type}" title="{message>message}" description="{message>message}" subtitle="{message>additionalText}" counter="{message>counter}" />
+							</MessagePopover>
+						</dependents>
+				</Button>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column width="26em">
+				<Text text="Actions" />
+			</Column>
+			<Column minScreenWidth="Phone">
+				<Text text="Name" />
+			</Column>
+			<Column minScreenWidth="Phone" width="5em">
+				<Text text="Country" />
+			</Column>
+			<Column minScreenWidth="Tablet" width="5em" demandPopin="true">
+				<Text text="Founding Year" />
+			</Column>
+			<Column minScreenWidth="Tablet" width="5em" demandPopin="true" hAlign="Right">
+				<Text text="Breakup Year" />
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+				<Text text="Created by" />
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+				<Text text="Changed at" />
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+				<Text text="Draft Changed at" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<OverflowToolbar design="Transparent">
+						<Button text="Edit" press="onEdit" enabled="{= ${IsActiveEntity}}"/>
+						<Button text="Delete" press="handleDelete"/>
+						<Button type="Transparent" text="Make Draft" press="createDraftFromActiveDoc" enabled="{= ${IsActiveEntity}}"/>
+						<Button type="Transparent" text="Break up" press="breakUp"/>
+						<Button type="Transparent" text="Save" press="activateDocument" enabled="{= !${IsActiveEntity}}"/>
+					</OverflowToolbar>
+					<Input value="{Name}" editable="{= !${IsActiveEntity}}" enabled="{= !${IsActiveEntity}}" placeholder="Name for {ArtistUUID}&lt;=&gt;{ActiveUUID}" tooltip="{ArtistUUID}&lt;=&gt;{ActiveUUID}" />
+					<Input value="{CountryOfOrigin}" editable="{= !${IsActiveEntity}}" enabled="{= !${IsActiveEntity}}"/>
+					<Input value="{FoundingYear}" editable="{= !${IsActiveEntity}}" enabled="{= !${IsActiveEntity}}"/>
+					<Text text="{BreakupYear}"/>
+					<Text text="{DraftAdministrativeData/CreatedByUserDescription}"/>
+					<Text text="{ChangedAt}"/>
+					<Text text="{DraftAdministrativeData/LastChangeDateTime}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:View>

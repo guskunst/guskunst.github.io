@@ -1,0 +1,31 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:uxap="sap.uxap"
+          controllerName="ManageSalesOrderWithSegButtons.implementingComponents.productCanvas.view.Default" >
+	<App>
+		<pages>
+			<Page id="group" title="{i18n>groupTitle}">
+			<!-- uxap:ObjectPageHeader>
+			<uxap:ObjectPageHeaderActionButton icon="sap-icon://full-screen"></uxap:ObjectPageHeaderActionButton>
+			</uxap:ObjectPageHeader>-->
+				<content>
+					<VBox id="ServiceBox">
+						<f:SimpleForm columnsL="3" columnsM="2" editable="false" emptySpanL="0" emptySpanM="0" id="aForm" labelSpanL="4" labelSpanM="4"
+							layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="512" title="{i18n>formTitle}">
+							<f:content>
+								<core:Title text="{i18n>properties}"/>
+								<Label text="{i18n>sPath}"/>
+								<Text text="{component>/sPath}"/>
+								<Label text="{i18n>productID}"/>
+								<Text text="{component>/productID}"/>
+								<Label text="{i18n>uimode}"/>
+								<Text text="{component>/uiMode}"/>
+							</f:content>
+						</f:SimpleForm>
+					</VBox>
+					<Button text="{i18n>back}" press="onPress"/>
+					<Button text="RefreshAncestor" press="onClick"/>
+					<Input type = "text" value ="{component>/sPath}"/>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

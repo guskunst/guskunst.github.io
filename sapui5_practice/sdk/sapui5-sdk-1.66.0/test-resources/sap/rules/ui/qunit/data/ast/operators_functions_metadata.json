@@ -1,0 +1,1093 @@
+{
+			"operators": [{
+				"name": "+",
+				"label": "add",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"N": {
+						"N": "N",
+						"S": "S"
+					},
+					"A": {
+						"A": "A",
+						"S": "S"
+					},
+					"S": {
+						"S": "S",
+						"N": "S",
+						"D": "S",
+						"T": "S",
+						"Q": "S",
+						"A": "S"
+					},
+					"T": {
+						"S": "S"
+					},
+					"D": {
+						"S": "S"
+					},
+					"Q": {
+						"Q": "Q",
+						"S": "S"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "arithmetic"
+			}, {
+				"name": "-",
+				"label": "subtract",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"N": {
+						"N": "N"
+					},
+					"Q": {
+						"Q": "Q"
+					},
+					"A": {
+						"A": "A"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "arithmetic"
+			}, {
+				"name": "/",
+				"label": "divide",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"N": {
+						"N": "N"
+					},
+					"Q": {
+						"N": "Q"
+					},
+					"A": {
+						"N": "A"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "arithmetic"
+			}, {
+				"name": "*",
+				"label": "multiply",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"N": {
+						"N": "N",
+						"A": "A",
+						"Q": "Q"
+					},
+					"Q": {
+						"N": "Q"
+					},
+					"A": {
+						"N": "A"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "arithmetic"
+			}, {
+				"name": "=",
+				"label": "is equal",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"N": {
+						"N": "B"
+					},
+					"B": {
+						"B": "B"
+					},
+					"D": {
+						"D": "B"
+					},
+					"T": {
+						"T": "B"
+					},
+					"S": {
+						"S": "B"
+					},
+					"Q": {
+						"Q": "B"
+					},
+					"A": {
+						"A": "B"
+					},
+					"U": {
+						"U": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "comparison"
+			}, {
+				"name": "!=",
+				"label": "is not equal",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"N": {
+						"N": "B"
+					},
+					"B": {
+						"B": "B"
+					},
+					"D": {
+						"D": "B"
+					},
+					"T": {
+						"T": "B"
+					},
+					"S": {
+						"S": "B"
+					},
+					"Q": {
+						"Q": "B"
+					},
+					"A": {
+						"A": "B"
+					},
+					"U": {
+						"U": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "comparison"
+			}, {
+				"name": ">",
+				"label": "is greater than",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"N": {
+						"N": "B"
+					},
+					"D": {
+						"D": "B"
+					},
+					"T": {
+						"T": "B"
+					},
+					"S": {
+						"S": "B"
+					},
+					"Q": {
+						"Q": "B"
+					},
+					"A": {
+						"A": "B"
+					},
+					"U": {
+						"U": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "comparison"
+			}, {
+				"name": ">=",
+				"label": "is equal or greater than",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"N": {
+						"N": "B"
+					},
+					"D": {
+						"D": "B"
+					},
+					"T": {
+						"T": "B"
+					},
+					"S": {
+						"S": "B"
+					},
+					"Q": {
+						"Q": "B"
+					},
+					"A": {
+						"A": "B"
+					},
+					"U": {
+						"U": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "comparison"
+			},  {
+				"name": "<",
+				"label": "is less",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"N": {
+						"N": "B"
+					},
+					"D": {
+						"D": "B"
+					},
+					"T": {
+						"T": "B"
+					},
+					"S": {
+						"S": "B"
+					},
+					"Q": {
+						"Q": "B"
+					},
+					"A": {
+						"A": "B"
+					},
+					"U": {
+						"U": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "comparison"
+			}, {
+				"name": "<=",
+				"label": "is equal or less than",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"N": {
+						"N": "B"
+					},
+					"D": {
+						"D": "B"
+					},
+					"T": {
+						"T": "B"
+					},
+					"S": {
+						"S": "B"
+					},
+					"Q": {
+						"Q": "B"
+					},
+					"A": {
+						"A": "B"
+					},
+					"U": {
+						"U": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "comparison"
+			}, {
+				"name": "IN",
+				"label": "in",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"N": {
+						"N": "B"
+					},
+					"B": {
+						"B": "B"
+					},
+					"D": {
+						"D": "B"
+					},
+					"T": {
+						"T": "B"
+					},
+					"S": {
+						"S": "B"
+					},
+					"Q": {
+						"Q": "B"
+					},
+					"A": {
+						"A": "B"
+					},
+					"G": {
+						"G": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "range"
+			}, {
+				"name": "NOTIN",
+				"label": "not in",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"N": {
+						"N": "B"
+					},
+					"B": {
+						"B": "B"
+					},
+					"D": {
+						"D": "B"
+					},
+					"T": {
+						"T": "B"
+					},
+					"S": {
+						"S": "B"
+					},
+					"Q": {
+						"Q": "B"
+					},
+					"A": {
+						"A": "B"
+					},
+					"G": {
+						"G": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "range"
+			}, {
+				"name": "EXISTSIN",
+				"label": "exists in",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"N": {
+						"N": "B"
+					},
+					"B": {
+						"B": "B"
+					},
+					"D": {
+						"D": "B"
+					},
+					"T": {
+						"T": "B"
+					},
+					"S": {
+						"S": "B"
+					},
+					"Q": {
+						"Q": "B"
+					},
+					"A": {
+						"A": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "array"
+			}, {
+				"name": "NOTEXISTSIN",
+				"label": "does not exists in",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"N": {
+						"N": "B"
+					},
+					"B": {
+						"B": "B"
+					},
+					"D": {
+						"D": "B"
+					},
+					"T": {
+						"T": "B"
+					},
+					"S": {
+						"S": "B"
+					},
+					"Q": {
+						"Q": "B"
+					},
+					"A": {
+						"A": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "array"
+			}, {
+				"name": "MATCHES",
+				"label": "matches",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"S": {
+						"S": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "functional"
+			}, {
+				"name": "NOTMATCHES",
+				"label": "does not matches",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"S": {
+						"S": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "functional"
+			}, {
+				"name": "CONTAINS",
+				"label": "contains string",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"S": {
+						"S": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "functional"
+			}, {
+				"name": "NOTCONTAINS",
+				"label": "does not contains string",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"S": {
+						"S": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "functional"
+			}, {
+				"name": "STARTSWITH",
+				"label": "starts with",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"S": {
+						"S": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "functional"
+			}, {
+				"name": "NOTSTARTSWITH",
+				"label": "does not starts with",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"S": {
+						"S": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "functional"
+			}, {
+				"name": "ENDSWITH",
+				"label": "ends with",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"S": {
+						"S": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "functional"
+			}, {
+				"name": "NOTENDSWITH",
+				"label": "does not ends with",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"S": {
+						"S": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "functional"
+			}, {
+				"name": "NOT",
+				"label": "not",
+				"noOfArgs": 1,
+				"returnValueBusinessDataTypeCollection": {
+					"D": {
+						"D": "B"
+					},
+					"T": {
+						"T": "B"
+					},
+					"N": {
+						"N": "B"
+					},
+					"B": {
+						"B": "B"
+					},
+					"S": {
+						"S": "B"
+					},
+					"Q": {
+						"Q": "B"
+					},
+					"A": {
+						"A": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "logical"
+			}, {
+				"name": "AND",
+				"label": "and",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"B": {
+						"B": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "logical"
+			}, {
+				"name": "OR",
+				"label": "or",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"B": {
+						"B": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"category": "logical"
+			}],
+			"functions": [{
+				"name": "AVG",
+				"label": "average",
+				"category": "aggregate",
+				"noOfArgs": "*",
+				"argsMetadata": [{
+					"sequence": 1,
+					"dataObjectType": "T"
+				}, {
+					"sequence": 2,
+					"dataObjectType": "E",
+					"businessDataTypeList": [
+						"Q",
+						"N",
+						"A"
+					],
+					"determinesReturnDataObjectType": "Y"
+				}],
+				"noOfMandatoryArgs": "2",
+				"returnDataObjectTypeList": [
+					"E",
+					"T"
+				]
+			}, {
+				"name": "SUM",
+				"label": "sum",
+				"category": "aggregate",
+				"noOfArgs": "*",
+				"argsMetadata": [{
+					"sequence": 1,
+					"dataObjectType": "T"
+				}, {
+					"sequence": 2,
+					"dataObjectType": "E",
+					"businessDataTypeList": [
+						"Q",
+						"N",
+						"A"
+					],
+					"determinesReturnDataObjectType": "Y"
+				}],
+				"noOfMandatoryArgs": "2",
+				"returnDataObjectTypeList": [
+					"E",
+					"T"
+				]
+			}, {
+				"name": "COUNT",
+				"label": "count",
+				"category": "aggregate",
+				"noOfArgs": "*",
+				"argsMetadata": [{
+					"sequence": 1,
+					"dataObjectType": "T",
+					"determinesReturnDataObjectType": "Y"
+
+				}],
+				"noOfMandatoryArgs": "1",
+				"returnDataObjectTypeList": [
+					"E",
+					"T"
+				],
+				"defaultDataObjectReturnType": "E",
+				"defaultBusinessDataReturnType": "N"
+
+			}, {
+				"name": "COUNTDISTINCT",
+				"label": "count distinct",
+				"category": "aggregate",
+				"noOfArgs": "2",
+				"argsMetadata": [{
+					"sequence": 1,
+					"dataObjectType": "T"
+				}, {
+					"sequence": 2,
+					"dataObjectType": "E",
+					"businessDataTypeList": [
+						"N"
+					],
+					"determinesReturnDataObjectType": "Y"
+				}],
+				"noOfMandatoryArgs": "2",
+				"returnDataObjectTypeList": [
+					"E"
+				]
+			}, {
+				"name": "DISTINCT",
+				"label": "distinct",
+				"category": "aggregate",
+				"noOfArgs": 2,
+				"argsMetadata": [{
+					"sequence": 1,
+					"dataObjectType": "T"
+				}, {
+					"sequence": 2,
+					"dataObjectType": "E"
+				}],
+				"noOfMandatoryArgs": "2",
+				"returnDataObjectTypeList": [
+					"T"
+				]
+			}, {
+				"name": "MIN",
+				"label": "minimum",
+				"category": "aggregate",
+				"noOfArgs": "*",
+				"argsMetadata": [{
+					"sequence": 1,
+					"dataObjectType": "T"
+				}, {
+					"sequence": 2,
+					"dataObjectType": "E",
+					"businessDataTypeList": [
+						"N",
+						"A",
+						"Q",
+						"D",
+						"T"
+					],
+					"determinesReturnDataObjectType": "Y"
+				}],
+				"noOfMandatoryArgs": "2",
+				"returnDataObjectTypeList": [
+					"E",
+					"T"
+				]
+			}, {
+				"name": "MAX",
+				"label": "maximum",
+				"category": "aggregate",
+				"noOfArgs": "*",
+				"argsMetadata": [{
+					"sequence": 1,
+					"dataObjectType": "T"
+				}, {
+					"sequence": 2,
+					"dataObjectType": "E",
+					"businessDataTypeList": [
+						"N",
+						"A",
+						"Q",
+						"D",
+						"T"
+					],
+					"determinesReturnDataObjectType": "Y"
+				}],
+				"noOfMandatoryArgs": "2",
+				"returnDataObjectTypeList": [
+					"E",
+					"T"
+				]
+			}, {
+				"name": "FILTER",
+				"label": "where",
+				"category": "aggregate",
+				"noOfArgs": 2,
+				"argsMetadata": [{
+					"sequence": 1,
+					"dataObjectType": "T"
+				}],
+				"noOfMandatoryArgs": "1",
+				"returnDataObjectTypeList": [
+					"T"
+				]
+			}, {
+				"name": "TOP",
+				"label": "top",
+				"category": "selection",
+				"noOfArgs": 2,
+				"argsMetadata": [{
+					"sequence": 1,
+					"dataObjectType": "T"
+				}, {
+					"sequence": 2,
+					"dataObjectType": "E"
+				}],
+				"noOfMandatoryArgs": "2",
+				"returnDataObjectTypeList": [
+					"T"
+				]
+			}, {
+				"name": "BOTTOM",
+				"label": "bottom",
+				"category": "selection",
+				"noOfArgs": 2,
+				"argsMetadata": [{
+					"sequence": 1,
+					"dataObjectType": "T"
+				}, {
+					"sequence": 2,
+					"dataObjectType": "E"
+				}],
+				"noOfMandatoryArgs": "2",
+				"returnDataObjectTypeList": [
+					"T"
+				]
+			}, {
+				"name": "SELECT",
+				"label": "select",
+				"category": "selection",
+				"noOfArgs": "*",
+				"argsMetadata": [{
+					"sequence": 1,
+					"dataObjectType": "T"
+				}],
+				"noOfMandatoryArgs": "1",
+				"returnDataObjectTypeList": [
+					"T"
+				]
+			}, {
+				"name": "SORTASC",
+				"label": "sort ascending",
+				"category": "selection",
+				"noOfArgs": 2,
+				"argsMetadata": [{
+					"sequence": 1,
+					"dataObjectType": "T"
+				}, {
+					"sequence": 2,
+					"dataObjectType": "E"
+				}],
+				"noOfMandatoryArgs": "2",
+				"returnDataObjectTypeList": [
+					"T"
+				]
+			}, {
+				"name": "SORTDESC",
+				"label": "sort descending",
+				"category": "selection",
+				"noOfArgs": 2,
+				"argsMetadata": [{
+					"sequence": 1,
+					"dataObjectType": "T"
+				}, {
+					"sequence": 2,
+					"dataObjectType": "E"
+				}],
+				"noOfMandatoryArgs": "2",
+				"returnDataObjectTypeList": [
+					"T"
+				]
+			},
+			 {
+				"name": "ISINNEXT",
+				"label": "isinnext",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"D": {
+						"Q": "B"
+					},
+					"T": {
+						"Q": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"noOfMandatoryArgs": "2",
+				"category": "window"
+			},
+			 {
+				"name": "ISNOTINNEXT",
+				"label": "isnotinnext",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"D": {
+						"Q": "B"
+					},
+					"T": {
+						"Q": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"noOfMandatoryArgs": "2",
+				"category": "window"
+			},
+			{
+				"name": "ISINLAST",
+				"label": "isinlast",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"D": {
+						"Q": "B"
+					},
+					"T": {
+						"Q": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"noOfMandatoryArgs": "2",
+				"category": "window"
+			},
+			{
+				"name": "ISNOTINLAST",
+				"label": "isnotinlast",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"D": {
+						"Q": "B"
+					},
+					"T": {
+						"Q": "B"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"noOfMandatoryArgs": "2",
+				"category": "window"
+			},
+			{
+				"name": "CONCAT",
+				"label": "concatenate",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"S": {
+						"S": "S"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"noOfMandatoryArgs": "2",
+				"category": "advanced"
+			},
+			{
+				"name": "ROUND",
+				"label": "round",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"N": {
+						"N": "N"
+					},"Q": {
+						"N": "Q"
+					},"A": {
+						"N": "A"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"noOfMandatoryArgs": "2",
+				"category": "advanced"
+			},
+			{
+				"name": "POWER",
+				"label": "power",
+				"noOfArgs": 2,
+				"returnValueBusinessDataTypeCollection": {
+					"N": {
+						"N": "N"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"noOfMandatoryArgs": "2",
+				"category": "advanced"
+			},
+			{
+				"name": "SIN",
+				"label": "sin",
+				"noOfArgs": 1,
+				"returnValueBusinessDataTypeCollection": {
+					"N": {
+						"N": "N"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"noOfMandatoryArgs": "1",
+				"category": "advanced"
+			},
+			{
+				"name": "COS",
+				"label": "cos",
+				"noOfArgs": 1,
+				"returnValueBusinessDataTypeCollection": {
+					"N": {
+						"N": "N"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"noOfMandatoryArgs": "1",
+				"category": "advanced"
+			},
+			{
+				"name": "TODAY",
+				"label": "today",
+				"noOfArgs": 0,
+				"returnValueBusinessDataTypeCollection": {
+					"D": {
+						"D": "D"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"noOfMandatoryArgs": "0",
+				"category": "advanced"
+			},
+			{
+				"name": "YESTERDAY",
+				"label": "yesterday",
+				"noOfArgs": 0,
+				"returnValueBusinessDataTypeCollection": {
+					"D": {
+						"D": "D"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"noOfMandatoryArgs": "0",
+				"category": "advanced"
+			},
+			{
+				"name": "TOMORROW",
+				"label": "tomorrow",
+				"noOfArgs": 0,
+				"returnValueBusinessDataTypeCollection": {
+					"D": {
+						"D": "D"
+					}
+				},
+				"returnValueDataObjectTypeCollection": {
+					"E": {
+						"E": "E"
+					}
+				},
+				"noOfMandatoryArgs": "0",
+				"category": "advanced"
+			}]
+		}

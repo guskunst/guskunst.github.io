@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="UTF-8">
+
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+
+		<title>Fiori Elements Draft Model Freestyle Page</title>
+
+		<script>
+			function ui5IsNotAvailable() {
+				alert("UI5 CDN down :-(");
+			}
+		</script>
+
+		<script id="sap-ui-bootstrap" type="text/javascript" onerror="ui5IsNotAvailable();"
+				src="../../../../../resources/sap-ui-core.js"
+				data-sap-ui-libs="sap.m, sap.ui.layout, sap.fe, sap.ui.mdc"
+				data-sap-ui-theme="sap_belize"
+				data-sap-ui-xx-bindingSyntax="complex"
+				data-sap-ui-compatVersion="edge"
+				data-sap-ui-resourceroots='{ "this": ".", "view" : "./view" }'>
+		</script>
+
+
+<script>
+	sap.ui.require([
+		"sap/ui/thirdparty/sinon",
+		"sap/ui/model/odata/v4/ODataModel",
+		"sap/ui/model/odata/OperationMode",
+		"sap/ui/model/json/JSONModel",
+		"sap/fe/model/NamedBindingModel",
+		"sap/fe/model/DraftModel",
+		"this/viewFactory"
+	], function (sinon, ODataModel, OperationMode, JSONModel, NamedBindingModel, DraftModel, viewFactory) {
+		var mockData = {};
+		/* Load Mockdata first */
+		jQuery.get("./Artists.json")
+		.then(function (data, status, jqXHR) {
+			mockData["Artists"] = data;
+			return jQuery.get("./metadata.xml");
+		})
+		.then(function (data, status, jqXHR) {
+			var uriParams = jQuery.sap.getUriParameters(),
+				/* Url parameter {boolean} batch */
+				groupId = uriParams.get("batch") ? "$auto" : "$direct",
+				/* Url parameter useBackendUrl to specify a backend server url for a proxy */
+				serverUrl = uriParams.get("useBackendUrl"),
+				proxyPrefix = serverUrl ? "/databinding/proxy/" + serverUrl.replace("://", "/") : "";
+
+			/* Prepare Sinon as we don't have a mock server yet */
+			if (!serverUrl) {
+				var fServer = sinon.fakeServer.create();
+				fServer.autoRespond=true;
+				fServer.xhr.useFilters = true;
+
+				fServer.xhr.addFilter(function(method, url) {
+					//whenever the this returns true the request will not faked
+					return !url.match(/\/sap\/opu\/odata4\//);
+				});
+
+				fServer.respondWith("GET", /\/sap\/opu\/odata4\/sap\/sadl_gw_appmusic_draft\/srvd\/sap\/sadl_gw_appmusicdr_definition\/0001\//, function(xhr, id) {
+					if (xhr.url.indexOf("metadata") > -1) {
+						return xhr.respond( 200,  { "Content-Type": "application/xml" }, jqXHR.responseText);
+					} else {
+						if (xhr.url.indexOf("$filter") > 0) {
+							var oData = jQuery.extend({}, mockData["Artists"]),
+								sFilter = xhr.url.match(/\$filter=(.*)&/)[1];
+							//Extreme filtering on FoundingYear eq only
+							if (sFilter.indexOf('FoundingYear%20eq') > -1) {
+								var sValue = sFilter.match(/FoundingYear%20eq%20'([0-9]*)'/)[1];
+								oData.value = oData.value.filter(function(entry) {
+									return entry.FoundingYear === sValue;
+								});
+							}
+							return xhr.respond( 200,  { "Content-Type": "application/json", "OData-Version": "4.0" }, JSON.stringify(oData));
+						} else {
+							return xhr.respond( 200,  { "Content-Type": "application/json", "OData-Version": "4.0" }, '{"error":"No filter specified!"}');
+						}
+					}
+				});
+			}
+			var oView;
+			var mModelOptions = {
+				serviceUrl : proxyPrefix + "/sap/opu/odata4/sap/sadl_gw_appmusic_draft/srvd/sap/sadl_gw_appmusicdr_definition/0001/",
+				synchronizationMode : 'None',
+				groupId: groupId,
+				//FIXME: Why is there no default mode
+				operationMode: OperationMode.Server
+			};
+
+			var oModel = new ODataModel(mModelOptions),
+				sViewPart =  uriParams.get("viewName") || "Main",
+				sViewName = sViewName = sViewPart.indexOf("/") < 0 ? "view." + ( sViewPart ) : sViewPart,
+				mainTitle = "Demo of a freestyle application using sap.fe.DraftModel",
+				titles = {
+					'Main': {
+						title: mainTitle,
+						subtitle: "Offline: Filters are limited to Founding Year"
+					},
+					'NoActions': {
+						title: mainTitle + '(no controller extensions)',
+						subtitle: "Offline: Filters are limited to Founding Year"
+					},
+					'FreeStyleFilterAndFETable': {
+						title: mainTitle + " and freestyle filterbar with sap.fe.Table",
+						subtitle: "Offline: Filters are limited to Founding Year (e.g. =2017)"
+					},
+					'FEFilterBarAndFreestyleTable': {
+						title: mainTitle + " and sap.fe.FilterBar with sap.m.Table",
+						subtitle: "Offline: Filters are limited to Founding Year (e.g. =2017)"
+					},
+					'FEFilterBarAndFETable': {
+						title: mainTitle + " and sap.fe.FilterBar with sap.fe.Table",
+						subtitle: "Offline: Filters are limited to Founding Year (e.g. =2017)"
+					},
+					'FEFilterBarAndFETableWithFreestyleColumns': {
+						title: mainTitle + " freestyle columns in sap.fe.Table",
+						subtitle: "Offline"
+					},
+					'ErrorTestFETable': {
+						title: mainTitle + " Error testing with sap.fe.Table",
+						subtitle: "Offline"
+					}
+				},
+				oUIModel = new JSONModel({
+					mock: !serverUrl,
+					title: titles[sViewPart].title,
+					subtitle: titles[sViewPart].subtitle
+				});
+
+			// TODO: we should provide a view factory
+			NamedBindingModel.upgrade(oModel).then(function() {
+				viewFactory.create({
+					viewName: sViewName,
+					height: "100%",
+					async: true
+				}, oModel).then(function(view) {
+					oView = view;
+					oView.setModel(oUIModel, "ui");
+					oView.placeAt("content");
+					oView.loaded().then(function() {
+						console.log(oView._xContent);
+					});
+					return DraftModel.upgrade(oModel);
+				}).then(function() {
+					oView.setModel(oModel);
+					oView.setModel(oModel.getDraftAccessModel(), "$draft");
+				});
+
+			});
+		});
+	});
+</script>
+
+</head>
+<body class="sapUiBody sapUiSizeCompact" id="content">
+</body>
+</html>

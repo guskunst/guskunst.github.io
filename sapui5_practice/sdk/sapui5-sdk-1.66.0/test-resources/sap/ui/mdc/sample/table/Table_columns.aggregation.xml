@@ -1,0 +1,33 @@
+<core:FragmentDefinition
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:mdc="sap.ui.mdc" xmlns:core="sap.ui.core" xmlns:m="sap.m"
+	template:require="sap.ui.model.odata.v4.AnnotationHelper this.sample.table.TableHelper">
+	<template:alias name=".MODEL" value="sap.ui.model.odata.v4.AnnotationHelper">
+		<template:alias name=".TABLE" value="this.sample.table.TableHelper">
+				<template:with path="metadataContexts>" helper=".TABLE.getLineItemCollection" var="lineItem">
+					<template:repeat list="{lineItem>}" var="dataField">
+						<template:if
+							test="{= (!${dataField>Action} &amp;&amp; !${dataField>SemanticObject} &amp;&amp; !${dataField>Inline}) }">
+							<mdc:Column
+								id = "{= ${dataField>Value/$Path} }"
+								header="{= ${dataField>@@.MODEL.label} || ${dataField>@com.sap.vocabularies.Common.v1.Label} }"
+								dataProperties="{= ${dataField>Value/$Path} }"
+								hAlign="{= (['Edm.Decimal','Edm.DateTimeOffset','Edm.Date'].indexOf(${dataField>Value/$Path/$Type}) >= 0) ? 'End' : (${dataField>Criticality/$Path}) ? 'Center' : 'Begin' }">
+								<template:if test="{= ${metadataContexts>/ignoreField}}">
+								    <template:then>
+								    	<core:Fragment fragmentName="this.sample.table.TableField" type="XML" />
+									</template:then>
+									<template:else>
+										<core:Fragment fragmentName="sap.ui.mdc.odata.v4.Field" type="XML" />
+									</template:else>
+								</template:if>
+								<mdc:creationTemplate>
+									<m:Input/>
+								</mdc:creationTemplate>
+							</mdc:Column>
+						</template:if>
+					</template:repeat>
+				</template:with>
+		</template:alias>
+	</template:alias>
+</core:FragmentDefinition>

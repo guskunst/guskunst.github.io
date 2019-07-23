@@ -1,0 +1,28 @@
+<core:FragmentDefinition
+	xmlns="sap.suite.ui.microchart"
+	xmlns:core="sap.ui.core"
+	xmlns:m="sap.m"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	template:require="{
+	MODEL: 'sap/ui/model/odata/v4/AnnotationHelper',
+	MICROCHART: 'sap/ui/mdc/odata/v4/microchart/MicroChart'
+}">
+	<template:with path="bulletMicroChart>MeasureAttributes/0/" var="MeasureAttribute">
+		<template:with path="MeasureAttribute>DataPoint/$AnnotationPath/" var="DataPoint">
+			<BulletMicroChart
+							targetValue="{DataPoint>TargetValue@@.MODEL.value}"
+							forecastValue="{DataPoint>ForecastValue@@.MODEL.value}"
+							minValue="{DataPoint>MinimumValue@@.MODEL.value}">
+				<actual>
+					<BulletMicroChartData value="{MeasureAttribute>Measure@@.MODEL.value}"
+										color="{= MICROCHART._helper.getMicroChartColor(${DataPoint>}, ${MeasureAttribute>Measure}) }"/>
+				</actual>
+			</BulletMicroChart>
+			<template:with path="MeasureAttribute>Measure/$PropertyPath" var="Measure">
+				<template:if test="{= ${Measure>@Org.OData.Measures.V1.ISOCurrency} || ${Measure>@Org.OData.Measures.V1.Unit} }">
+					<m:Label class="sapUiTinyMarginTop" text="{= ${Measure>@Org.OData.Measures.V1.ISOCurrency@@MODEL.value} || ${Measure>@Org.OData.Measures.V1.Unit@@MODEL.value} }"/>
+				</template:if>
+			</template:with>
+		</template:with>
+	</template:with>
+</core:FragmentDefinition>

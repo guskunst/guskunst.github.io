@@ -1,0 +1,41 @@
+<core:FragmentDefinition
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:fe="sap.fe"
+	xmlns="sap.m"
+	xmlns:uxap="sap.uxap"
+	xmlns:core="sap.ui.core">
+	<template:if test="{= ( ${entitySet>@com.sap.vocabularies.Common.v1.DraftRoot} || ${entitySet>@com.sap.vocabularies.Session.v1.StickySessionSupported/EditAction}) &amp;&amp; !(${entitySet>@Org.OData.Capabilities.V1.UpdateRestrictions/Updatable/} === false)}">
+		<uxap:ObjectPageHeaderActionButton
+			type="Emphasized"
+			hideText="false"
+			text="{sap.fe.i18n>OBJECT_PAGE_EDIT}"
+			visible="{path: 'entitySet>@Org.OData.Capabilities.V1.UpdateRestrictions/Updatable', formatter: 'sap.fe.templates.ObjectPage.AnnotationHelper.getEditDeleteButtonVisibility'}"
+			importance="High"
+			tooltip="{sap.fe.i18n>OBJECT_PAGE_EDIT}"
+			press=".editFlow.editDocument(${$view>/getBindingContext})"/>
+	</template:if>
+	<template:if test="{= !(${entitySet>@Org.OData.Capabilities.V1.DeleteRestrictions/Deletable/} === false)}">
+		<uxap:ObjectPageHeaderActionButton
+			type="Default"
+			hideText="false"
+			text="{sap.fe.i18n>OBJECT_PAGE_DELETE}"
+			visible="{parts: [{path: 'entitySet>@Org.OData.Capabilities.V1.DeleteRestrictions/Deletable'}, {path: 'entitySet>@com.sap.vocabularies.Common.v1.DraftNode'}], formatter: 'sap.fe.templates.ObjectPage.AnnotationHelper.getEditDeleteButtonVisibility'}"
+			importance="High"
+			tooltip="{sap.fe.i18n>OBJECT_PAGE_DELETE}"
+			press=".editFlow.deleteDocument(${$view>/getBindingContext},
+				{title: ${$view>/#fe::op/getHeaderTitle/getExpandedHeading/getItems/0/getText},
+				description: ${$view>/#fe::op/getHeaderTitle/getExpandedHeading/getItems/1/getText}
+			})"/>
+	</template:if>
+	<template:repeat list="{entityType>@com.sap.vocabularies.UI.v1.Identification}" var="dataField">
+        <template:if test="{= ${dataField>$Type} === 'com.sap.vocabularies.UI.v1.DataFieldForAction' &amp;&amp; ${dataField>Determining} !== true &amp;&amp; ${dataField>Action@Org.OData.Core.V1.OperationAvailable} !== false }">
+            <template:if test="{= !(${dataField>./@com.sap.vocabularies.UI.v1.Hidden} === true)}">
+                <uxap:ObjectPageHeaderActionButton
+                    text="{dataField>Label}"
+                	press="{= '.editFlow.onCallAction(\'' + ${dataField>Action} + '\', { contexts: ${$view>/getBindingContext}, invocationGrouping : \'' + (${dataField>InvocationGrouping/$EnumMember} === 'com.sap.vocabularies.UI.v1.OperationGroupingType/ChangeSet' ? 'ChangeSet' : 'Isolated') + '\', label: \'' + ${dataField>Label} + '\'})'}"
+                    visible="{= !${dataField>./@com.sap.vocabularies.UI.v1.Hidden@@MODEL.value} || ${dataField>Action/0/$IsBound} !== true || (${dataField>Action@Org.OData.Core.V1.OperationAvailable} === null ? '{= %{#' + ${dataField>Action} + '} ? true : false }' : true)}"
+                    hideText="false" importance="Medium" type="Default"/>
+            </template:if>
+        </template:if>
+    </template:repeat>
+</core:FragmentDefinition>

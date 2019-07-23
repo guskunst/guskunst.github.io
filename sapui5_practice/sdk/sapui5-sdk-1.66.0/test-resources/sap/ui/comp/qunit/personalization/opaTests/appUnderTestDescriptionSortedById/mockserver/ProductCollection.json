@@ -1,0 +1,23 @@
+[
+  {
+	"ProductId": "1239102",
+	"Name": "Power Projector 4713",
+	"Category": "Projector",
+	"Status": "X Available",
+	"StatusCode": 0
+  },
+  {
+	"ProductId": "2212-121-828",
+	"Name": "Gladiator MX",
+	"Category": "Graphics Card",
+	"Status": "Discontinued",
+	"StatusCode": 1
+  },
+  {
+	"ProductId": "22134T",
+	"Name": "Webcam",
+	"Category": "Accessory",
+	"Status": "X Available",
+	"StatusCode": 0
+  }
+]

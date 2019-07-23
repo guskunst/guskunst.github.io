@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+		   xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+		   xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+		   xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="EPM_DEVELOPER_SCENARIO_SRV"
+				sap:schema-version="0" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+
+			<EntityType Name="Product" sap:service-schema-version="1" sap:service-version="1" sap:semantics="aggregate"
+						sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ProductId"/>
+				</Key>
+				<Property Name="ProductId" Type="Edm.String" sap:label="Product ID" sap:sortable="true"
+						  sap:filterable="true" sap:aggregation-role="dimension"/>
+				<Property Name="Name" Type="Edm.String" sap:sortable="true" sap:filterable="true"
+						  sap:aggregation-role="dimension"/>
+				<Property Name="Status" Type="Edm.String" sap:label="Status" sap:sortable="true" sap:filterable="true"
+						  sap:aggregation-role="dimension"/>
+				<Property Name="StatusCode" Type="Edm.Byte" sap:sortable="true" sap:filterable="true"
+						  sap:aggregation-role="dimension"/>
+			</EntityType>
+
+			<EntityContainer Name="EPM_DEVELOPER_SCENARIO_SRV" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="ProductCollection" EntityType="EPM_DEVELOPER_SCENARIO_SRV.Product"
+						   sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false"
+						   sap:content-version="1"/>
+			</EntityContainer>
+
+			<Annotations Target="EPM_DEVELOPER_SCENARIO_SRV.Product" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+
+				<Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
+					<Collection>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="Name"/>
+							<Annotation Term="com.sap.vocabularies.UI.v1.Importance"
+										EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="Status"/>
+							<Annotation Term="com.sap.vocabularies.UI.v1.Importance"
+										EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High"/>
+						</Record>
+					</Collection>
+				</Annotation>
+
+				<Annotation Term="com.sap.vocabularies.UI.v1.PresentationVariant">
+					<Record>
+						<PropertyValue Property="RequestAtLeast">
+							<Collection>
+								<Record>
+									<PropertyPath>StatusCode</PropertyPath>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record>
+									<PropertyValue Property="Property">
+										<PropertyPath>StatusCode</PropertyPath>
+									</PropertyValue>
+									<PropertyValue Property="Descending">
+										<Bool>false</Bool>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+
+			</Annotations>
+
+			<Annotations Target="EPM_DEVELOPER_SCENARIO_SRV.Product/Status"
+						 xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="StatusCode">
+					<Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement"
+								EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextSeparate"/>
+				</Annotation>
+			</Annotations>
+
+			<!--<Annotations Target="EPM_DEVELOPER_SCENARIO_SRV.Product/StatusCode"-->
+			<!--xmlns="http://docs.oasis-open.org/odata/ns/edm">-->
+			<!--<Annotation Term="com.sap.vocabularies.UI.v1.Hidden" Bool="true"/>-->
+			<!--</Annotations>-->
+
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

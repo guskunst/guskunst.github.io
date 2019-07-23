@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="UTF-8">
+
+	<!DOCTYPE html>
+	<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+		<style>
+			html {
+				height: 100%;
+			}
+		</style>
+		<title>Fiori Elements Template Utility</title>
+
+		<script>
+			function ui5IsNotAvailable() {
+				alert("UI5 CDN down :-(");
+			}
+		</script>
+
+		<script id="sap-ui-bootstrap" type="text/javascript" onerror="ui5IsNotAvailable();"
+			src="../../../../../../resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m, sap.ui.layout, sap.ui.mdc, sap.fe"
+			data-sap-ui-theme="sap_belize"
+			data-sap-ui-xx-bindingSyntax="complex"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-resourceroots='{ "templater" : "." }'>
+		</script>
+
+		<script>
+			function isBackendRequired() {
+				var uriParams = jQuery.sap.getUriParameters(),
+					serverUrl = uriParams.get("useBackendUrl"),
+					proxyPrefix = serverUrl ? "/databinding/proxy/" + serverUrl.replace("://", "/") : "";
+				if (proxyPrefix) {
+					/* overwrite jQuery to change the URL always */$
+					var fnOrg = jQuery.ajax;
+					jQuery.ajax = function (sUrl) {
+						if (sUrl && typeof sUrl === "string" && sUrl.indexOf("/sap/opu/odata4") === 0) {
+							sUrl = proxyPrefix + sUrl;
+						}
+						return fnOrg.apply(this, arguments);
+					}
+					return true;
+				}
+				return false;
+			}
+
+			sap.ui.require([
+				"templater/FioriElementsAppAnalyzer",
+				"sap/ui/core/ComponentContainer",
+				"sap/ui/model/json/JSONModel",
+				"sap/ui/thirdparty/sinon"
+			], function (FioriElementsAppAnalyzer, ComponentContainer, JSONModel, sinon) {
+
+				function get(url, serviceName) {
+					return Promise.resolve(jQuery.get(url).then(function (data, status, jqXHR) {
+						return { data: data, status: status, jqXHR: jqXHR, serviceName: serviceName };
+					}));
+				}
+
+				var oView = sap.ui.view({
+						viewName: "templater.Main",
+						type: "XML",
+						height: "100%",
+						async: true
+					}),
+					oPagesModel = new JSONModel();
+
+				oView.placeAt("content");
+
+				/* Make sure jQuery deferred delivers are switched to real Promises */
+				Promise.all([
+					get("./artistmetadata.xml", "c_aivs_mdbu_artisttp"),
+					get("./puplicationmetadata.xml", "c_aivs_mdbu_publicationtp"),
+					get("./countrycodemetadata.xml", "i_aivs_countrycode_vh")
+				]).then(function (aResult) {
+					/* Prepare Sinon as we don't have a mock server yet */
+					if (!isBackendRequired()) {
+						var fServer = sinon.fakeServer.create();
+						fServer.autoRespond = true;
+						fServer.xhr.useFilters = true;
+
+						fServer.xhr.addFilter(function (method, url) {
+							//whenever the this returns true the request will not faked
+							return !url.match(/\/sap\/opu\/odata4\//);
+						});
+
+						aResult.forEach(function (oResult) {
+							var jqXHR = oResult.jqXHR,
+								sPathPattern = '\/sap\/opu\/odata4\/sap\/zmm_music_database\/sadl\/sap\/' + oResult.serviceName + '\/0001\/',
+								regExPath = new RegExp(sPathPattern);
+
+							fServer.respondWith("GET", regExPath, function (xhr, id) {
+								if (xhr.url.indexOf("metadata") > -1) {
+									return xhr.respond(200, { "Content-Type": "application/xml" }, jqXHR.responseText);
+								}
+							});
+
+						});
+					}
+					/* read manifest.json */
+					return Promise.resolve(jQuery.get("../../../demokit/apps/music/webapp/manifest.json"));
+				}).then(function (oManifest) {
+					oManifest = typeof oManifest === 'string' ? JSON.parse(oManifest) : oManifest;
+					var sProject = "../../../demokit/apps/music/webapp/",
+						sApp = "music";
+					jQuery.sap.registerModulePath(sApp, sProject);
+					var oComponentContainer = new ComponentContainer({
+						name: sApp,
+						height: "0"
+					});
+
+					var oAnalysisDonePromise = FioriElementsAppAnalyzer.analyzeApp(oComponentContainer, true /* suppress rendering */);
+					return oView.loaded().then(function() {
+						//oView.addContent(oComponentContainer);
+						oComponentContainer.placeAt("content");
+						return oAnalysisDonePromise;
+					})
+				}).then(function (oPages) {
+					oPagesModel.setData(oPages);
+					oView.setModel(oPagesModel);
+					Object.keys(oPages).forEach(function (sPageID) {
+						var oPage = oPages[sPageID];
+						console.log(oPage.viewXML);
+					});
+				});
+			});
+		</script>
+
+	</head>
+
+	<body class="sapUiBody sapUiSizeCompact" style="height:100%;" id="content">
+	</body>
+
+	</html>

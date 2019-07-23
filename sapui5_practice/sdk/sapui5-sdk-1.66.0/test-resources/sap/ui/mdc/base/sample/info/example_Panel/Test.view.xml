@@ -1,0 +1,71 @@
+<core:View height="100%" xmlns:core="sap.ui.core" xmlns:m="sap.m" xmlns:l="sap.ui.layout"
+		   xmlns:info="sap.ui.mdc.base.info" controllerName="sap.ui.mdc.base.sample.info.example_Panel.Test">
+
+	<m:App id="IDSapMApp" defaultTransitionName="show">
+		<m:ScrollContainer id="IDSapMScrollContainer" height="100%" width="100%" horizontal="false" vertical="true"
+						   focusable="true">
+			<l:VerticalLayout class="sapUiContentPadding" width="100%">
+				<l:content>
+
+					<m:Button text="Start Runtime Adaptation" press="onPressRTA"/>
+
+					<m:Panel id="IDSapMPanel" headerText="sap.ui.mdc.base.info.Panel" expandable="true" expanded="true"
+							 width="auto">
+						<m:content>
+							<info:Panel id="IDInfoPanel"
+										metadataHelperPath="sap/ui/mdc/base/sample/info/example_Panel/Test.controller">
+								<info:items>
+									<info:PanelItem id="IDInfoPanelItem00"
+													isMain="true"
+													text="Prolite B2791QSU-B1"
+													description="iiyama"
+													href="https://iiyama.com/"
+													icon="/testsuite/test-resources/sap/ui/documentation/sdk/images/HT-1037.jpg"
+													target="_blank"
+													visible="true"/>
+									<info:PanelItem id="IDInfoPanelItem04"
+													text="Superior"
+													description="Transaction SHELL"
+													href="https://www.shell.de/"
+													target="_blank"
+														icon="sap-icon://mileage"
+													visible="true"/>
+								</info:items>
+								<info:additionalContent>
+									<info:ContactDetails>
+										<info:items>
+											<info:ContactDetailsItem
+													photo="/testsuite/test-resources/sap/ui/documentation/sdk/images/John_Miller.png"
+													formattedName="John Miller"
+													role="Sales Assistant"
+													org="Hewlett-Packard Company">
+												<info:emails>
+													<info:ContactDetailsEmailItem uri="john.doe@hp.com" types="work"/>
+													<info:ContactDetailsEmailItem uri="john.doe@home_preferred.com"
+																				  types="home,preferred"/>
+												</info:emails>
+												<info:phones>
+													<info:ContactDetailsPhoneItem uri="+001610134869-9" types="fax"/>
+													<info:ContactDetailsPhoneItem uri="+0049175123456" types="cell"/>
+													<info:ContactDetailsPhoneItem uri="+001610134869-0" types="work"/>
+												</info:phones>
+												<info:addresses>
+													<info:ContactDetailsAddressItem street="Schickardstr. 32"
+																					code="71034"
+																					locality="Böblingen"
+																					region="Baden Württemberg"
+																					country="Deutschland"
+																					types="work"/>
+												</info:addresses>
+											</info:ContactDetailsItem>
+										</info:items>
+									</info:ContactDetails>
+								</info:additionalContent>
+							</info:Panel>
+						</m:content>
+					</m:Panel>
+				</l:content>
+			</l:VerticalLayout>
+		</m:ScrollContainer>
+	</m:App>
+</core:View>

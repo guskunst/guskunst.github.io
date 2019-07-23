@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+
+	<title>Playground Home Page</title>
+	<script src="../../../../resources/sap-ui-core.js" id="sap-ui-bootstrap" data-sap-ui-theme="sap_belize"
+	 data-sap-ui-libs="sap.m, sap.ushell, sap.ui.layout" data-sap-ui-resourceroots='{"sap.ushell.playground": "./"}'>
+	</script>
+	<script>
+		sap.ui.getCore().attachInit(function () {
+			new sap.ui.core.ComponentContainer({
+				height: "100%",
+				name: "sap.ushell.playground",
+				settings: {
+					id: "controlPlayground"
+				}
+			}).placeAt("body");
+		});
+	</script>
+</head>
+
+<body id="body" class="sapUiBody">
+</body>
+
+</html>

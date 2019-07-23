@@ -1,0 +1,234 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:smartField="sap.ui.comp.smartfield"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns:l="sap.ui.layout"
+	xmlns:form="sap.ui.comp.smartform"
+	xmlns:m="sap.m"
+	height="100%"
+	controllerName="sap.ui.comp.sample.smartfield.Overview.Main">
+		<m:ScrollContainer id="SC1" height="100%" horizontal="false" vertical="true">
+			<form:SmartForm id="SF1" class="editableForm" editTogglable="true" editable="true" title="{Name}">
+				<form:Group id="G1" label="Product">
+
+					<!-- ********************************** -->
+					<!-- sap:updatable="false"				-->
+					<!-- ********************************** -->
+
+					<form:GroupElement id="GE-ProductId">
+						<smartField:SmartField id="idProductId" value="{ProductId}"/>
+					</form:GroupElement>
+
+					<!-- ************************************** -->
+					<!-- Link									-->
+					<!-- ************************************** -->
+
+					<form:GroupElement id="GE-Name">
+						<smartField:SmartField id="idName" value="{Name}" url="http://www.sap.com"/>
+					</form:GroupElement>
+
+					<!-- **************************************	-->
+					<!-- E-mail									-->
+					<!-- **************************************	-->
+
+					<form:GroupElement id="GE-Email">
+						<smartField:SmartField id="idEmail" value="{Email}"/>
+					</form:GroupElement>
+
+					<!-- ************************************** -->
+					<!-- Phone									-->
+					<!-- ************************************** -->
+
+					<form:GroupElement id="GE-Phone">
+						<smartField:SmartField id="idPhone" value="{Phone}"/>
+					</form:GroupElement>
+
+					<!-- ************************************** -->
+					<!-- URL									-->
+					<!-- ************************************** -->
+
+					<form:GroupElement id="GE-URL">
+						<smartField:SmartField id="idURL" value="{URL}"/>
+					</form:GroupElement>
+
+					<!-- ****************************************************** -->
+					<!-- com.sap.vocabularies.Common.v1.ValueList				-->
+					<!-- and sap:value-list="fixed-values"						-->
+					<!-- ****************************************************** -->
+
+					<form:GroupElement id="GE-Category">
+						<smartField:SmartField id="idCategory" value="{Category}"/>
+					</form:GroupElement>
+
+					<!-- ****************************************************** -->
+					<!-- com.sap.vocabularies.UI.v1.MultiLineText				-->
+					<!-- ****************************************************** -->
+
+					<form:GroupElement id="GE-Description">
+						<smartField:SmartField id="idDescription" value="{Description}" app:multiLineSettings="{cols: 50, rows: 4}"/>
+					</form:GroupElement>
+
+					<!-- ****************************************************** -->
+					<!-- sap:unit and sap:semantics="currency-code" 			-->
+					<!-- ****************************************************** -->
+
+					<form:GroupElement id="GE-Price">
+						<smartField:SmartField id="idPrice" value="{Price}"/>
+					</form:GroupElement>
+
+					<!-- ************************** -->
+					<!-- ObjectNumber				-->
+					<!-- ************************** -->
+
+					<form:GroupElement id="GE-PriceObjectNumber">
+						<smartField:SmartField value="{Price}" id="idPriceObjectNumber" contextEditable="false">
+							<smartField:controlProposal>
+								<smartField:ControlProposal controlType="ObjectNumber">
+								</smartField:ControlProposal>
+							</smartField:controlProposal>
+						</smartField:SmartField>
+					</form:GroupElement>
+
+					<!-- ************************************************** -->
+					<!-- Edm.Boolean display behaviors						-->
+					<!-- ************************************************** -->
+
+					<form:GroupElement id="GE-Sale">
+
+						<smartField:SmartField value="{Sale}" id="idSale">
+							<smartField:layoutData>
+								<l:GridData  spanL="2" spanM="2" spanS="2"/>
+							</smartField:layoutData>
+						</smartField:SmartField>
+
+						<smartField:SmartField value="{Sale}" id="idSaleDisplay" contextEditable="false">
+							<smartField:layoutData>
+								<l:GridData spanL="2" spanM="2" spanS="2"/>
+							</smartField:layoutData>
+						</smartField:SmartField>
+
+						<smartField:SmartField value="{Sale}" id="idSaleDisplayOnOff" contextEditable="false" >
+							<smartField:configuration>
+								<smartField:Configuration displayBehaviour="OnOff"/>
+							</smartField:configuration>
+							<smartField:layoutData>
+								<l:GridData spanL="2" spanM="2" spanS="2"/>
+							</smartField:layoutData>
+						</smartField:SmartField>
+
+						<smartField:SmartField value="{Sale}" id="idSaleDisplayTrueFalse" contextEditable="false">
+							<smartField:configuration>
+								<smartField:Configuration displayBehaviour="TrueFalse"/>
+							</smartField:configuration>
+							<smartField:layoutData>
+								<l:GridData spanL="2" spanM="2" spanS="2"/>
+							</smartField:layoutData>
+						</smartField:SmartField>
+					</form:GroupElement>
+
+					<!-- ************************************** -->
+					<!-- ObjectStatus with icon					-->
+					<!-- ************************************** -->
+
+					<form:GroupElement id="GE-Status">
+						<smartField:SmartField value="{Status}" id="idStatus">
+							<smartField:controlProposal>
+								<smartField:ControlProposal>
+									<smartField:objectStatus>
+										<smartField:ObjectStatus criticality="{StatusValueState}"/>
+									</smartField:objectStatus>
+								</smartField:ControlProposal>
+							</smartField:controlProposal>
+						</smartField:SmartField>
+					</form:GroupElement>
+
+					<!-- ************************************** -->
+					<!-- ObjectStatus without icon				-->
+					<!-- ************************************** -->
+
+					<form:GroupElement id="GE-StatusNoIcon">
+						<smartField:SmartField value="{Status}" id="idStatusNoIcon">
+							<smartField:controlProposal>
+								<smartField:ControlProposal>
+									<smartField:objectStatus>
+										<smartField:ObjectStatus criticality="{StatusValueState}" criticalityRepresentationType="WithoutIcon"/>
+									</smartField:objectStatus>
+								</smartField:ControlProposal>
+							</smartField:controlProposal>
+						</smartField:SmartField>
+					</form:GroupElement>
+
+					<!-- ********************************************** -->
+					<!-- Unit of measure								-->
+					<!-- (sap-unit and sap:semantics="unit-of-measure") -->
+					<!-- ********************************************** -->
+
+					<form:GroupElement id="GE-Quantity">
+						<smartField:SmartField id="idQuantity" value="{Quantity}"/>
+					</form:GroupElement>
+
+					<!-- ************************************************************** -->
+					<!-- Password (com.sap.vocabularies.Common.v1.Masked)				-->
+					<!-- ************************************************************** -->
+
+					<form:GroupElement id="GE-Password">
+						<smartField:SmartField id="idPassword" value="{Password}"/>
+					</form:GroupElement>
+
+					<!-- ************************************************ -->
+					<!-- Date (Edm.DateTime and sap:display-format="Date" -->
+					<!-- ************************************************ -->
+
+					<form:GroupElement id="GE-CreationDate">
+						<smartField:SmartField id="idCreationDate" value="{CreationDate}"/>
+					</form:GroupElement>
+
+					<!-- ************************************** -->
+					<!-- Date with dateFormatSettings for style -->
+					<!-- see sap.ui.core.format.DateFormat		-->
+					<!-- oFormatOptions.style					-->
+					<!-- ************************************** -->
+
+					<form:GroupElement id="GE-CreationDateLong">
+						<smartField:SmartField id="idCreationDateLong" value="{CreationDate}">
+							<smartField:customData>
+								<core:CustomData key="dateFormatSettings" value='\{"style":"long"\}'/>
+							</smartField:customData>
+						</smartField:SmartField>
+					</form:GroupElement>
+
+					<!-- ****************************************** -->
+					<!-- Date with dateFormatSettings for pattern	-->
+					<!-- see sap.ui.core.format.DateFormat			-->
+					<!-- oFormatOptions.pattern						-->
+					<!-- ****************************************** -->
+
+					<form:GroupElement id="GE-CreationDateCustomPattern">
+						<smartField:SmartField id="idCreationDateCustomPattern" value="{CreationDate}">
+							<smartField:customData>
+								<core:CustomData key="dateFormatSettings" value='\{"pattern":"yyyy-MM-dd"\}'/>
+							</smartField:customData>
+						</smartField:SmartField>
+					</form:GroupElement>
+
+					<!-- ************ -->
+					<!-- Edm.DateTime -->
+					<!-- ************ -->
+
+					<form:GroupElement id="GE-LastChanged">
+						<smartField:SmartField id="idLastChanged" value="{LastChanged}"/>
+					</form:GroupElement>
+
+					<!-- ****************** -->
+					<!-- Edm.DateTimeOffset -->
+					<!-- ****************** -->
+
+					<form:GroupElement id="GE-AvailableSince">
+						<smartField:SmartField id="idAvailableSince" value="{AvailableSince}"/>
+					</form:GroupElement>
+				</form:Group>
+			</form:SmartForm>
+		</m:ScrollContainer>
+</mvc:View>

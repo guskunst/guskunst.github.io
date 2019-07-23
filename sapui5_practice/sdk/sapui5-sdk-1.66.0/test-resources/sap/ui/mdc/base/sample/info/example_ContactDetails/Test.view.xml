@@ -1,0 +1,44 @@
+<core:View height="100%" xmlns:core="sap.ui.core" xmlns:m="sap.m" xmlns:l="sap.ui.layout"
+		   xmlns:info="sap.ui.mdc.base.info" controllerName="sap.ui.mdc.base.sample.info.example_ContactDetails.Test">
+
+	<m:App defaultTransitionName="show">
+		<m:ScrollContainer height="100%" width="100%" horizontal="false" vertical="true" focusable="true">
+			<l:VerticalLayout class="sapUiContentPadding" width="100%">
+				<l:content>
+					<m:Panel headerText="sap.ui.mdc.base.info.ContactDetails" expandable="true" expanded="true"
+							 width="auto">
+						<m:content>
+							<info:ContactDetails>
+								<info:items>
+									<info:ContactDetailsItem
+											photo="/testsuite/test-resources/sap/ui/documentation/sdk/images/johnDoe.png"
+											formattedName="John Doe" role="Research &amp; Development" title="Developer"
+											org="New Economy">
+										<info:emails>
+											<info:ContactDetailsEmailItem uri="john.doe@work.com" types="work"/>
+											<info:ContactDetailsEmailItem uri="john.doe@home_preferred.com"
+																		  types="home,preferred"/>
+										</info:emails>
+										<info:phones>
+											<info:ContactDetailsPhoneItem uri="+001610134869-9" types="fax"/>
+											<info:ContactDetailsPhoneItem uri="+0049175123456" types="cell"/>
+											<info:ContactDetailsPhoneItem uri="+001610134869-0" types="work"/>
+										</info:phones>
+										<info:addresses>
+											<info:ContactDetailsAddressItem street="800 E 3rd St."
+																			code="90013"
+																			locality="Los Angeles"
+																			region="CA"
+																			country="USA"
+																			types="work"/>
+										</info:addresses>
+									</info:ContactDetailsItem>
+								</info:items>
+							</info:ContactDetails>
+						</m:content>
+					</m:Panel>
+				</l:content>
+			</l:VerticalLayout>
+		</m:ScrollContainer>
+	</m:App>
+</core:View>

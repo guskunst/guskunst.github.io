@@ -1,0 +1,8 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mdc="sap.ui.mdc.experimental" controllerName="my.SortDialogPanel">
+	<mdc:P13nSortQBGridPanel id="IDSortPanel" items="{metaModel>/items}">
+		<mdc:items>
+			<mdc:P13nSortItem columnKey="{metaModel>columnKey}" text="{metaModel>text}" position="{metaModel>position}"
+							  tooltip="{metaModel>tooltip}" selected="{metaModel>selected}" sortOrder="{metaModel>sortOrder}"/>
+		</mdc:items>
+	</mdc:P13nSortQBGridPanel>
+</core:View>

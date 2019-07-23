@@ -1,0 +1,39 @@
+<mvc:View
+	controllerName="sap.suite.ui.microchart.sample.StackedBarMicroChart.Page"
+	xmlns="sap.suite.ui.microchart"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc">
+	<l:VerticalLayout class="sapUiSmallMargin" >
+	<StackedBarMicroChart size="L" press="press" precision="0" class="sapUiSmallMargin">
+		<bars>
+			<StackedBarMicroChartBar valueColor="Good" value="20"/>
+			<StackedBarMicroChartBar valueColor="Neutral" value="40"/>
+			<StackedBarMicroChartBar valueColor="Error" value="50"/>
+		</bars>
+	</StackedBarMicroChart>
+	<StackedBarMicroChart size="M" press="press" class="sapUiSmallMargin">
+		<bars>
+			<StackedBarMicroChartBar displayValue="20M" value="20"/>
+			<StackedBarMicroChartBar displayValue="40M" value="40"/>
+			<StackedBarMicroChartBar displayValue="50M" value="50"/>
+		</bars>
+	</StackedBarMicroChart>
+	<StackedBarMicroChart size="S" press="press" precision="0" class="sapUiSmallMargin">
+		<bars>
+			<StackedBarMicroChartBar valueColor="sapUiChartPaletteSemanticGood" value="20"/>
+			<StackedBarMicroChartBar valueColor="sapUiChartPaletteSemanticNeutral" value="40"/>
+			<StackedBarMicroChartBar valueColor="sapUiChartPaletteSemanticBad" value="50"/>
+		</bars>
+	</StackedBarMicroChart>
+	<StackedBarMicroChart size="XS" press="press" precision="0" class="sapUiSmallMargin">
+		<bars>
+			<StackedBarMicroChartBar displayValue="20M" value="20"/>
+			<StackedBarMicroChartBar displayValue="40M" valueColor="Neutral" value="40"/>
+			<StackedBarMicroChartBar displayValue="50M" valueColor="sapUiChartPaletteSemanticBad" value="50"/>
+		</bars>
+	</StackedBarMicroChart>
+		<StackedBarMicroChart size="L" press="press" precision="0" class="sapUiSmallMargin">
+		</StackedBarMicroChart>
+
+	</l:VerticalLayout>
+</mvc:View>

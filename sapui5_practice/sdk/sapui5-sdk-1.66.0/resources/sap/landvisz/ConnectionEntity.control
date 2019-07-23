@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ConnectionEntity</name>
+    <derived/>
+    <documentation>Connection Entity of Dependency view</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property group="Data" type="sap.ui.core/string" name="connectionId">
+            <documentation>id of connection Entity</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="size">
+            <documentation>size of connection Entity</documentation>
+        </property>
+        <property group="Identification" type="sap.landvisz/ConnectionType" name="type">
+            <documentation>type of a connection Entity</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="linkId">
+            <documentation>ID which links the entities</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="linkedHeader">
+            <documentation>link header data that is shared with in the entities</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="dependencyTooltip">
+            <documentation>tooltip for dependency type icon</documentation>
+        </property>
+        <property group="Data" defaultValue="true" type="sap.ui.core/boolean" name="showOverlay">
+            <documentation>to show the overlay for highlightig</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation cardinality="0..n" type="sap.landvisz/internal/LinearRowField" name="connectionData">
+            <documentation>Linear row field renderer for connection Entity</documentation>
+        </aggregation>
+    </aggregations>
+</control>

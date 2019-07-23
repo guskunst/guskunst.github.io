@@ -1,0 +1,66 @@
+{
+    "explored": {
+        "entitiesDefaults": {
+            "appComponent": "MOB-UIA-LIB-CC",
+            "formFactors": "L",
+            "since": "1.16"
+        },
+        "entities": [
+            {
+                "id": "sap.ca.ui.AddPicture",
+                "name": "Add Picture",
+                "category": "User Input",
+                "samples": []
+            },
+            {
+                "id": "sap.ca.ui.PictureViewer",
+                "name": "Picture Viewer",
+                "category": "Display",
+                "samples": []
+            },
+            {
+                "id": "sap.ca.ui.Hierarchy",
+                "name": "Hierarchy",
+                "category": "Display",
+                "samples": []
+            },
+            {
+                "id": "sap.ca.ui.OverflowContainer",
+                "name": "Overflow Container",
+                "category": "Container",
+                "samples": []
+            },
+            {
+                "id": "sap.ca.ui.FileUpload",
+                "name": "File Upload",
+                "category": "User Input",
+                "formFactors": "ML",
+                "samples": []
+            },
+            {
+                "id": "sap.ca.ui.HierarchicalSelectDialog",
+                "name": "Hierarchical Select Dialog",
+                "category": "Popup",
+                "samples": []
+            },
+            {
+                "id": "sap.ca.ui.OverviewTile",
+                "name": "Overview Tile",
+                "category": "Tile",
+                "samples": []
+            },
+            {
+                "id": "sap.ca.ui.GrowingTileContainer",
+                "name": "Growing Tile Container",
+                "category": "Tile",
+                "samples": []
+            }
+        ],
+        "samplesRef": {
+            "namespace": "sap.ca.ui.sample",
+            "ref": "test-resources/sap/ca/ui/demokit/sample"
+        },
+        "samples": [
+        ]
+    }
+}

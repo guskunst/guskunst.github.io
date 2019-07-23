@@ -1,0 +1,22 @@
+<core:FragmentDefinition
+        xmlns="sap.ushell.ui.shell" xmlns:core="sap.ui.core" xmlns:fiori3="sap.ushell.ui.fiori3">
+
+    <fiori3:ShellHeader
+            id="shell-header"
+            showLogo="{/showLogo}"
+            visible="{/headerVisible}"
+            homeUri="{/rootIntent}"
+            headItems="{path: '/headItems', factory: '.shellUpdateAggItem'}"
+            headEndItems="{path: '/headEndItems', factory: '.shellUpdateAggItem', filters: [{path: '', test: '.isHeadEndItemNotInOverflow'}]}"
+            centralAreaElement="{/centralAreaElement}">
+        <fiori3:title>
+            <ShellTitle id="shellTitle" text="{/title}" />
+        </fiori3:title>
+        <fiori3:appTitle>
+            <ShellAppTitle
+                id="shellAppTitle"
+                text="{/application/title}"
+                tooltip="{i18n>shellNavMenu_openMenuTooltip}" />
+        </fiori3:appTitle>
+    </fiori3:ShellHeader>
+</core:FragmentDefinition>

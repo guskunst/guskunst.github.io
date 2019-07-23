@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+
+	<title>Test</title>
+
+	<script src="http://localhost:8080/testsuite/resources/sap-ui-core.js" id="sap-ui-bootstrap"
+		data-sap-ui-libs="sap.m,sap.ui.mdc,sap.ui.layout,sap.ui.fl,sap.ui.core" data-sap-ui-xx-bindingSyntax="complex"
+		data-sap-ui-theme="sap_belize">
+	</script>
+
+
+	<script>
+
+		// ---------------------------------------------------------------------------------------
+		jQuery.sap.require("sap.ui.mdc.PropertyInfo");
+		FilterBarDelegate = sap.ui.requireSync("sap/ui/mdc/odata/v4/base/filterbar/FilterBarDelegate");
+
+		FilterBarDelegate.fetchProperties = function (oFilterBar) {
+			return new Promise(function (fResolve) {
+
+				var aProperties = [new sap.ui.mdc.PropertyInfo({
+					name: "id",
+					label: "A simple FilterField",
+					type: "Edm.String",
+					filterExpression: sap.ui.mdc.FilterExpression.Multi,
+					hasFieldHelp: true,
+					fieldHelp: "FH1"
+				}), new sap.ui.mdc.PropertyInfo({
+					name: "text",
+					label: "Text",
+					type: "Edm.String",
+					filterExpression: sap.ui.mdc.FilterExpression.Single
+				})];
+
+				fResolve(aProperties);
+			});
+		};
+
+		//---------------
+
+
+		var fContent = function () {
+
+
+			var oVHFilterBar = new sap.ui.mdc.base.filterbar.FilterBar({
+				liveMode: true,
+				filterItems: [new sap.ui.mdc.base.FilterField({
+					label: "id",
+					conditions: "{$filters>/conditions/id}"
+				}),
+				new sap.ui.mdc.base.FilterField({
+					label: "text",
+					conditions: "{$filters>/conditions/text}"
+				})]
+			});
+
+			var oFieldHelp = new sap.ui.mdc.base.FieldValueHelp({
+				title: "Value Help",
+				id: "FH1",
+				noDialog: false,
+				filterFields: "*id,text*",
+				keyPath: "id",
+				descriptionPath: "text",
+				showConditionPanel: true,
+				filterBar: oVHFilterBar,
+				content: new sap.ui.mdc.base.FieldValueHelpMTableWrapper({
+					table:
+						new sap.m.Table({
+							columns: [new sap.m.Column({ width: '5rem', header: new sap.m.Text({ text: "id" }) }),
+							new sap.m.Column({ header: new sap.m.Text({ text: "text" }) })
+							],
+							items: {
+								path: "/currencies",
+								template: new sap.m.ColumnListItem({
+									type: "Active",
+									cells: [new sap.m.Text({ text: "{id}" }), new sap.m.Text({ text: "{text}" })]
+								})
+							},
+							width: "30rem"
+						})
+				})
+
+			});
+
+			sap.ui.requireSync("sap/ui/mdc/base/ConditionModel");
+
+
+			var oFilterBar = new sap.ui.mdc.base.filterbar.FilterBar("filterBar", {
+				liveMode: true,
+				supportP13N: true,
+				metadataDelegate: "sap/ui/mdc/odata/v4/base/filterbar/FilterBarDelegate",
+				filterItems: [new sap.ui.mdc.base.FilterField({
+					label: "A simple FilterField",
+					conditions: "{$filters>/conditions/id}",
+					editMode: sap.ui.mdc.EditMode.Editable,
+					maxConditions: -1,
+					width: "20rem",
+					required: false,
+					display: sap.ui.mdc.FieldDisplay.ValueDescription,
+					fieldHelp: "FH1",
+					dependents: [oFieldHelp]
+				})]
+			});
+
+
+			var oTable = new sap.m.Table({
+				columns: [new sap.m.Column({ width: '5rem', header: new sap.m.Text({ text: "id" }) }),
+				new sap.m.Column({ header: new sap.m.Text({ text: "text" }) })
+				],
+				items: {
+					path: "/currencies",
+					template: new sap.m.ColumnListItem({
+						type: "Active",
+						cells: [new sap.m.Text({ text: "{id}" }), new sap.m.Text({ text: "{text}" })]
+					})
+				}
+			});
+
+
+			var oVL = new sap.ui.layout.VerticalLayout({ content: [oFilterBar, oTable] });
+			var oForm = new sap.ui.layout.form.SimpleForm({ layout: "ResponsiveGridLayout", editable: true, content: [oVL] });
+
+
+			var oViewModel = new sap.ui.model.json.JSONModel({
+				value: "Euro",
+				key: "EUR",
+				currencies: [
+					{
+						id: "EUR",
+						unit: "EUR",
+						text: "Euro"
+					},
+					{
+						id: "USD",
+						unit: "USD",
+						text: "US-Dollar"
+					},
+					{
+						id: "JPY",
+						unit: "JPY",
+						text: "Japan Yen"
+					},
+					{
+						id: "SEK",
+						unit: "SEK",
+						text: "Swedish krona"
+					}
+				]
+
+			});
+			oForm.setModel(oViewModel);
+
+			var oCM = sap.ui.mdc.base.ConditionModel.getFor(oTable.getBinding("items"));
+			oForm.setModel(oCM, "cm");
+			sap.ui.getCore().getMessageManager().registerObject(oForm, true);
+
+			return oForm;
+
+		};
+
+
+		sap.ui.getCore().attachInit(function () {
+
+
+			jQuery.sap.require("sap.ui.core.UIComponent");
+			jQuery.sap.declare("samples.mdc.Component");
+
+			sap.ui.core.UIComponent.extend("samples.mdc.Component", {
+				metadata: {
+				}
+			});
+			samples.mdc.Component.prototype.createContent = function () {
+				return fContent();
+			};
+
+			var oComp = sap.ui.getCore().createComponent({
+				name: "samples.mdc",
+				id: "Comp1",
+				settings: {}
+			});
+
+			var oCompCont = new sap.ui.core.ComponentContainer("CompCont", {
+				component: oComp
+			});
+
+			oCompCont.placeAt("content");
+
+		});
+
+	</script>
+
+</head>
+
+<body id="content" class="sapUiBody sapUiSizeCompact">
+</body>
+
+</html>

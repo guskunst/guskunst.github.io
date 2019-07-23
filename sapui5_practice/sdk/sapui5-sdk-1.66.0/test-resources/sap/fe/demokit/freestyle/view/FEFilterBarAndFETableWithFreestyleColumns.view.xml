@@ -1,0 +1,48 @@
+<core:View
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns="sap.m" controllerName="view.Main"
+	xmlns:mdc="sap.ui.mdc"
+	xmlns:core="sap.ui.core">
+	<core:Fragment fragmentName="view.Header" type="XML"/>
+
+	<mdc:FilterBar id="template::FilterBar"
+		metadataContexts="{ path: '/Artists',  name: 'entitySet'}"
+		listBindingNames="sap.fe.tableBinding"
+		filterSummary="Toll"/>
+
+	<mdc:Table
+			id="template::Table"
+			metadataContexts="{path: '/Artists',  name: 'entitySet'},{path:'/Artists/@com.sap.vocabularies.UI.v1.LineItem',  name: 'columns'}"
+			type="ResponsiveTable"
+			listBindingName="sap.fe.tableBinding"
+			showError="handleMessagePopoverPress"
+			autoActionHandling="true">
+		<mdc:columns>
+			<mdc:Column
+					id="ColumnArtistCreatedBy"
+					sortProperty="CreatedBy"
+					label="Created By (Column)"
+					hAlign="Begin">
+				<Button text="{CreatedBy}" />
+			</mdc:Column>
+			<mdc:Column
+					id="ColumnArtistCreatedAt"
+					sortProperty="CreatedAt"
+					label="Created At (Column)"
+					hAlign="End">
+				<Input value="{CreatedAt}" />
+			</mdc:Column>
+		</mdc:columns>
+	</mdc:Table>
+
+	<Button icon="sap-icon://message-popup" text="{= ${message>/}.length}" type="Emphasized"
+			press="handleMessagePopoverPress">
+			<dependents>
+				<MessagePopover id="messagePopover" items="{message>/}">
+					<MessagePopoverItem type="{message>type}" title="{message>message}" description="{message>message}" subtitle="{message>additionalText}" counter="{message>counter}" />
+				</MessagePopover>
+			</dependents>
+	</Button>
+	<!-- by sorting the table on ChangedAt descending one always gets the newly changed or created entries on top of the table in this simplified UI -->
+
+</core:View>

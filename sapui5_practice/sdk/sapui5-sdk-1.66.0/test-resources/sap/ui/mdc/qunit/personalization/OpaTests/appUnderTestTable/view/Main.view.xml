@@ -1,0 +1,37 @@
+<core:View xmlns:core="sap.ui.core"
+		   xmlns:mdc="sap.ui.mdc"
+		   xmlns="sap.m"
+		   xmlns:fl="sap.ui.fl.variants"
+		   class="sapUiSizeCompact"
+		   controllerName="view.Main">
+	<App>
+		<Page>
+			<fl:VariantManagement id="IDVariantManagementOfInternalSampleApp_01" for="IDContainerForVariantManagement"/>
+			<VBox id="IDContainerForVariantManagement">
+
+				<mdc:Table id="IDTableOfInternalSampleApp_01"
+						   metadataDelegate="sap/ui/mdc/odata/v4/TableDelegate"
+						   rows="{path: '/Artists'}"
+						   selectionMode="Multi"
+						   p13nMode="Column,Sort">
+					<mdc:columns>
+						<mdc:Column id="IDTableName_01" header="Name" dataProperties="name">
+							<Text text="{name}"/>
+						</mdc:Column>
+						<mdc:Column id="IDTableYear" header="Year" dataProperties="foundingYear">
+							<Text text="{foundingYear}"/>
+						</mdc:Column>
+						<mdc:Column id="IDTablemodified" header="Modified By" dataProperties="modifiedBy">
+							<Text text="{modifiedBy}"/>
+						</mdc:Column>
+						<mdc:Column id="IDTableCreated" header="Created at" dataProperties="createdAt">
+							<Text text="{createdAt}"/>
+						</mdc:Column>
+					</mdc:columns>
+				</mdc:Table>
+
+			</VBox>
+		</Page>
+	</App>
+</core:View>
+

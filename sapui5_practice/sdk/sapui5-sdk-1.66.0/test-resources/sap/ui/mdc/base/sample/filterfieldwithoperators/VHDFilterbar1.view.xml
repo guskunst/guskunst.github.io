@@ -1,0 +1,32 @@
+<mvc:View
+	height="100%"
+	controllerName="my.VHDFilterbar1"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:mdcbase="sap.ui.mdc.base"
+	xmlns:my="my">
+
+	<l:AlignedFlowLayout>
+		<VBox class="sapUiTinyMargin">
+
+			<Label
+				labelFor="textFF"
+				text="Text"
+			/>
+
+			<mdcbase:FilterField
+				id="textFF"
+				dataType="sap.ui.model.type.String"
+				width="100%"
+				conditions="{cm>/conditions/text}"
+				valueState="{ path: 'cm>/fieldPath/title/valueState', mode: 'OneWay'}"
+				valueStateText="{ path: 'cm>/fieldPath/title/valueStateText', mode: 'OneWay'}">
+			</mdcbase:FilterField>
+		</VBox>
+
+		<l:endContent>
+			<Button text="Go" type="Emphasized" press=".onGo" class="sapUiTinyMarginEnd"/>
+		</l:endContent>
+	</l:AlignedFlowLayout>
+</mvc:View>

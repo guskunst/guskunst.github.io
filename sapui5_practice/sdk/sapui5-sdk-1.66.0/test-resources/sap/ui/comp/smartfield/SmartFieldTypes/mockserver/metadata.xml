@@ -1,0 +1,67 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+	xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+
+
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZEPM_C_SALESORDERITEMQUERY_CDS" xml:lang="en" sap:schema-version="1">
+
+			<EntityType Name="ZEPM_C_SALESORDERITEMQUERYResult" sap:semantics="aggregate" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ID" />
+				</Key>
+				<Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Product ID" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="DATE" Type="Edm.DateTime" sap:display-format="Date" sap:label="Date"/>
+				<Property Name="TIME" Type="Edm.Time" sap:label="Time"/>
+				<Property Name="DTOFFSET" Type="Edm.DateTimeOffset" sap:label="DTOffset"/>
+				<Property Name="STRINGDATE" Type="Edm.String" sap:label="StringDate"/>
+				<Property Name="STRING" Type="Edm.String" sap:label="String"/>
+				<Property Name="DECIMAL" Type="Edm.Decimal" Precision="10" Scale="2" sap:label="Decimal"/>
+				<Property Name="DOUBLE" Type="Edm.Double" sap:label="Double"/>
+				<Property Name="INT16" Type="Edm.Int16" sap:label="Int16"/>
+				<Property Name="BYTE" Type="Edm.Byte" sap:label="Byte"/>
+				<Property Name="BOOL" Type="Edm.Boolean" sap:label="Boolean"/>
+			</EntityType>
+
+			<EntityType Name="String" sap:semantics="aggregate" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="STR" />
+				</Key>
+				<Property Name="STR" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="String" />
+				<Property Name="TXT" Type="Edm.String" sap:label="String"/>
+			</EntityType>
+
+			<EntityContainer Name="ZEPM_C_SALESORDERITEMQUERY_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+				<EntitySet Name="Types" EntityType="ZEPM_C_SALESORDERITEMQUERY_CDS.ZEPM_C_SALESORDERITEMQUERYResult" sap:creatable="false" sap:updatable="true" sap:deletable="false" sap:addressable="false" sap:content-version="1" />
+				<EntitySet Name="Strings" EntityType="ZEPM_C_SALESORDERITEMQUERY_CDS.String" sap:creatable="false" sap:updatable="true" sap:deletable="false" sap:addressable="false" sap:content-version="1" />
+			</EntityContainer>
+
+			<Annotations Target="ZEPM_C_SALESORDERITEMQUERY_CDS.ZEPM_C_SALESORDERITEMQUERYResult/STRINGDATE"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.IsCalendarDate" Bool="true" />
+			</Annotations>
+
+			<Annotations Target="ZEPM_C_SALESORDERITEMQUERY_CDS.ZEPM_C_SALESORDERITEMQUERYResult/STRING"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Types"/>
+						<PropertyValue Property="CollectionPath" String="Strings"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="STRING"/>
+									<PropertyValue Property="ValueListProperty" String="STR"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="TXT"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

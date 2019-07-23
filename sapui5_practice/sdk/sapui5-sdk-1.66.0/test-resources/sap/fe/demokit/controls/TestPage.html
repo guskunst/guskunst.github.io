@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="UTF-8">
+
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+
+		<title>Fiori Elements Test Page</title>
+
+		<script >
+			function ui5IsNotAvailable() {
+				alert("UI5 CDN down :-(");
+			}
+		</script>
+
+		<script id="sap-ui-bootstrap" type="text/javascript" onerror="ui5IsNotAvailable();"
+				src="../../../../../resources/sap-ui-core.js"
+				data-sap-ui-libs="sap.m, sap.ui.layout, sap.ui.mdc, sap.fe"
+				data-sap-ui-theme="sap_belize"
+				data-sap-ui-xx-bindingSyntax="complex"
+				data-sap-ui-compatVersion="edge"
+				data-sap-ui-resourceroots='{
+										    "testPage" : "./"
+										     }'>
+		</script>
+
+
+<script>
+	sap.ui.require([
+		"sap/ui/thirdparty/sinon",
+		"sap/ui/model/odata/v4/ODataModel",
+		"sap/ui/core/util/XMLPreprocessor",
+		"sap/ui/core/XMLComposite"
+	], function (sinon, ODataModel, XMLPreprocessor, XMLComposite) {
+		var mockData = {};
+		/* Load Mockdata first */
+		jQuery.get("./SalesOrderList.json")
+		.then(function (data, status, jqXHR) {
+			mockData["SalesOrderList"] = data;
+			return jQuery.get("./metadata.xml");
+		})
+		.then(function (data, status, jqXHR) {
+			var uriParams = jQuery.sap.getUriParameters(),
+				serverUrl = uriParams.get("useBackendUrl"),
+				proxyPrefix = serverUrl ? "/databinding/proxy/" + serverUrl.replace("://", "/") : "";
+
+			/* Prepare Sinon as we don't have a mock server yet */
+			if (!serverUrl) {
+				var fServer = sinon.fakeServer.create();
+				fServer.autoRespond=true;
+				fServer.xhr.useFilters = true;
+
+				fServer.xhr.addFilter(function(method, url) {
+					//whenever the this returns true the request will not faked
+					return !url.match(/\/sap\/opu\/odata4\//);
+				});
+
+				fServer.respondWith("GET", /\/sap\/opu\/odata4\/IWBEP\/V4_SAMPLE\/default\/IWBEP\/V4_GW_SAMPLE_BASIC\/0001\//, function(xhr, id) {
+					if (xhr.url.indexOf("metadata") > -1) {
+						return xhr.respond( 200,  { "Content-Type": "application/xml" }, jqXHR.responseText);
+					} else {
+						return xhr.respond( 200,  { "Content-Type": "application/json", "OData-Version": "4.0" }, mockData["SalesOrderList"]);
+					}
+				});
+			}
+			// register sap.fe Field as it's currently not registered in our sap.fe library
+			XMLPreprocessor.plugIn(function(oNode, oVisitor) {
+					oVisitor.visitAttributes(oNode);
+				XMLComposite.initialTemplating(oNode, oVisitor, "sap.fe.Field");
+			},"sap.fe","Field");
+
+			var oView;
+			var mModelOptions = {
+				serviceUrl : proxyPrefix + "/sap/opu/odata4/IWBEP/V4_SAMPLE/default/IWBEP/V4_GW_SAMPLE_BASIC/0001/",
+				//annotationURI : [ "/gwsamplebasicso/webapp/annotations/annotations.xml" ],
+				annotationURI : [ "./annotations.xml" ],
+				synchronizationMode : 'None',
+				groupId: "$direct",
+				updateGroupId: "$direct"
+			};
+
+			var oModel = new ODataModel(mModelOptions);
+
+			var handleItemPress = function(oEvent){
+				var oContext = oEvent.getParameter("listItem").getBindingContext();
+				oView.byId("fe::op").bindElement(oContext.getCanonicalPath(), { $expand : 'SO_2_SOITEM'});
+			}
+
+			var handleActionCall = function(oEvent){
+				alert("actions are not yet implemented in the test page");
+			}
+
+			// TODO: we should provide a view factory
+			oModel.getMetaModel().requestObject("/$EntityContainer/").then(function() {
+				oView = sap.ui.view({
+					viewName: "testPage.TestPage",
+					type: "XML",
+					height: "100%",
+					async: true,
+					preprocessors: {
+						xml: {
+							bindingContexts: {},
+							models: {
+								'sap.fe.metaModel' : oModel.getMetaModel()
+							}
+						}
+					},
+				});
+
+				var oI18nModel = new sap.ui.model.resource.ResourceModel({ bundleName: "sap/fe/messagebundle", async : true });
+				oView.setModel(oI18nModel, "sap.fe.i18n");
+
+				oView.setModel(oModel);
+				oView.placeAt("content");
+			});
+		});
+	});
+</script>
+
+</head>
+<body class="sapUiBody sapUiSizeCompact" id="content">
+</body>
+</html>

@@ -1,0 +1,575 @@
+<mvc:View height="100%" controllerName="sap.ui.mdc.base.sample.field.fieldBase.Test"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:m="sap.m"
+	xmlns:mdc="sap.ui.mdc.base"
+	xmlns:mdcFB="sap.ui.mdc.base.filterbar"
+	xmlns:l="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:c="sap.ui.core"
+	xmlns:legend="sap.ui.core.feature.legend"
+	xmlns:custom="sap.ui.mdc.base.sample.field.lib">
+
+	<m:App id="MyApp" defaultTransitionName="show">
+		<m:Page id="P0" title="Simple Fields" titleLevel="H1">
+			<m:ScrollContainer vertical="true" height="75%">
+				<form:Form editable="true">
+					<form:layout>
+						<form:ColumnLayout columnsXL="4" columnsL="3" columnsM="2"/>
+					</form:layout>
+					<form:FormContainer title="FieldBase">
+						<form:layoutData>
+							<form:ColumnContainerData columnsXL="3"/>
+						</form:layoutData>
+						<form:FormElement label="A simple Field">
+							<mdc:FieldBase id="FB1"
+								conditions="{cm>/conditions/ProductId}"
+								display="Description"
+								maxConditions="1"
+								placeholder="{/#Product/ProductId/@sap:label}"
+								tooltip="{/#Product/ProductId/@sap:label}"
+								valueState="{cm>/fieldPath/ProductId/valueState}"
+								valueStateText="{cm>/fieldPath/ProductId/valueStateText}"
+								liveChange="handleLiveChange"
+								fieldHelp="FVH1">
+								<mdc:dependents>
+									<mdc:FieldValueHelp id="FVH1"
+										title="Product"
+										filterFields="*ProductId,Name*"
+										keyPath="ProductId"
+										descriptionPath="Name"
+										showConditionPanel="true">
+										<mdc:content>
+											<mdc:FieldValueHelpMTableWrapper id="FVH1-W">
+												<m:Table items="{path: '/ProductCollection'}" width="26rem">
+													<m:columns>
+														<m:Column>
+															<m:Label text="{/#Product/ProductId/@sap:label}"></m:Label>
+														</m:Column>
+														<m:Column width="10rem">
+															<m:Label text="{/#Product/Name/@sap:label}"></m:Label>
+														</m:Column>
+														<m:Column width="2rem">
+															<m:Label text="Icon"></m:Label>
+														</m:Column>
+													</m:columns>
+													<m:items>
+														<m:ColumnListItem type="Active">
+															<m:Text text="{ProductId}"></m:Text>
+															<m:Text text="{Name}"></m:Text>
+															<m:Image src="{= '../../../../../../../' + ${ProductPicUrl}}" height="1rem"></m:Image>
+														</m:ColumnListItem>
+													</m:items>
+												</m:Table>
+											</mdc:FieldValueHelpMTableWrapper>
+										</mdc:content>
+										<mdc:filterBar>
+											<mdcFB:FilterBar id="FilterBar1" liveMode= "true" supportP13N= "false">
+												<mdc:FilterField id="FilterBar1-F1"
+													label="{/#Product/ProductId/@sap:label}"
+													conditions="{$filters>/conditions/ProductId}"
+													maxConditions="5"
+													placeholder="{/#Product/ProductId/@sap:label}"
+													valueState="{ path: '$filters>/fieldPath/ProductId/valueState'}"
+													valueStateText="{ path: '$filters>/fieldPath/ProductId/valueStateText'}">
+												</mdc:FilterField>
+												<mdc:FilterField id="FilterBar1-F2"
+													label="{/#Product/Name/@sap:label}"
+													conditions="{$filters>/conditions/Name}"
+													maxConditions="5"
+													placeholder="{/#Product/Name/@sap:label}"
+													valueState="{ path: '$filters>/fieldPath/Name/valueState'}"
+													valueStateText="{ path: '$filters>/fieldPath/Name/valueStateText'}">
+												</mdc:FilterField>
+											</mdcFB:FilterBar>
+										</mdc:filterBar>
+									</mdc:FieldValueHelp>
+								</mdc:dependents>
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="A simple Field in display mode">
+							<mdc:FieldBase
+								id="FB2"
+								conditions="{cm>/conditions/ProductId}"
+								maxConditions="1"
+								editMode="Display"
+								display="ValueDescription"
+								placeholder="Placeholder"
+								fieldHelp="FVH1"
+								liveChange="handleLiveChange">
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="A single value Field with conditions">
+							<mdc:FieldBase id="FB3"
+								conditions="{cm>/conditions/Description}"
+								maxConditions="1"
+								placeholder="{/#Product/Description/@sap:label}"
+								valueState="{cm>/fieldPath/Description/valueState}"
+								valueStateText="{cm>/fieldPath/Description/valueStateText}"
+								liveChange="handleLiveChange">
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="A single value Field with conditions in display mode">
+							<mdc:FieldBase id="FB4"
+								conditions="{cm>/conditions/Description}"
+								maxConditions="1"
+								editMode="Display"
+								placeholder="Placeholder"
+								liveChange="handleLiveChange">
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="A multi Field">
+							<mdc:FieldBase id="FB5"
+								conditions="{cm>/conditions/Name}"
+								maxConditions="5"
+								placeholder="{/#Product/Name/@sap:label}"
+								valueState="{cm>/fieldPath/Name/valueState}"
+								valueStateText="{cm>/fieldPath/Name/valueStateText}"
+								liveChange="handleLiveChange"
+								fieldHelp="FVH2">
+								<mdc:dependents>
+									<mdc:FieldValueHelp id="FVH2"
+										title="Product"
+										filterFields="*ProductId,Name*"
+										keyPath="Name"
+										showConditionPanel="true">
+										<mdc:content>
+											<mdc:FieldValueHelpMTableWrapper id="FVH2-W">
+												<m:Table items="{path: '/ProductCollection'}" width="26rem">
+													<m:columns>
+														<m:Column>
+															<m:Label text="{/#Product/ProductId/@sap:label}"></m:Label>
+														</m:Column>
+														<m:Column width="10rem">
+															<m:Label text="{/#Product/Name/@sap:label}"></m:Label>
+														</m:Column>
+														<m:Column width="2rem">
+															<m:Label text="Icon"></m:Label>
+														</m:Column>
+													</m:columns>
+													<m:items>
+														<m:ColumnListItem type="Active">
+															<m:Text text="{ProductId}"></m:Text>
+															<m:Text text="{Name}"></m:Text>
+															<m:Image src="{= '../../../../../../../' + ${ProductPicUrl}}" height="1rem"></m:Image>
+														</m:ColumnListItem>
+													</m:items>
+												</m:Table>
+											</mdc:FieldValueHelpMTableWrapper>
+										</mdc:content>
+										<mdc:filterBar>
+											<mdcFB:FilterBar id="FilterBar2"  liveMode= "true" supportP13N= "false">
+												<mdc:FilterField id="FilterBar2-F1"
+													label="{/#Product/ProductId/@sap:label}"
+													conditions="{$filters>/conditions/ProductId}"
+													maxConditions="5"
+													placeholder="{/#Product/ProductId/@sap:label}"
+													valueState="{ path: '$filters>/fieldPath/ProductId/valueState'}"
+													valueStateText="{ path: '$filters>/fieldPath/ProductId/valueStateText'}">
+												</mdc:FilterField>
+												<mdc:FilterField id="FilterBar2-F2"
+													label="{/#Product/Name/@sap:label}"
+													conditions="{$filters>/conditions/Name}"
+													maxConditions="5"
+													placeholder="{/#Product/Name/@sap:label}"
+													valueState="{ path: '$filters>/fieldPath/Name/valueState'}"
+													valueStateText="{ path: '$filters>/fieldPath/Nale/valueStateText'}">
+												</mdc:FilterField>
+											</mdcFB:FilterBar>
+										</mdc:filterBar>
+									</mdc:FieldValueHelp>
+								</mdc:dependents>
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="A multi Field in display mode">
+							<mdc:FieldBase id="FB6"
+								conditions="{cm>/conditions/Name}"
+								maxConditions="5"
+								editMode="Display"
+								placeholder="Placeholder"
+								liveChange="handleLiveChange">
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="A date Field">
+							<mdc:FieldBase id="FB7"
+								conditions="{cm>/conditions/Date}"
+								dataType="Edm.DateTime"
+								dataTypeFormatOptions="{style: 'short'}"
+								dataTypeConstraints="{displayFormat: 'Date'}"
+								maxConditions="1"
+								placeholder="{/#Product/Date/@sap:label}"
+								valueState="{cm>/fieldPath/Date/valueState}"
+								valueStateText="{cm>/fieldPath/Date/valueStateText}"
+								liveChange="handleLiveChange">
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="A date Field in display mode">
+							<mdc:FieldBase id="FB8"
+								conditions="{cm>/conditions/Date}"
+								dataType="Edm.DateTime"
+								dataTypeFormatOptions="{style: 'long'}"
+								dataTypeConstraints="{displayFormat: 'Date'}"
+								maxConditions="1"
+								editMode="Display"
+								placeholder="Placeholder"
+								liveChange="handleLiveChange">
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="Fields with external controls">
+							<mdc:FieldBase id="FB9"
+								conditions="{cm>/conditions/Quantity}"
+								dataType="Edm.Float"
+								maxConditions="1"
+								valueState="{cm>/fieldPath/Quantity/valueState}"
+								valueStateText="{cm>/fieldPath/Quantity/valueStateText}"
+								liveChange="handleLiveChange">
+								<m:Slider value="{path: '$field>/conditions', type: 'sap.ui.mdc.base.type.ConditionsType'}"/>
+								<mdc:layoutData>
+									<form:ColumnElementData cellsLarge="12" />
+								</mdc:layoutData>
+							</mdc:FieldBase>
+							<mdc:FieldBase id="FB9a"
+								conditions="{cm>/conditions/Quantity}"
+								dataType="Edm.Float"
+								maxConditions="1"
+								liveChange="handleLiveChange">
+								<mdc:contentEdit>
+									<m:Slider value="{path: '$field>/conditions', type: 'sap.ui.mdc.base.type.ConditionsType'}"/>
+								</mdc:contentEdit>
+								<mdc:contentDisplay>
+									<m:ProgressIndicator percentValue="{path: '$field>/conditions', type: 'sap.ui.mdc.base.type.ConditionsType'}" displayOnly="false"/>
+								</mdc:contentDisplay>
+									<mdc:layoutData>
+									<form:ColumnElementData cellsLarge="12" />
+								</mdc:layoutData>
+							</mdc:FieldBase>
+							<mdc:FieldBase id="FB9b"
+								conditions="{cm>/conditions/Quantity}"
+								dataType="Edm.Float"
+								maxConditions="1"
+								valueState="{cm>/fieldPath/Quantity/valueState}"
+								valueStateText="{cm>/fieldPath/Quantity/valueStateText}"
+								liveChange="handleLiveChange">
+								<mdc:contentEdit>
+									<m:Slider value="{path: '$field>/conditions', type: 'sap.ui.mdc.base.type.ConditionsType'}"/>
+								</mdc:contentEdit>
+								<mdc:layoutData>
+									<form:ColumnElementData cellsLarge="12" />
+								</mdc:layoutData>
+							</mdc:FieldBase>
+							<mdc:FieldBase id="FB9c"
+								conditions="{cm>/conditions/Quantity}"
+								dataType="Edm.Float"
+								maxConditions="-1"
+								valueState="{cm>/fieldPath/Quantity/valueState}"
+								valueStateText="{cm>/fieldPath/Quantity/valueStateText}"
+								liveChange="handleLiveChange">
+								<mdc:contentDisplay>
+									<m:SegmentedButton items="{path: '$field>/conditions'}">
+										<m:items>
+											<m:SegmentedButtonItem text="{path: '$field>', type: 'sap.ui.mdc.base.type.ConditionType'}" />
+										</m:items>
+									</m:SegmentedButton>
+								</mdc:contentDisplay>
+								<mdc:layoutData>
+									<form:ColumnElementData cellsLarge="12" />
+								</mdc:layoutData>
+							</mdc:FieldBase>
+							<m:Select id="FB9-mode" selectedKey="Editable" change="handleModeChange">
+								<c:Item key="Editable" text="Editable"/>
+								<c:Item key="Display" text="Display"/>
+								<c:Item key="ReadOnly" text="ReadOnly"/>
+								<c:Item key="Disabled" text="Disabled"/>
+								<m:layoutData>
+									<form:ColumnElementData cellsLarge="12" />
+								</m:layoutData>
+							</m:Select>
+						</form:FormElement>
+
+						<form:FormElement label="Field as Link">
+							<mdc:FieldBase id="FB10"
+								conditions="{cm2>/conditions/Link}"
+								maxConditions="1"
+								editMode="Display"
+								liveChange="handleLiveChange"
+								press="handlePress">
+								<mdc:fieldInfo>
+									<mdc:CustomFieldInfo id="F8-I" >
+										<form:SimpleForm layout="ResponsiveGridLayout" editable="false"
+											title="Product details">
+										<m:Label text="{/#Product/ProductId/@sap:label}"></m:Label>
+										<m:Text text="{ProductId}"></m:Text>
+										<m:Label text="{/#Product/Name/@sap:label}"></m:Label>
+										<m:Text text="{Name}"></m:Text>
+										<m:Label text="{/#Product/Description/@sap:label}"></m:Label>
+										<m:Text text="{Description}"></m:Text>
+										<m:Label text="Image"></m:Label>
+										<m:Image src="{= '../../../../../../../' + ${ProductPicUrl}}" height="3rem"/>
+										</form:SimpleForm>
+									</mdc:CustomFieldInfo>
+								</mdc:fieldInfo>
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="A multi Field with conditions help">
+							<mdc:FieldBase id="FB11"
+								conditions="{cm>/conditions/SupplierName}"
+								maxConditions="-1"
+								placeholder="{/#Product/SupplierName/@sap:label}"
+								valueState="{cm>/fieldPath/SupplierName/valueState}"
+								valueStateText="{cm>/fieldPath/SupplierName/valueStateText}"
+								liveChange="handleLiveChange"
+								fieldHelp="FVH3">
+								<mdc:dependents>
+									<mdc:FieldValueHelp id="FVH3" 
+										title="{/#Product/SupplierName/@sap:label}"
+										filterFields="*SupplierName*"
+										keyPath="SupplierName"
+										descriptionPath="SupplierName"
+										showConditionPanel="true">
+									</mdc:FieldValueHelp>
+								</mdc:dependents>
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="A multi Field with conditions help in display mode">
+							<mdc:FieldBase id="FB12"
+								conditions="{cm>/conditions/SupplierName}"
+								maxConditions="-1"
+								editMode="Display"
+								placeholder="Placeholder"
+								liveChange="handleLiveChange">
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="A multi Field with table provided on open">
+							<mdc:FieldBase id="FB13"
+								conditions="{cm>/conditions/Status}"
+								maxConditions="3"
+								display="DescriptionValue"
+								placeholder="{/#Product/Status/@sap:label}"
+								valueState="{cm>/fieldPath/Status/valueState}"
+								valueStateText="{cm>/fieldPath/Status/valueStateText}"
+								liveChange="handleLiveChange"
+								fieldHelp="FVH-Status">
+								<mdc:dependents>
+									<mdc:FieldValueHelp id="FVH-Status" 
+										title="{/#Product/Status/@sap:label}"
+										filterFields="*StatusId,Name*"
+										keyPath="StatusId"
+										descriptionPath="Name"
+										showConditionPanel="true"
+										open="handleStatusOpen">
+										<mdc:FieldValueHelpMTableWrapper id="FVH-Status-W">
+										</mdc:FieldValueHelpMTableWrapper>
+									</mdc:FieldValueHelp>
+								</mdc:dependents>
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="A multi Field with table provided on open display mode">
+							<mdc:FieldBase id="FB14"
+								conditions="{cm>/conditions/Status}"
+								maxConditions="3"
+								editMode="Display"
+								display="DescriptionValue"
+								placeholder="Placeholder"
+								liveChange="handleLiveChange"
+								fieldHelp="FVH-Status">
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="A multi Field with '/' in FieldPath">
+							<mdc:FieldBase id="FB15"
+								conditions="{cm>/conditions/XXX/YYY}"
+								maxConditions="-1"
+								display="Value"
+								placeholder="Placeholder"
+								liveChange="handleLiveChange">
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="Two single boolean Fields (same Conditions)">
+							<mdc:FieldBase id="FB16"
+								conditions="{cm>/conditions/Important}"
+								dataType="Edm.Boolean"
+								maxConditions="1"
+								display="Description"
+								placeholder="{/#Product/Important/@sap:label}"
+								valueState="{cm>/fieldPath/Important/valueState}"
+								valueStateText="{cm>/fieldPath/Important/valueStateText}"
+								liveChange="handleLiveChange">
+							</mdc:FieldBase>
+							<mdc:FieldBase id="FB16b"
+								conditions="{cm>/conditions/Important}"
+								dataType="Edm.Boolean"
+								maxConditions="1"
+								display="Description"
+								placeholder="{/#Product/Important/@sap:label}"
+								valueState="{cm>/fieldPath/Important/valueState}"
+								valueStateText="{cm>/fieldPath/Important/valueStateText}"
+								liveChange="handleLiveChange">
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="A single boolean Field in display mode">
+							<mdc:FieldBase id="FB17"
+								conditions="{cm>/conditions/Important}"
+								dataType="Edm.Boolean"
+								maxConditions="1"
+								display="Description"
+								editMode="Display"
+								placeholder="{/#Product/Important/@sap:label}"
+								liveChange="handleLiveChange">
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="A single UoM field">
+							<mdc:FieldBase id="FB18"
+								conditions="{cm>/conditions/WeightMeasure}"
+								dataType="sap.ui.model.type.Unit"
+								dataTypeConstraints="{minimum: 0}"
+								maxConditions="1"
+								display="Value"
+								editMode="Editable"
+								placeholder="{/#Product/WeightMeasure/@sap:label}"
+								valueState="{cm>/fieldPath/WeightMeasure/valueState}"
+								valueStateText="{cm>/fieldPath/WeightMeasure/valueStateText}"
+								liveChange="handleLiveChange"
+								fieldHelp="FVH-WeightUnit">
+								<mdc:dependents>
+									<mdc:ListFieldHelp id="FVH-WeightUnit"
+											items="{view>/weightUnits}" >
+										<c:ListItem key="{view>id}" text="{view>unit}" additionalText="{view>text}"/>
+									</mdc:ListFieldHelp>
+								</mdc:dependents>
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="A single UoM field in display mode">
+							<mdc:FieldBase id="FB19"
+								conditions="{cm>/conditions/WeightMeasure}"
+								dataType="sap.ui.model.type.Unit"
+								maxConditions="1"
+								display="Value"
+								editMode="Display"
+								placeholder="{/#Product/WeightMeasure/@sap:label}"
+								liveChange="handleLiveChange">
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="A search field">
+							<mdc:FieldBase id="FB20"
+								conditions="{cm>/conditions/*Name,Description*}"
+								maxConditions="1"
+								placeholder="Search"
+								valueState="{cm>/fieldPath/*Name,Description*/valueState}"
+								valueStateText="{cm>/fieldPath/*Name,Description*/valueStateText}"
+								liveChange="handleLiveChange">
+							</mdc:FieldBase>
+						</form:FormElement>
+
+						<form:FormElement label="A search field in display mode">
+							<mdc:FieldBase id="FB21"
+								conditions="{cm>/conditions/*Name,Description*}"
+								maxConditions="1"
+								editMode="Display"
+								placeholder="Search"
+								liveChange="handleLiveChange">
+							</mdc:FieldBase>
+						</form:FormElement>
+					</form:FormContainer>
+
+					<form:FormContainer title="Condition Model">
+						<form:FormElement label="Conditions">
+							<m:TextArea id="Cond" editable="false" rows="15"></m:TextArea>
+							<m:Button id="clear" icon="sap-icon://clear-filter" press="clearFilters">
+								<m:layoutData>
+									<form:ColumnElementData cellsLarge="1" cellsSmall="1"></form:ColumnElementData>
+								</m:layoutData>
+							</m:Button>
+						</form:FormElement>
+					</form:FormContainer>
+				</form:Form>
+			</m:ScrollContainer>
+			<m:ScrollContainer vertical="true" height="25%">
+				<m:Table id="myTable" items="{path: '/ProductCollection'}" width="100%">
+					<m:headerToolbar>
+						<m:Toolbar>
+							<m:Title text="Filtered items"></m:Title>
+						</m:Toolbar>
+					</m:headerToolbar>
+					<m:columns>
+						<m:Column width="8rem">
+							<m:Label text="{/#Product/ProductId/@sap:label}"></m:Label>
+						</m:Column>
+						<m:Column width="12rem">
+							<m:Label text="{/#Product/Name/@sap:label}"></m:Label>
+						</m:Column>
+						<m:Column minScreenWidth="Desktop" demandPopin="true">
+							<m:Label text="{/#Product/Description/@sap:label}"></m:Label>
+						</m:Column>
+						<m:Column width="8rem">
+							<m:Label text="{/#Product/SupplierName/@sap:label}"></m:Label>
+						</m:Column>
+						<m:Column width="2rem" minScreenWidth="Tablet" demandPopin="true">
+							<m:Label text="Icon"></m:Label>
+						</m:Column>
+						<m:Column width="12rem" minScreenWidth="Desktop" demandPopin="true">
+							<m:Label text="{/#Product/Date/@sap:label}"></m:Label>
+						</m:Column>
+						<m:Column width="8rem" minScreenWidth="Desktop" demandPopin="true">
+							<m:Label text="{/#Product/Status/@sap:label}"></m:Label>
+						</m:Column>
+						<m:Column width="2rem" minScreenWidth="Desktop" demandPopin="true">
+							<m:Label text="{/#Product/Quantity/@sap:label}"></m:Label>
+						</m:Column>
+						<m:Column width="2rem" minScreenWidth="Desktop" demandPopin="true">
+							<m:Label text="{/#Product/Important/@sap:label}"></m:Label>
+						</m:Column>
+					</m:columns>
+					<m:items>
+						<m:ColumnListItem type="Active">
+							<m:Text id="T-F1" text="{ProductId}" wrapping="false"/>
+							<m:Text id="T-F2" text="{Name}" wrapping="false"/>
+							<m:Text id="T-F3" text="{Description}" wrapping="true"/>
+							<m:Text id="T-F4" text="{SupplierName}" wrapping="false"/>
+							<m:Image src="{= '../../../../../../../' + ${ProductPicUrl}}" height="1rem"/>
+							<m:Text id="T-F5" text="{path: 'Date', type:'sap.ui.model.odata.type.DateTime', constraints: {displayFormat: 'Date'}}" wrapping="false"/>
+							<m:Text id="T-F6" text="{Status}" wrapping="false"/>
+							<m:Text id="T-F7" text="{Quantity}" wrapping="false"/>
+							<m:CheckBox id="CB-F8" selected="{Important}" displayOnly="true"></m:CheckBox>
+						</m:ColumnListItem>
+					</m:items>
+				</m:Table>
+			</m:ScrollContainer>
+			<m:footer>
+				<m:Bar>
+					<m:contentLeft>
+						<c:Icon id="MyIcon"></c:Icon>
+						<m:Text id="MyText" text="Event" width="400px" wrapping="false"></m:Text>
+					</m:contentLeft>
+					<m:contentMiddle>
+						<m:SegmentedButton selectedKey="P0" width="320px" select="handleButton">
+							<m:items>
+								<m:SegmentedButtonItem key="P0" text="Simple"></m:SegmentedButtonItem>
+							</m:items>
+						</m:SegmentedButton>
+					</m:contentMiddle>
+					<m:contentRight>
+						<c:Icon id="MyIconRight"></c:Icon>
+						<m:Text id="MyTextRight" text="LiveChange" width="400px" wrapping="false"></m:Text>
+					</m:contentRight>
+				</m:Bar>
+			</m:footer>
+		</m:Page>
+	</m:App>
+
+</mvc:View>

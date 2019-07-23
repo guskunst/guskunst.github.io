@@ -1,0 +1,13 @@
+<core:View xmlns:mdc="sap.ui.mdc" xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!-- The metadataContexts with {name: 'ignoreField', model: 'collection'} is a hack to switch to non mdc.Field (m.Text) based controls only, NOT for productive usage!  -->
+	<mdc:Table id="mdcTable" metadataContexts="[{ path: '/Z_01_PRODUCTS',  name: 'collection', model: 'collection'},{ name: 'ignoreField', model: 'collection'}]"
+		rows="{path: '/Z_01_PRODUCTS'}" selectionMode="Multi" height="100%" >
+		<mdc:actions>
+			<Button text= "Responsive table"  press="sap.ui.getCore().byId('{$view>id}').byId('mdcTable').setType('ResponsiveTable')"/>
+			<Button text= "   Grid Table   "  press="sap.ui.getCore().byId('{$view>id}').byId('mdcTable').setType('Table')"/>
+			<Button text= "Single Selection"  press="sap.ui.getCore().byId('{$view>id}').byId('mdcTable').setSelectionMode('Single')"/>
+			<Button text= " Multi Selection"  press="sap.ui.getCore().byId('{$view>id}').byId('mdcTable').setSelectionMode('Multi')"/>
+			<Button text= "  No Selection  "  press="sap.ui.getCore().byId('{$view>id}').byId('mdcTable').setSelectionMode('None')"/>
+		</mdc:actions>
+	</mdc:Table>
+</core:View>

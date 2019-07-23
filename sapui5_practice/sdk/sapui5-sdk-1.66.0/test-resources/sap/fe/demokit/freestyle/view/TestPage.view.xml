@@ -1,0 +1,35 @@
+<core:View xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+		   xmlns="sap.m"
+		   xmlns:core="sap.ui.core"
+		   xmlns:fe="sap.fe"
+		   template:require="sap.fe.core.AnnotationHelper">
+
+	<fe:FilterBar id="salesOrderFilter" entitySetContexts="/SalesOrderList"></fe:FilterBar>
+
+	<fe:Table context="/SalesOrderList/@com.sap.vocabularies.UI.v1.LineItem"
+			  id="salesOrderList"
+			  type="ResponsiveTable"
+			  filterBarId="salesOrderFilter"
+			  itemPress="handleItemPress"
+			  callAction="handleActionCall"
+	/>
+
+	<Panel id="objectPage" headerText="Sales Order Details">
+		<HBox><Label text="1st Identification Field: "></Label><fe:Field dataFieldContext="/SalesOrderList/@com.sap.vocabularies.UI.v1.Identification/0"/></HBox>
+		<HBox><Label text="2nd Identification Field: "></Label><fe:Field dataFieldContext="/SalesOrderList/@com.sap.vocabularies.UI.v1.Identification/1"/></HBox>
+		<HBox><Label text="3rd Identification Field: "></Label><fe:Field dataFieldContext="/SalesOrderList/@com.sap.vocabularies.UI.v1.Identification/2"/></HBox>
+		<HBox><Label text="4th Identification Field: "></Label><fe:Field dataFieldContext="/SalesOrderList/@com.sap.vocabularies.UI.v1.Identification/3"/></HBox>
+		<HBox><Label text="5th Identification Field: "></Label><fe:Field dataFieldContext="/SalesOrderList/@com.sap.vocabularies.UI.v1.Identification/4"/></HBox>
+		<HBox><Label text="Currency Code via Property Path: "></Label> <fe:Field dataFieldContext="/SalesOrderList/CurrencyCode"/></HBox>
+
+		<!-- currently we need to escpape the binding path - to be discussed with MDC -->
+		<fe:Table id="itemList"
+				  context="/SOLineItemList/@com.sap.vocabularies.UI.v1.LineItem"
+				  tableBindingPath="\{path : 'SO_2_SOITEM', parameters : \{$count : true\} \}"
+				  type="ResponsiveTable"
+		/>
+
+
+	</Panel>
+
+</core:View>
