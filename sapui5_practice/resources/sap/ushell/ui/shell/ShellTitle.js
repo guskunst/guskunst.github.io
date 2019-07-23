@@ -1,0 +1,2 @@
+// Copyright (c) 2009-2017 SAP SE, All Rights Reserved
+sap.ui.define(['sap/ui/core/Control'],function(C){"use strict";var S=C.extend("sap.ushell.ui.shell.ShellTitle",{metadata:{properties:{text:{type:"string",group:"Misc",defaultValue:null},icon:{type:"sap.ui.core.URI",group:"Appearance",defaultValue:null}}},renderer:{render:function(r,c){if(c.getText()){r.write("<span");r.writeControlData(c);r.write(' class="sapUshellHeadTitle">');r.writeEscaped(c.getText());r.write("</span>");}}}});return S;},true);

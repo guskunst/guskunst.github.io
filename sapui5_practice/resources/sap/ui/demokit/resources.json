@@ -1,0 +1,2361 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".library"
+		},
+		{
+			"name": "CodeSampleContainer-dbg.js",
+			"module": "sap/ui/demokit/CodeSampleContainer.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/commons/Link.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/demokit/CodeSampleContainerRenderer.js",
+				"sap/ui/demokit/CodeViewer.js",
+				"sap/ui/demokit/UIAreaSubstitute.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "CodeSampleContainer.js",
+			"module": "sap/ui/demokit/CodeSampleContainer.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/commons/Link.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/demokit/CodeSampleContainerRenderer.js",
+				"sap/ui/demokit/CodeViewer.js",
+				"sap/ui/demokit/UIAreaSubstitute.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "CodeSampleContainerRenderer-dbg.js",
+			"module": "sap/ui/demokit/CodeSampleContainerRenderer.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "CodeSampleContainerRenderer.js",
+			"module": "sap/ui/demokit/CodeSampleContainerRenderer.js",
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "CodeViewer-dbg.js",
+			"module": "sap/ui/demokit/CodeViewer.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"jquery.sap.keycodes.js",
+				"sap/ui/commons/Button.js",
+				"sap/ui/commons/Dialog.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/demokit/CodeViewerRenderer.js",
+				"sap/ui/demokit/library.js"
+			],
+			"condRequired": [
+				"sap/ui/demokit/js/google-code-prettify/prettify.js"
+			]
+		},
+		{
+			"name": "CodeViewer.js",
+			"module": "sap/ui/demokit/CodeViewer.js",
+			"required": [
+				"jquery.sap.global.js",
+				"jquery.sap.keycodes.js",
+				"sap/ui/commons/Button.js",
+				"sap/ui/commons/Dialog.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/demokit/CodeViewerRenderer.js",
+				"sap/ui/demokit/library.js"
+			],
+			"condRequired": [
+				"sap/ui/demokit/js/google-code-prettify/prettify.js"
+			]
+		},
+		{
+			"name": "CodeViewerRenderer-dbg.js",
+			"module": "sap/ui/demokit/CodeViewerRenderer.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "CodeViewerRenderer.js",
+			"module": "sap/ui/demokit/CodeViewerRenderer.js",
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "DemokitApp-dbg.js",
+			"module": "sap/ui/demokit/DemokitApp.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"jquery.sap.script.js",
+				"sap/ui/Device.js",
+				"sap/ui/commons/Button.js",
+				"sap/ui/commons/Dialog.js",
+				"sap/ui/commons/DropdownBox.js",
+				"sap/ui/commons/FormattedTextView.js",
+				"sap/ui/commons/Image.js",
+				"sap/ui/commons/Label.js",
+				"sap/ui/commons/Link.js",
+				"sap/ui/commons/SearchField.js",
+				"sap/ui/commons/Splitter.js",
+				"sap/ui/commons/TextView.js",
+				"sap/ui/commons/Tree.js",
+				"sap/ui/commons/TreeNode.js",
+				"sap/ui/commons/layout/AbsoluteLayout.js",
+				"sap/ui/commons/library.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/HTML.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/core/Title.js",
+				"sap/ui/core/library.js",
+				"sap/ui/core/mvc/View.js",
+				"sap/ui/core/search/OpenSearchProvider.js",
+				"sap/ui/core/util/LibraryInfo.js",
+				"sap/ui/demokit/FeedbackClient.js",
+				"sap/ui/demokit/Tag.js",
+				"sap/ui/demokit/TagCloud.js",
+				"sap/ui/demokit/library.js",
+				"sap/ui/layout/VerticalLayout.js",
+				"sap/ui/layout/form/Form.js",
+				"sap/ui/layout/form/FormContainer.js",
+				"sap/ui/layout/form/FormElement.js",
+				"sap/ui/layout/form/GridElementData.js",
+				"sap/ui/layout/form/GridLayout.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/ux3/DataSet.js",
+				"sap/ui/ux3/DataSetItem.js",
+				"sap/ui/ux3/DataSetSimpleView.js",
+				"sap/ui/ux3/NavigationItem.js",
+				"sap/ui/ux3/Shell.js",
+				"sap/ui/ux3/ToolPopup.js"
+			]
+		},
+		{
+			"name": "DemokitApp.js",
+			"module": "sap/ui/demokit/DemokitApp.js",
+			"required": [
+				"jquery.sap.global.js",
+				"jquery.sap.script.js",
+				"sap/ui/Device.js",
+				"sap/ui/commons/Button.js",
+				"sap/ui/commons/Dialog.js",
+				"sap/ui/commons/DropdownBox.js",
+				"sap/ui/commons/FormattedTextView.js",
+				"sap/ui/commons/Image.js",
+				"sap/ui/commons/Label.js",
+				"sap/ui/commons/Link.js",
+				"sap/ui/commons/SearchField.js",
+				"sap/ui/commons/Splitter.js",
+				"sap/ui/commons/TextView.js",
+				"sap/ui/commons/Tree.js",
+				"sap/ui/commons/TreeNode.js",
+				"sap/ui/commons/layout/AbsoluteLayout.js",
+				"sap/ui/commons/library.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/HTML.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/core/Title.js",
+				"sap/ui/core/library.js",
+				"sap/ui/core/mvc/View.js",
+				"sap/ui/core/search/OpenSearchProvider.js",
+				"sap/ui/core/util/LibraryInfo.js",
+				"sap/ui/demokit/FeedbackClient.js",
+				"sap/ui/demokit/Tag.js",
+				"sap/ui/demokit/TagCloud.js",
+				"sap/ui/demokit/library.js",
+				"sap/ui/layout/VerticalLayout.js",
+				"sap/ui/layout/form/Form.js",
+				"sap/ui/layout/form/FormContainer.js",
+				"sap/ui/layout/form/FormElement.js",
+				"sap/ui/layout/form/GridElementData.js",
+				"sap/ui/layout/form/GridLayout.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/ux3/DataSet.js",
+				"sap/ui/ux3/DataSetItem.js",
+				"sap/ui/ux3/DataSetSimpleView.js",
+				"sap/ui/ux3/NavigationItem.js",
+				"sap/ui/ux3/Shell.js",
+				"sap/ui/ux3/ToolPopup.js"
+			]
+		},
+		{
+			"name": "EntityInfo-dbg.js",
+			"module": "sap/ui/demokit/EntityInfo.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/demokit/util/APIInfo.js",
+				"sap/ui/demokit/util/jsanalyzer/ModuleAnalyzer.js"
+			]
+		},
+		{
+			"name": "EntityInfo.js",
+			"module": "sap/ui/demokit/EntityInfo.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/demokit/util/APIInfo.js",
+				"sap/ui/demokit/util/jsanalyzer/ModuleAnalyzer.js"
+			]
+		},
+		{
+			"name": "FeedbackClient-dbg.js",
+			"module": "sap/ui/demokit/FeedbackClient.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/commons/Button.js",
+				"sap/ui/commons/CheckBox.js",
+				"sap/ui/commons/FormattedTextView.js",
+				"sap/ui/commons/Label.js",
+				"sap/ui/commons/Link.js",
+				"sap/ui/commons/SegmentedButton.js",
+				"sap/ui/commons/TextArea.js",
+				"sap/ui/commons/TextView.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/library.js",
+				"sap/ui/layout/HorizontalLayout.js",
+				"sap/ui/layout/VerticalLayout.js",
+				"sap/ui/layout/form/SimpleForm.js",
+				"sap/ui/layout/library.js",
+				"sap/ui/ux3/ToolPopup.js"
+			]
+		},
+		{
+			"name": "FeedbackClient.js",
+			"module": "sap/ui/demokit/FeedbackClient.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/commons/Button.js",
+				"sap/ui/commons/CheckBox.js",
+				"sap/ui/commons/FormattedTextView.js",
+				"sap/ui/commons/Label.js",
+				"sap/ui/commons/Link.js",
+				"sap/ui/commons/SegmentedButton.js",
+				"sap/ui/commons/TextArea.js",
+				"sap/ui/commons/TextView.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/library.js",
+				"sap/ui/layout/HorizontalLayout.js",
+				"sap/ui/layout/VerticalLayout.js",
+				"sap/ui/layout/form/SimpleForm.js",
+				"sap/ui/layout/library.js",
+				"sap/ui/ux3/ToolPopup.js"
+			]
+		},
+		{
+			"name": "FileUploadIntrospector-dbg.js",
+			"module": "sap/ui/demokit/FileUploadIntrospector.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.act.js",
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/demokit/FileUploadIntrospectorRenderer.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "FileUploadIntrospector.js",
+			"module": "sap/ui/demokit/FileUploadIntrospector.js",
+			"required": [
+				"jquery.sap.act.js",
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/demokit/FileUploadIntrospectorRenderer.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "FileUploadIntrospectorRenderer-dbg.js",
+			"module": "sap/ui/demokit/FileUploadIntrospectorRenderer.js",
+			"isDebug": true
+		},
+		{
+			"name": "FileUploadIntrospectorRenderer.js",
+			"module": "sap/ui/demokit/FileUploadIntrospectorRenderer.js"
+		},
+		{
+			"name": "HexagonButton-dbg.js",
+			"module": "sap/ui/demokit/HexagonButton.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Control.js",
+				"sap/ui/demokit/HexagonButtonRenderer.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "HexagonButton.js",
+			"module": "sap/ui/demokit/HexagonButton.js",
+			"required": [
+				"sap/ui/core/Control.js",
+				"sap/ui/demokit/HexagonButtonRenderer.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "HexagonButtonGroup-dbg.js",
+			"module": "sap/ui/demokit/HexagonButtonGroup.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Control.js",
+				"sap/ui/demokit/HexagonButtonGroupRenderer.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "HexagonButtonGroup.js",
+			"module": "sap/ui/demokit/HexagonButtonGroup.js",
+			"required": [
+				"sap/ui/core/Control.js",
+				"sap/ui/demokit/HexagonButtonGroupRenderer.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "HexagonButtonGroupRenderer-dbg.js",
+			"module": "sap/ui/demokit/HexagonButtonGroupRenderer.js",
+			"isDebug": true
+		},
+		{
+			"name": "HexagonButtonGroupRenderer.js",
+			"module": "sap/ui/demokit/HexagonButtonGroupRenderer.js"
+		},
+		{
+			"name": "HexagonButtonRenderer-dbg.js",
+			"module": "sap/ui/demokit/HexagonButtonRenderer.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.encoder.js",
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "HexagonButtonRenderer.js",
+			"module": "sap/ui/demokit/HexagonButtonRenderer.js",
+			"required": [
+				"jquery.sap.encoder.js",
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "IndexLayout-dbg.js",
+			"module": "sap/ui/demokit/IndexLayout.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/IntervalTrigger.js",
+				"sap/ui/demokit/IndexLayoutRenderer.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "IndexLayout.js",
+			"module": "sap/ui/demokit/IndexLayout.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/IntervalTrigger.js",
+				"sap/ui/demokit/IndexLayoutRenderer.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "IndexLayoutPage-dbg.js",
+			"module": "sap/ui/demokit/IndexLayoutPage.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.encoder.js",
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/demokit/IndexLayout.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "IndexLayoutPage.js",
+			"module": "sap/ui/demokit/IndexLayoutPage.js",
+			"required": [
+				"jquery.sap.encoder.js",
+				"jquery.sap.global.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/demokit/IndexLayout.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "IndexLayoutRenderer-dbg.js",
+			"module": "sap/ui/demokit/IndexLayoutRenderer.js",
+			"isDebug": true
+		},
+		{
+			"name": "IndexLayoutRenderer.js",
+			"module": "sap/ui/demokit/IndexLayoutRenderer.js"
+		},
+		{
+			"name": "IndexPage-dbg.js",
+			"module": "sap/ui/demokit/IndexPage.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/commons/RichTooltip.js",
+				"sap/ui/demokit/DemokitApp.js",
+				"sap/ui/demokit/HexagonButton.js",
+				"sap/ui/demokit/HexagonButtonGroup.js"
+			]
+		},
+		{
+			"name": "IndexPage.js",
+			"module": "sap/ui/demokit/IndexPage.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/commons/RichTooltip.js",
+				"sap/ui/demokit/DemokitApp.js",
+				"sap/ui/demokit/HexagonButton.js",
+				"sap/ui/demokit/HexagonButtonGroup.js"
+			]
+		},
+		{
+			"name": "SimpleTree-dbg.js",
+			"module": "sap/ui/demokit/SimpleTree.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/SearchField.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/delegate/ItemNavigation.js",
+				"sap/ui/demokit/SimpleTreeRenderer.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js"
+			]
+		},
+		{
+			"name": "SimpleTree.js",
+			"module": "sap/ui/demokit/SimpleTree.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/SearchField.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/delegate/ItemNavigation.js",
+				"sap/ui/demokit/SimpleTreeRenderer.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js"
+			]
+		},
+		{
+			"name": "SimpleTreeNode-dbg.js",
+			"module": "sap/ui/demokit/SimpleTreeNode.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Icon.js"
+			]
+		},
+		{
+			"name": "SimpleTreeNode.js",
+			"module": "sap/ui/demokit/SimpleTreeNode.js",
+			"required": [
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Icon.js"
+			]
+		},
+		{
+			"name": "SimpleTreeRenderer-dbg.js",
+			"module": "sap/ui/demokit/SimpleTreeRenderer.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.encoder.js",
+				"jquery.sap.global.js",
+				"sap/ui/demokit/SimpleTreeNode.js"
+			]
+		},
+		{
+			"name": "SimpleTreeRenderer.js",
+			"module": "sap/ui/demokit/SimpleTreeRenderer.js",
+			"required": [
+				"jquery.sap.encoder.js",
+				"jquery.sap.global.js",
+				"sap/ui/demokit/SimpleTreeNode.js"
+			]
+		},
+		{
+			"name": "Tag-dbg.js",
+			"module": "sap/ui/demokit/Tag.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "Tag.js",
+			"module": "sap/ui/demokit/Tag.js",
+			"required": [
+				"sap/ui/core/Element.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "TagCloud-dbg.js",
+			"module": "sap/ui/demokit/TagCloud.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Control.js",
+				"sap/ui/demokit/TagCloudRenderer.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "TagCloud.js",
+			"module": "sap/ui/demokit/TagCloud.js",
+			"required": [
+				"sap/ui/core/Control.js",
+				"sap/ui/demokit/TagCloudRenderer.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "TagCloudRenderer-dbg.js",
+			"module": "sap/ui/demokit/TagCloudRenderer.js",
+			"isDebug": true
+		},
+		{
+			"name": "TagCloudRenderer.js",
+			"module": "sap/ui/demokit/TagCloudRenderer.js"
+		},
+		{
+			"name": "UI5EntityCueCard-dbg.js",
+			"module": "sap/ui/demokit/UI5EntityCueCard.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/commons/Link.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/demokit/EntityInfo.js",
+				"sap/ui/demokit/UI5EntityCueCardRenderer.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "UI5EntityCueCard.js",
+			"module": "sap/ui/demokit/UI5EntityCueCard.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/commons/Link.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/demokit/EntityInfo.js",
+				"sap/ui/demokit/UI5EntityCueCardRenderer.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "UI5EntityCueCardRenderer-dbg.js",
+			"module": "sap/ui/demokit/UI5EntityCueCardRenderer.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "UI5EntityCueCardRenderer.js",
+			"module": "sap/ui/demokit/UI5EntityCueCardRenderer.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "UIAreaSubstitute-dbg.js",
+			"module": "sap/ui/demokit/UIAreaSubstitute.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Element.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "UIAreaSubstitute.js",
+			"module": "sap/ui/demokit/UIAreaSubstitute.js",
+			"required": [
+				"sap/ui/core/Element.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "configuration/properties.json"
+		},
+		{
+			"name": "demoapps/Component-dbg.js",
+			"module": "sap/ui/demokit/demoapps/Component.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/demokit/demoapps/model/libraryData.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "demoapps/Component.js",
+			"module": "sap/ui/demokit/demoapps/Component.js",
+			"required": [
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/demokit/demoapps/model/libraryData.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "demoapps/all-dbg.js",
+			"module": "sap/ui/demokit/demoapps/all.js",
+			"isDebug": true
+		},
+		{
+			"name": "demoapps/all.js",
+			"module": "sap/ui/demokit/demoapps/all.js"
+		},
+		{
+			"name": "demoapps/controller/App-dbg.controller.js",
+			"module": "sap/ui/demokit/demoapps/controller/App.controller.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessageToast.js",
+				"sap/m/library.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/demokit/demoapps/model/formatter.js",
+				"sap/ui/demokit/demoapps/model/sourceFileDownloader.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js"
+			]
+		},
+		{
+			"name": "demoapps/controller/App.controller.js",
+			"module": "sap/ui/demokit/demoapps/controller/App.controller.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessageToast.js",
+				"sap/m/library.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/demokit/demoapps/model/formatter.js",
+				"sap/ui/demokit/demoapps/model/sourceFileDownloader.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js"
+			]
+		},
+		{
+			"name": "demoapps/css/style.css"
+		},
+		{
+			"name": "demoapps/i18n/i18n.properties",
+			"module": "sap/ui/demokit/demoapps/i18n/i18n.properties"
+		},
+		{
+			"name": "demoapps/img/demoAppsTeaser.png"
+		},
+		{
+			"name": "demoapps/manifest.json",
+			"module": "sap/ui/demokit/demoapps/manifest.json"
+		},
+		{
+			"name": "demoapps/model/formatter-dbg.js",
+			"module": "sap/ui/demokit/demoapps/model/formatter.js",
+			"isDebug": true
+		},
+		{
+			"name": "demoapps/model/formatter.js",
+			"module": "sap/ui/demokit/demoapps/model/formatter.js"
+		},
+		{
+			"name": "demoapps/model/libraryData-dbg.js",
+			"module": "sap/ui/demokit/demoapps/model/libraryData.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "demoapps/model/libraryData.js",
+			"module": "sap/ui/demokit/demoapps/model/libraryData.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/demokit/library.js"
+			]
+		},
+		{
+			"name": "demoapps/model/sourceFileDownloader-dbg.js",
+			"module": "sap/ui/demokit/demoapps/model/sourceFileDownloader.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "demoapps/model/sourceFileDownloader.js",
+			"module": "sap/ui/demokit/demoapps/model/sourceFileDownloader.js",
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "demoapps/view/App.view.xml",
+			"module": "sap/ui/demokit/demoapps/view/App.view.xml",
+			"required": [
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/demokit/demoapps/controller/App.controller.js",
+				"sap/ui/layout/BlockLayout.js",
+				"sap/ui/layout/BlockLayoutCell.js",
+				"sap/ui/layout/BlockLayoutRow.js",
+				"sap/ui/layout/Grid.js",
+				"sap/ui/layout/VerticalLayout.js"
+			]
+		},
+		{
+			"name": "demoapps/view/BlockLayoutCell.fragment.xml",
+			"module": "sap/ui/demokit/demoapps/view/BlockLayoutCell.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/layout/BlockLayoutCell.js",
+				"sap/ui/layout/HorizontalLayout.js",
+				"sap/ui/layout/VerticalLayout.js"
+			]
+		},
+		{
+			"name": "demoapps/view/BlockLayoutHeadlineCell.fragment.xml",
+			"module": "sap/ui/demokit/demoapps/view/BlockLayoutHeadlineCell.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js",
+				"sap/ui/layout/BlockLayoutCell.js"
+			]
+		},
+		{
+			"name": "demoapps/view/BlockLayoutTeaserCell.fragment.xml",
+			"module": "sap/ui/demokit/demoapps/view/BlockLayoutTeaserCell.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/layout/BlockLayoutCell.js",
+				"sap/ui/layout/Grid.js",
+				"sap/ui/layout/HorizontalLayout.js",
+				"sap/ui/layout/VerticalLayout.js"
+			]
+		},
+		{
+			"name": "explored/Bootstrap-dbg.js",
+			"module": "sap/ui/demokit/explored/Bootstrap.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/Shell.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/demokit/explored/data.js",
+				"sap/ui/demokit/library.js"
+			],
+			"condRequired": [
+				"sap/ui/core/util/LibraryInfo.js"
+			]
+		},
+		{
+			"name": "explored/Bootstrap.js",
+			"module": "sap/ui/demokit/explored/Bootstrap.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/Shell.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/demokit/explored/data.js",
+				"sap/ui/demokit/library.js"
+			],
+			"condRequired": [
+				"sap/ui/core/util/LibraryInfo.js"
+			]
+		},
+		{
+			"name": "explored/Component-dbg.js",
+			"module": "sap/ui/demokit/explored/Component.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/routing/RouteMatchedHandler.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/View.js",
+				"sap/ui/demokit/explored/data.js",
+				"sap/ui/demokit/explored/util/MyRouter.js",
+				"sap/ui/demokit/explored/util/ToggleFullScreenHandler.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js"
+			]
+		},
+		{
+			"name": "explored/Component.js",
+			"module": "sap/ui/demokit/explored/Component.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/routing/RouteMatchedHandler.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/View.js",
+				"sap/ui/demokit/explored/data.js",
+				"sap/ui/demokit/explored/util/MyRouter.js",
+				"sap/ui/demokit/explored/util/ToggleFullScreenHandler.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js"
+			]
+		},
+		{
+			"name": "explored/css/style.css"
+		},
+		{
+			"name": "explored/data-dbg.js",
+			"module": "sap/ui/demokit/explored/data.js",
+			"isDebug": true
+		},
+		{
+			"name": "explored/data.js",
+			"module": "sap/ui/demokit/explored/data.js"
+		},
+		{
+			"name": "explored/i18n/messageBundle.properties",
+			"module": "sap/ui/demokit/explored/i18n/messageBundle.properties"
+		},
+		{
+			"name": "explored/img/114_iPhone-Retina_Web_Clip.png"
+		},
+		{
+			"name": "explored/img/144_iPad_Retina_Web_Clip.png"
+		},
+		{
+			"name": "explored/img/57_iPhone_Desktop_Launch.png"
+		},
+		{
+			"name": "explored/img/72_iPad_Desktop_Launch.png"
+		},
+		{
+			"name": "explored/img/favicon.ico"
+		},
+		{
+			"name": "explored/tmpl/index.html.tmpl"
+		},
+		{
+			"name": "explored/util/MyRouter-dbg.js",
+			"module": "sap/ui/demokit/explored/util/MyRouter.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Core.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/core/routing/Router.js"
+			]
+		},
+		{
+			"name": "explored/util/MyRouter.js",
+			"module": "sap/ui/demokit/explored/util/MyRouter.js",
+			"required": [
+				"sap/ui/core/Core.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/core/routing/Router.js"
+			]
+		},
+		{
+			"name": "explored/util/ObjectSearch-dbg.js",
+			"module": "sap/ui/demokit/explored/util/ObjectSearch.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "explored/util/ObjectSearch.js",
+			"module": "sap/ui/demokit/explored/util/ObjectSearch.js",
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "explored/util/ToggleFullScreenHandler-dbg.js",
+			"module": "sap/ui/demokit/explored/util/ToggleFullScreenHandler.js",
+			"isDebug": true
+		},
+		{
+			"name": "explored/util/ToggleFullScreenHandler.js",
+			"module": "sap/ui/demokit/explored/util/ToggleFullScreenHandler.js"
+		},
+		{
+			"name": "explored/view/app-dbg.controller.js",
+			"module": "sap/ui/demokit/explored/view/app.controller.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "explored/view/app-dbg.view.js",
+			"module": "sap/ui/demokit/explored/view/app.view.js",
+			"isDebug": true,
+			"required": [
+				"sap/m/SplitApp.js",
+				"sap/ui/core/mvc/JSView.js"
+			]
+		},
+		{
+			"name": "explored/view/app.controller.js",
+			"module": "sap/ui/demokit/explored/view/app.controller.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "explored/view/app.view.js",
+			"module": "sap/ui/demokit/explored/view/app.view.js",
+			"required": [
+				"sap/m/SplitApp.js",
+				"sap/ui/core/mvc/JSView.js"
+			]
+		},
+		{
+			"name": "explored/view/appSettingsDialog.fragment.xml",
+			"module": "sap/ui/demokit/explored/view/appSettingsDialog.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/layout/Grid.js",
+				"sap/ui/layout/GridData.js"
+			]
+		},
+		{
+			"name": "explored/view/base-dbg.controller.js",
+			"module": "sap/ui/demokit/explored/view/base.controller.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"jquery.sap.storage.js",
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "explored/view/base.controller.js",
+			"module": "sap/ui/demokit/explored/view/base.controller.js",
+			"required": [
+				"jquery.sap.global.js",
+				"jquery.sap.storage.js",
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "explored/view/code-dbg.controller.js",
+			"module": "sap/ui/demokit/explored/view/code.controller.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/demokit/explored/data.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "explored/view/code.controller.js",
+			"module": "sap/ui/demokit/explored/view/code.controller.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/demokit/explored/data.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "explored/view/code.view.xml",
+			"module": "sap/ui/demokit/explored/view/code.view.xml",
+			"required": [
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/demokit/CodeViewer.js",
+				"sap/ui/demokit/explored/view/code.controller.js"
+			]
+		},
+		{
+			"name": "explored/view/entity-dbg.controller.js",
+			"module": "sap/ui/demokit/explored/view/entity.controller.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/demokit/EntityInfo.js",
+				"sap/ui/demokit/explored/data.js",
+				"sap/ui/demokit/explored/util/ObjectSearch.js",
+				"sap/ui/demokit/explored/util/ToggleFullScreenHandler.js",
+				"sap/ui/demokit/explored/view/base.controller.js",
+				"sap/ui/demokit/util/JSDocUtil.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "explored/view/entity.controller.js",
+			"module": "sap/ui/demokit/explored/view/entity.controller.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/demokit/EntityInfo.js",
+				"sap/ui/demokit/explored/data.js",
+				"sap/ui/demokit/explored/util/ObjectSearch.js",
+				"sap/ui/demokit/explored/util/ToggleFullScreenHandler.js",
+				"sap/ui/demokit/explored/view/base.controller.js",
+				"sap/ui/demokit/util/JSDocUtil.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "explored/view/entity.view.xml",
+			"module": "sap/ui/demokit/explored/view/entity.view.xml",
+			"required": [
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/HTML.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/demokit/explored/view/entity.controller.js",
+				"sap/ui/layout/VerticalLayout.js"
+			]
+		},
+		{
+			"name": "explored/view/master-dbg.controller.js",
+			"module": "sap/ui/demokit/explored/view/master.controller.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"jquery.sap.storage.js",
+				"sap/m/GroupHeaderListItem.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/demokit/explored/util/ToggleFullScreenHandler.js",
+				"sap/ui/demokit/explored/view/base.controller.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/Sorter.js"
+			]
+		},
+		{
+			"name": "explored/view/master.controller.js",
+			"module": "sap/ui/demokit/explored/view/master.controller.js",
+			"required": [
+				"jquery.sap.global.js",
+				"jquery.sap.storage.js",
+				"sap/m/GroupHeaderListItem.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/demokit/explored/util/ToggleFullScreenHandler.js",
+				"sap/ui/demokit/explored/view/base.controller.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/Sorter.js"
+			]
+		},
+		{
+			"name": "explored/view/master.view.xml",
+			"module": "sap/ui/demokit/explored/view/master.view.xml",
+			"required": [
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/demokit/explored/view/master.controller.js"
+			]
+		},
+		{
+			"name": "explored/view/notFound-dbg.controller.js",
+			"module": "sap/ui/demokit/explored/view/notFound.controller.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "explored/view/notFound.controller.js",
+			"module": "sap/ui/demokit/explored/view/notFound.controller.js",
+			"required": [
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "explored/view/notFound.view.xml",
+			"module": "sap/ui/demokit/explored/view/notFound.view.xml",
+			"required": [
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/demokit/explored/view/notFound.controller.js"
+			]
+		},
+		{
+			"name": "explored/view/sample-dbg.controller.js",
+			"module": "sap/ui/demokit/explored/view/sample.controller.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/Text.js",
+				"sap/m/library.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/HTML.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/demokit/explored/data.js",
+				"sap/ui/demokit/explored/util/ToggleFullScreenHandler.js",
+				"sap/ui/demokit/explored/view/base.controller.js",
+				"sap/ui/fl/FakeLrepConnectorLocalStorage.js",
+				"sap/ui/fl/Utils.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "explored/view/sample.controller.js",
+			"module": "sap/ui/demokit/explored/view/sample.controller.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/Text.js",
+				"sap/m/library.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/HTML.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/demokit/explored/data.js",
+				"sap/ui/demokit/explored/util/ToggleFullScreenHandler.js",
+				"sap/ui/demokit/explored/view/base.controller.js",
+				"sap/ui/fl/FakeLrepConnectorLocalStorage.js",
+				"sap/ui/fl/Utils.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "explored/view/sample.view.xml",
+			"module": "sap/ui/demokit/explored/view/sample.view.xml",
+			"required": [
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/demokit/explored/view/sample.controller.js"
+			]
+		},
+		{
+			"name": "explored/view/viewSettingsDialog.fragment.xml",
+			"module": "sap/ui/demokit/explored/view/viewSettingsDialog.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "explored/view/welcome.view.xml",
+			"module": "sap/ui/demokit/explored/view/welcome.view.xml",
+			"required": [
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "js/esprima-dbg.js",
+			"isDebug": true
+		},
+		{
+			"name": "js/esprima.js"
+		},
+		{
+			"name": "js/framewrapper-dbg.js",
+			"isDebug": true
+		},
+		{
+			"name": "js/framewrapper.js"
+		},
+		{
+			"name": "js/google-code-prettify/lang-css-dbg.js",
+			"isDebug": true
+		},
+		{
+			"name": "js/google-code-prettify/lang-css.js"
+		},
+		{
+			"name": "js/google-code-prettify/lang-feature-dbg.js",
+			"isDebug": true
+		},
+		{
+			"name": "js/google-code-prettify/lang-feature.js"
+		},
+		{
+			"name": "js/google-code-prettify/lang-properties-dbg.js",
+			"isDebug": true
+		},
+		{
+			"name": "js/google-code-prettify/lang-properties.js"
+		},
+		{
+			"name": "js/google-code-prettify/lang-text-dbg.js",
+			"isDebug": true
+		},
+		{
+			"name": "js/google-code-prettify/lang-text.js"
+		},
+		{
+			"name": "js/google-code-prettify/prettify-dbg.js",
+			"isDebug": true
+		},
+		{
+			"name": "js/google-code-prettify/prettify.css"
+		},
+		{
+			"name": "js/google-code-prettify/prettify.js"
+		},
+		{
+			"name": "js/google-code-prettify/run-prettify-dbg.js",
+			"isDebug": true
+		},
+		{
+			"name": "js/google-code-prettify/run-prettify.js"
+		},
+		{
+			"name": "js/google-code-prettify/run_prettify-dbg.js",
+			"isDebug": true
+		},
+		{
+			"name": "js/google-code-prettify/run_prettify.js"
+		},
+		{
+			"name": "js/highlight-query-terms-dbg.js",
+			"isDebug": true
+		},
+		{
+			"name": "js/highlight-query-terms.js"
+		},
+		{
+			"name": "js/licenses/esprima-BSD-LICENSE.txt"
+		},
+		{
+			"name": "js/licenses/google-code-prettify-Apache-LICENSE.txt"
+		},
+		{
+			"name": "js/sdk-pagehelper-dbg.js",
+			"isDebug": true
+		},
+		{
+			"name": "js/sdk-pagehelper.js"
+		},
+		{
+			"name": "js/sdk-pagehelper.js.map",
+			"isDebug": true
+		},
+		{
+			"name": "library-dbg.js",
+			"module": "sap/ui/demokit/library.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/Global.js",
+				"sap/ui/commons/library.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/library.js",
+				"sap/ui/demokit/js/highlight-query-terms.js"
+			],
+			"condRequired": [
+				"sap/ui/core/util/LibraryInfo.js"
+			]
+		},
+		{
+			"name": "library-h2-preload-dbg.js",
+			"module": "sap/ui/demokit/library-h2-preload.js",
+			"isDebug": true,
+			"merged": true,
+			"required": [
+				"jquery.sap.act.js",
+				"jquery.sap.encoder.js",
+				"jquery.sap.global.js",
+				"jquery.sap.keycodes.js",
+				"jquery.sap.script.js",
+				"jquery.sap.storage.js",
+				"jquery.sap.strings.js",
+				"sap/m/GroupHeaderListItem.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessageToast.js",
+				"sap/m/SearchField.js",
+				"sap/m/Shell.js",
+				"sap/m/SplitApp.js",
+				"sap/m/Text.js",
+				"sap/m/library.js",
+				"sap/m/routing/RouteMatchedHandler.js",
+				"sap/ui/Device.js",
+				"sap/ui/Global.js",
+				"sap/ui/base/ManagedObjectMetadata.js",
+				"sap/ui/commons/Button.js",
+				"sap/ui/commons/CheckBox.js",
+				"sap/ui/commons/Dialog.js",
+				"sap/ui/commons/DropdownBox.js",
+				"sap/ui/commons/FormattedTextView.js",
+				"sap/ui/commons/Image.js",
+				"sap/ui/commons/Label.js",
+				"sap/ui/commons/Link.js",
+				"sap/ui/commons/RichTooltip.js",
+				"sap/ui/commons/SearchField.js",
+				"sap/ui/commons/SegmentedButton.js",
+				"sap/ui/commons/Splitter.js",
+				"sap/ui/commons/TextArea.js",
+				"sap/ui/commons/TextView.js",
+				"sap/ui/commons/Tree.js",
+				"sap/ui/commons/TreeNode.js",
+				"sap/ui/commons/layout/AbsoluteLayout.js",
+				"sap/ui/commons/library.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/HTML.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/IntervalTrigger.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/core/Title.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/delegate/ItemNavigation.js",
+				"sap/ui/core/library.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/mvc/JSView.js",
+				"sap/ui/core/mvc/View.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/core/routing/Router.js",
+				"sap/ui/core/search/OpenSearchProvider.js",
+				"sap/ui/core/util/LibraryInfo.js",
+				"sap/ui/demokit/js/esprima.js",
+				"sap/ui/demokit/js/highlight-query-terms.js",
+				"sap/ui/fl/FakeLrepConnectorLocalStorage.js",
+				"sap/ui/fl/Utils.js",
+				"sap/ui/layout/BlockLayout.js",
+				"sap/ui/layout/BlockLayoutCell.js",
+				"sap/ui/layout/BlockLayoutRow.js",
+				"sap/ui/layout/Grid.js",
+				"sap/ui/layout/GridData.js",
+				"sap/ui/layout/HorizontalLayout.js",
+				"sap/ui/layout/VerticalLayout.js",
+				"sap/ui/layout/form/Form.js",
+				"sap/ui/layout/form/FormContainer.js",
+				"sap/ui/layout/form/FormElement.js",
+				"sap/ui/layout/form/GridElementData.js",
+				"sap/ui/layout/form/GridLayout.js",
+				"sap/ui/layout/form/SimpleForm.js",
+				"sap/ui/layout/library.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ui/ux3/DataSet.js",
+				"sap/ui/ux3/DataSetItem.js",
+				"sap/ui/ux3/DataSetSimpleView.js",
+				"sap/ui/ux3/NavigationItem.js",
+				"sap/ui/ux3/Shell.js",
+				"sap/ui/ux3/ToolPopup.js"
+			],
+			"condRequired": [
+				"sap/ui/demokit/js/google-code-prettify/prettify.js"
+			],
+			"included": [
+				"sap/ui/demokit/library.js",
+				"sap/ui/demokit/manifest.json",
+				"sap/ui/demokit/CodeSampleContainer.js",
+				"sap/ui/demokit/CodeSampleContainerRenderer.js",
+				"sap/ui/demokit/CodeViewer.js",
+				"sap/ui/demokit/CodeViewerRenderer.js",
+				"sap/ui/demokit/DemokitApp.js",
+				"sap/ui/demokit/EntityInfo.js",
+				"sap/ui/demokit/FeedbackClient.js",
+				"sap/ui/demokit/FileUploadIntrospector.js",
+				"sap/ui/demokit/FileUploadIntrospectorRenderer.js",
+				"sap/ui/demokit/HexagonButton.js",
+				"sap/ui/demokit/HexagonButtonGroup.js",
+				"sap/ui/demokit/HexagonButtonGroupRenderer.js",
+				"sap/ui/demokit/HexagonButtonRenderer.js",
+				"sap/ui/demokit/IndexLayout.js",
+				"sap/ui/demokit/IndexLayoutPage.js",
+				"sap/ui/demokit/IndexLayoutRenderer.js",
+				"sap/ui/demokit/IndexPage.js",
+				"sap/ui/demokit/SimpleTree.js",
+				"sap/ui/demokit/SimpleTreeNode.js",
+				"sap/ui/demokit/SimpleTreeRenderer.js",
+				"sap/ui/demokit/Tag.js",
+				"sap/ui/demokit/TagCloud.js",
+				"sap/ui/demokit/TagCloudRenderer.js",
+				"sap/ui/demokit/UI5EntityCueCard.js",
+				"sap/ui/demokit/UI5EntityCueCardRenderer.js",
+				"sap/ui/demokit/UIAreaSubstitute.js",
+				"sap/ui/demokit/demoapps/Component.js",
+				"sap/ui/demokit/demoapps/all.js",
+				"sap/ui/demokit/demoapps/controller/App.controller.js",
+				"sap/ui/demokit/demoapps/manifest.json",
+				"sap/ui/demokit/demoapps/model/formatter.js",
+				"sap/ui/demokit/demoapps/model/libraryData.js",
+				"sap/ui/demokit/demoapps/model/sourceFileDownloader.js",
+				"sap/ui/demokit/demoapps/view/App.view.xml",
+				"sap/ui/demokit/demoapps/view/BlockLayoutCell.fragment.xml",
+				"sap/ui/demokit/demoapps/view/BlockLayoutHeadlineCell.fragment.xml",
+				"sap/ui/demokit/demoapps/view/BlockLayoutTeaserCell.fragment.xml",
+				"sap/ui/demokit/explored/Bootstrap.js",
+				"sap/ui/demokit/explored/Component.js",
+				"sap/ui/demokit/explored/data.js",
+				"sap/ui/demokit/explored/util/MyRouter.js",
+				"sap/ui/demokit/explored/util/ObjectSearch.js",
+				"sap/ui/demokit/explored/util/ToggleFullScreenHandler.js",
+				"sap/ui/demokit/explored/view/app.controller.js",
+				"sap/ui/demokit/explored/view/app.view.js",
+				"sap/ui/demokit/explored/view/appSettingsDialog.fragment.xml",
+				"sap/ui/demokit/explored/view/base.controller.js",
+				"sap/ui/demokit/explored/view/code.controller.js",
+				"sap/ui/demokit/explored/view/code.view.xml",
+				"sap/ui/demokit/explored/view/entity.controller.js",
+				"sap/ui/demokit/explored/view/entity.view.xml",
+				"sap/ui/demokit/explored/view/master.controller.js",
+				"sap/ui/demokit/explored/view/master.view.xml",
+				"sap/ui/demokit/explored/view/notFound.controller.js",
+				"sap/ui/demokit/explored/view/notFound.view.xml",
+				"sap/ui/demokit/explored/view/sample.controller.js",
+				"sap/ui/demokit/explored/view/sample.view.xml",
+				"sap/ui/demokit/explored/view/viewSettingsDialog.fragment.xml",
+				"sap/ui/demokit/explored/view/welcome.view.xml",
+				"sap/ui/demokit/util/APIInfo.js",
+				"sap/ui/demokit/util/JSDocUtil.js",
+				"sap/ui/demokit/util/jsanalyzer/ASTUtils.js",
+				"sap/ui/demokit/util/jsanalyzer/Doclet.js",
+				"sap/ui/demokit/util/jsanalyzer/ModuleAnalyzer.js"
+			]
+		},
+		{
+			"name": "library-h2-preload.js",
+			"module": "sap/ui/demokit/library-h2-preload.js",
+			"merged": true,
+			"required": [
+				"jquery.sap.act.js",
+				"jquery.sap.encoder.js",
+				"jquery.sap.global.js",
+				"jquery.sap.keycodes.js",
+				"jquery.sap.script.js",
+				"jquery.sap.storage.js",
+				"jquery.sap.strings.js",
+				"sap/m/GroupHeaderListItem.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessageToast.js",
+				"sap/m/SearchField.js",
+				"sap/m/Shell.js",
+				"sap/m/SplitApp.js",
+				"sap/m/Text.js",
+				"sap/m/library.js",
+				"sap/m/routing/RouteMatchedHandler.js",
+				"sap/ui/Device.js",
+				"sap/ui/Global.js",
+				"sap/ui/base/ManagedObjectMetadata.js",
+				"sap/ui/commons/Button.js",
+				"sap/ui/commons/CheckBox.js",
+				"sap/ui/commons/Dialog.js",
+				"sap/ui/commons/DropdownBox.js",
+				"sap/ui/commons/FormattedTextView.js",
+				"sap/ui/commons/Image.js",
+				"sap/ui/commons/Label.js",
+				"sap/ui/commons/Link.js",
+				"sap/ui/commons/RichTooltip.js",
+				"sap/ui/commons/SearchField.js",
+				"sap/ui/commons/SegmentedButton.js",
+				"sap/ui/commons/Splitter.js",
+				"sap/ui/commons/TextArea.js",
+				"sap/ui/commons/TextView.js",
+				"sap/ui/commons/Tree.js",
+				"sap/ui/commons/TreeNode.js",
+				"sap/ui/commons/layout/AbsoluteLayout.js",
+				"sap/ui/commons/library.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/HTML.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/IntervalTrigger.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/core/Title.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/delegate/ItemNavigation.js",
+				"sap/ui/core/library.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/mvc/JSView.js",
+				"sap/ui/core/mvc/View.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/core/routing/Router.js",
+				"sap/ui/core/search/OpenSearchProvider.js",
+				"sap/ui/core/util/LibraryInfo.js",
+				"sap/ui/demokit/js/esprima.js",
+				"sap/ui/demokit/js/highlight-query-terms.js",
+				"sap/ui/fl/FakeLrepConnectorLocalStorage.js",
+				"sap/ui/fl/Utils.js",
+				"sap/ui/layout/BlockLayout.js",
+				"sap/ui/layout/BlockLayoutCell.js",
+				"sap/ui/layout/BlockLayoutRow.js",
+				"sap/ui/layout/Grid.js",
+				"sap/ui/layout/GridData.js",
+				"sap/ui/layout/HorizontalLayout.js",
+				"sap/ui/layout/VerticalLayout.js",
+				"sap/ui/layout/form/Form.js",
+				"sap/ui/layout/form/FormContainer.js",
+				"sap/ui/layout/form/FormElement.js",
+				"sap/ui/layout/form/GridElementData.js",
+				"sap/ui/layout/form/GridLayout.js",
+				"sap/ui/layout/form/SimpleForm.js",
+				"sap/ui/layout/library.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ui/ux3/DataSet.js",
+				"sap/ui/ux3/DataSetItem.js",
+				"sap/ui/ux3/DataSetSimpleView.js",
+				"sap/ui/ux3/NavigationItem.js",
+				"sap/ui/ux3/Shell.js",
+				"sap/ui/ux3/ToolPopup.js"
+			],
+			"condRequired": [
+				"sap/ui/demokit/js/google-code-prettify/prettify.js"
+			],
+			"included": [
+				"sap/ui/demokit/library.js",
+				"sap/ui/demokit/manifest.json",
+				"sap/ui/demokit/CodeSampleContainer.js",
+				"sap/ui/demokit/CodeSampleContainerRenderer.js",
+				"sap/ui/demokit/CodeViewer.js",
+				"sap/ui/demokit/CodeViewerRenderer.js",
+				"sap/ui/demokit/DemokitApp.js",
+				"sap/ui/demokit/EntityInfo.js",
+				"sap/ui/demokit/FeedbackClient.js",
+				"sap/ui/demokit/FileUploadIntrospector.js",
+				"sap/ui/demokit/FileUploadIntrospectorRenderer.js",
+				"sap/ui/demokit/HexagonButton.js",
+				"sap/ui/demokit/HexagonButtonGroup.js",
+				"sap/ui/demokit/HexagonButtonGroupRenderer.js",
+				"sap/ui/demokit/HexagonButtonRenderer.js",
+				"sap/ui/demokit/IndexLayout.js",
+				"sap/ui/demokit/IndexLayoutPage.js",
+				"sap/ui/demokit/IndexLayoutRenderer.js",
+				"sap/ui/demokit/IndexPage.js",
+				"sap/ui/demokit/SimpleTree.js",
+				"sap/ui/demokit/SimpleTreeNode.js",
+				"sap/ui/demokit/SimpleTreeRenderer.js",
+				"sap/ui/demokit/Tag.js",
+				"sap/ui/demokit/TagCloud.js",
+				"sap/ui/demokit/TagCloudRenderer.js",
+				"sap/ui/demokit/UI5EntityCueCard.js",
+				"sap/ui/demokit/UI5EntityCueCardRenderer.js",
+				"sap/ui/demokit/UIAreaSubstitute.js",
+				"sap/ui/demokit/demoapps/Component.js",
+				"sap/ui/demokit/demoapps/all.js",
+				"sap/ui/demokit/demoapps/controller/App.controller.js",
+				"sap/ui/demokit/demoapps/manifest.json",
+				"sap/ui/demokit/demoapps/model/formatter.js",
+				"sap/ui/demokit/demoapps/model/libraryData.js",
+				"sap/ui/demokit/demoapps/model/sourceFileDownloader.js",
+				"sap/ui/demokit/demoapps/view/App.view.xml",
+				"sap/ui/demokit/demoapps/view/BlockLayoutCell.fragment.xml",
+				"sap/ui/demokit/demoapps/view/BlockLayoutHeadlineCell.fragment.xml",
+				"sap/ui/demokit/demoapps/view/BlockLayoutTeaserCell.fragment.xml",
+				"sap/ui/demokit/explored/Bootstrap.js",
+				"sap/ui/demokit/explored/Component.js",
+				"sap/ui/demokit/explored/data.js",
+				"sap/ui/demokit/explored/util/MyRouter.js",
+				"sap/ui/demokit/explored/util/ObjectSearch.js",
+				"sap/ui/demokit/explored/util/ToggleFullScreenHandler.js",
+				"sap/ui/demokit/explored/view/app.controller.js",
+				"sap/ui/demokit/explored/view/app.view.js",
+				"sap/ui/demokit/explored/view/appSettingsDialog.fragment.xml",
+				"sap/ui/demokit/explored/view/base.controller.js",
+				"sap/ui/demokit/explored/view/code.controller.js",
+				"sap/ui/demokit/explored/view/code.view.xml",
+				"sap/ui/demokit/explored/view/entity.controller.js",
+				"sap/ui/demokit/explored/view/entity.view.xml",
+				"sap/ui/demokit/explored/view/master.controller.js",
+				"sap/ui/demokit/explored/view/master.view.xml",
+				"sap/ui/demokit/explored/view/notFound.controller.js",
+				"sap/ui/demokit/explored/view/notFound.view.xml",
+				"sap/ui/demokit/explored/view/sample.controller.js",
+				"sap/ui/demokit/explored/view/sample.view.xml",
+				"sap/ui/demokit/explored/view/viewSettingsDialog.fragment.xml",
+				"sap/ui/demokit/explored/view/welcome.view.xml",
+				"sap/ui/demokit/util/APIInfo.js",
+				"sap/ui/demokit/util/JSDocUtil.js",
+				"sap/ui/demokit/util/jsanalyzer/ASTUtils.js",
+				"sap/ui/demokit/util/jsanalyzer/Doclet.js",
+				"sap/ui/demokit/util/jsanalyzer/ModuleAnalyzer.js"
+			]
+		},
+		{
+			"name": "library-h2-preload.js.map",
+			"isDebug": true
+		},
+		{
+			"name": "library-preload.js",
+			"module": "sap/ui/demokit/library-preload.js",
+			"merged": true,
+			"required": [
+				"jquery.sap.act.js",
+				"jquery.sap.encoder.js",
+				"jquery.sap.global.js",
+				"jquery.sap.keycodes.js",
+				"jquery.sap.script.js",
+				"jquery.sap.storage.js",
+				"jquery.sap.strings.js",
+				"sap/m/GroupHeaderListItem.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessageToast.js",
+				"sap/m/SearchField.js",
+				"sap/m/Shell.js",
+				"sap/m/SplitApp.js",
+				"sap/m/Text.js",
+				"sap/m/library.js",
+				"sap/m/routing/RouteMatchedHandler.js",
+				"sap/ui/Device.js",
+				"sap/ui/Global.js",
+				"sap/ui/base/ManagedObjectMetadata.js",
+				"sap/ui/commons/Button.js",
+				"sap/ui/commons/CheckBox.js",
+				"sap/ui/commons/Dialog.js",
+				"sap/ui/commons/DropdownBox.js",
+				"sap/ui/commons/FormattedTextView.js",
+				"sap/ui/commons/Image.js",
+				"sap/ui/commons/Label.js",
+				"sap/ui/commons/Link.js",
+				"sap/ui/commons/RichTooltip.js",
+				"sap/ui/commons/SearchField.js",
+				"sap/ui/commons/SegmentedButton.js",
+				"sap/ui/commons/Splitter.js",
+				"sap/ui/commons/TextArea.js",
+				"sap/ui/commons/TextView.js",
+				"sap/ui/commons/Tree.js",
+				"sap/ui/commons/TreeNode.js",
+				"sap/ui/commons/layout/AbsoluteLayout.js",
+				"sap/ui/commons/library.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/HTML.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/IntervalTrigger.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/core/Title.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/delegate/ItemNavigation.js",
+				"sap/ui/core/library.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/mvc/JSView.js",
+				"sap/ui/core/mvc/View.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/core/routing/Router.js",
+				"sap/ui/core/search/OpenSearchProvider.js",
+				"sap/ui/core/util/LibraryInfo.js",
+				"sap/ui/demokit/js/esprima.js",
+				"sap/ui/demokit/js/highlight-query-terms.js",
+				"sap/ui/fl/FakeLrepConnectorLocalStorage.js",
+				"sap/ui/fl/Utils.js",
+				"sap/ui/layout/BlockLayout.js",
+				"sap/ui/layout/BlockLayoutCell.js",
+				"sap/ui/layout/BlockLayoutRow.js",
+				"sap/ui/layout/Grid.js",
+				"sap/ui/layout/GridData.js",
+				"sap/ui/layout/HorizontalLayout.js",
+				"sap/ui/layout/VerticalLayout.js",
+				"sap/ui/layout/form/Form.js",
+				"sap/ui/layout/form/FormContainer.js",
+				"sap/ui/layout/form/FormElement.js",
+				"sap/ui/layout/form/GridElementData.js",
+				"sap/ui/layout/form/GridLayout.js",
+				"sap/ui/layout/form/SimpleForm.js",
+				"sap/ui/layout/library.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ui/ux3/DataSet.js",
+				"sap/ui/ux3/DataSetItem.js",
+				"sap/ui/ux3/DataSetSimpleView.js",
+				"sap/ui/ux3/NavigationItem.js",
+				"sap/ui/ux3/Shell.js",
+				"sap/ui/ux3/ToolPopup.js"
+			],
+			"condRequired": [
+				"sap/ui/demokit/js/google-code-prettify/prettify.js"
+			],
+			"included": [
+				"sap/ui/demokit/CodeSampleContainer.js",
+				"sap/ui/demokit/CodeSampleContainerRenderer.js",
+				"sap/ui/demokit/CodeViewer.js",
+				"sap/ui/demokit/CodeViewerRenderer.js",
+				"sap/ui/demokit/DemokitApp.js",
+				"sap/ui/demokit/EntityInfo.js",
+				"sap/ui/demokit/FeedbackClient.js",
+				"sap/ui/demokit/FileUploadIntrospector.js",
+				"sap/ui/demokit/FileUploadIntrospectorRenderer.js",
+				"sap/ui/demokit/HexagonButton.js",
+				"sap/ui/demokit/HexagonButtonGroup.js",
+				"sap/ui/demokit/HexagonButtonGroupRenderer.js",
+				"sap/ui/demokit/HexagonButtonRenderer.js",
+				"sap/ui/demokit/IndexLayout.js",
+				"sap/ui/demokit/IndexLayoutPage.js",
+				"sap/ui/demokit/IndexLayoutRenderer.js",
+				"sap/ui/demokit/IndexPage.js",
+				"sap/ui/demokit/SimpleTree.js",
+				"sap/ui/demokit/SimpleTreeNode.js",
+				"sap/ui/demokit/SimpleTreeRenderer.js",
+				"sap/ui/demokit/Tag.js",
+				"sap/ui/demokit/TagCloud.js",
+				"sap/ui/demokit/TagCloudRenderer.js",
+				"sap/ui/demokit/UI5EntityCueCard.js",
+				"sap/ui/demokit/UI5EntityCueCardRenderer.js",
+				"sap/ui/demokit/UIAreaSubstitute.js",
+				"sap/ui/demokit/demoapps/Component.js",
+				"sap/ui/demokit/demoapps/all.js",
+				"sap/ui/demokit/demoapps/controller/App.controller.js",
+				"sap/ui/demokit/demoapps/manifest.json",
+				"sap/ui/demokit/demoapps/model/formatter.js",
+				"sap/ui/demokit/demoapps/model/libraryData.js",
+				"sap/ui/demokit/demoapps/model/sourceFileDownloader.js",
+				"sap/ui/demokit/demoapps/view/App.view.xml",
+				"sap/ui/demokit/demoapps/view/BlockLayoutCell.fragment.xml",
+				"sap/ui/demokit/demoapps/view/BlockLayoutHeadlineCell.fragment.xml",
+				"sap/ui/demokit/demoapps/view/BlockLayoutTeaserCell.fragment.xml",
+				"sap/ui/demokit/explored/Bootstrap.js",
+				"sap/ui/demokit/explored/Component.js",
+				"sap/ui/demokit/explored/data.js",
+				"sap/ui/demokit/explored/util/MyRouter.js",
+				"sap/ui/demokit/explored/util/ObjectSearch.js",
+				"sap/ui/demokit/explored/util/ToggleFullScreenHandler.js",
+				"sap/ui/demokit/explored/view/app.controller.js",
+				"sap/ui/demokit/explored/view/app.view.js",
+				"sap/ui/demokit/explored/view/appSettingsDialog.fragment.xml",
+				"sap/ui/demokit/explored/view/base.controller.js",
+				"sap/ui/demokit/explored/view/code.controller.js",
+				"sap/ui/demokit/explored/view/code.view.xml",
+				"sap/ui/demokit/explored/view/entity.controller.js",
+				"sap/ui/demokit/explored/view/entity.view.xml",
+				"sap/ui/demokit/explored/view/master.controller.js",
+				"sap/ui/demokit/explored/view/master.view.xml",
+				"sap/ui/demokit/explored/view/notFound.controller.js",
+				"sap/ui/demokit/explored/view/notFound.view.xml",
+				"sap/ui/demokit/explored/view/sample.controller.js",
+				"sap/ui/demokit/explored/view/sample.view.xml",
+				"sap/ui/demokit/explored/view/viewSettingsDialog.fragment.xml",
+				"sap/ui/demokit/explored/view/welcome.view.xml",
+				"sap/ui/demokit/library.js",
+				"sap/ui/demokit/manifest.json",
+				"sap/ui/demokit/util/APIInfo.js",
+				"sap/ui/demokit/util/JSDocUtil.js",
+				"sap/ui/demokit/util/jsanalyzer/ASTUtils.js",
+				"sap/ui/demokit/util/jsanalyzer/Doclet.js",
+				"sap/ui/demokit/util/jsanalyzer/ModuleAnalyzer.js"
+			]
+		},
+		{
+			"name": "library-preload.js.map",
+			"isDebug": true
+		},
+		{
+			"name": "library-preload.json",
+			"module": "sap/ui/demokit/library-preload.json",
+			"merged": true,
+			"required": [
+				"jquery.sap.act.js",
+				"jquery.sap.encoder.js",
+				"jquery.sap.global.js",
+				"jquery.sap.keycodes.js",
+				"jquery.sap.script.js",
+				"jquery.sap.storage.js",
+				"jquery.sap.strings.js",
+				"sap/m/GroupHeaderListItem.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessageToast.js",
+				"sap/m/SearchField.js",
+				"sap/m/Shell.js",
+				"sap/m/SplitApp.js",
+				"sap/m/Text.js",
+				"sap/m/library.js",
+				"sap/m/routing/RouteMatchedHandler.js",
+				"sap/ui/Device.js",
+				"sap/ui/Global.js",
+				"sap/ui/base/ManagedObjectMetadata.js",
+				"sap/ui/commons/Button.js",
+				"sap/ui/commons/CheckBox.js",
+				"sap/ui/commons/Dialog.js",
+				"sap/ui/commons/DropdownBox.js",
+				"sap/ui/commons/FormattedTextView.js",
+				"sap/ui/commons/Image.js",
+				"sap/ui/commons/Label.js",
+				"sap/ui/commons/Link.js",
+				"sap/ui/commons/RichTooltip.js",
+				"sap/ui/commons/SearchField.js",
+				"sap/ui/commons/SegmentedButton.js",
+				"sap/ui/commons/Splitter.js",
+				"sap/ui/commons/TextArea.js",
+				"sap/ui/commons/TextView.js",
+				"sap/ui/commons/Tree.js",
+				"sap/ui/commons/TreeNode.js",
+				"sap/ui/commons/layout/AbsoluteLayout.js",
+				"sap/ui/commons/library-preload.json",
+				"sap/ui/commons/library.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/HTML.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/IntervalTrigger.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/core/Title.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/delegate/ItemNavigation.js",
+				"sap/ui/core/library-preload.json",
+				"sap/ui/core/library.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/mvc/JSView.js",
+				"sap/ui/core/mvc/View.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/core/routing/Router.js",
+				"sap/ui/core/search/OpenSearchProvider.js",
+				"sap/ui/core/util/LibraryInfo.js",
+				"sap/ui/demokit/js/esprima.js",
+				"sap/ui/demokit/js/highlight-query-terms.js",
+				"sap/ui/fl/FakeLrepConnectorLocalStorage.js",
+				"sap/ui/fl/Utils.js",
+				"sap/ui/layout/BlockLayout.js",
+				"sap/ui/layout/BlockLayoutCell.js",
+				"sap/ui/layout/BlockLayoutRow.js",
+				"sap/ui/layout/Grid.js",
+				"sap/ui/layout/GridData.js",
+				"sap/ui/layout/HorizontalLayout.js",
+				"sap/ui/layout/VerticalLayout.js",
+				"sap/ui/layout/form/Form.js",
+				"sap/ui/layout/form/FormContainer.js",
+				"sap/ui/layout/form/FormElement.js",
+				"sap/ui/layout/form/GridElementData.js",
+				"sap/ui/layout/form/GridLayout.js",
+				"sap/ui/layout/form/SimpleForm.js",
+				"sap/ui/layout/library.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ui/ux3/DataSet.js",
+				"sap/ui/ux3/DataSetItem.js",
+				"sap/ui/ux3/DataSetSimpleView.js",
+				"sap/ui/ux3/NavigationItem.js",
+				"sap/ui/ux3/Shell.js",
+				"sap/ui/ux3/ToolPopup.js"
+			],
+			"condRequired": [
+				"sap/ui/demokit/js/google-code-prettify/prettify.js"
+			],
+			"included": [
+				"sap/ui/demokit/CodeSampleContainer.js",
+				"sap/ui/demokit/CodeSampleContainerRenderer.js",
+				"sap/ui/demokit/CodeViewer.js",
+				"sap/ui/demokit/CodeViewerRenderer.js",
+				"sap/ui/demokit/DemokitApp.js",
+				"sap/ui/demokit/EntityInfo.js",
+				"sap/ui/demokit/FeedbackClient.js",
+				"sap/ui/demokit/FileUploadIntrospector.js",
+				"sap/ui/demokit/FileUploadIntrospectorRenderer.js",
+				"sap/ui/demokit/HexagonButton.js",
+				"sap/ui/demokit/HexagonButtonGroup.js",
+				"sap/ui/demokit/HexagonButtonGroupRenderer.js",
+				"sap/ui/demokit/HexagonButtonRenderer.js",
+				"sap/ui/demokit/IndexLayout.js",
+				"sap/ui/demokit/IndexLayoutPage.js",
+				"sap/ui/demokit/IndexLayoutRenderer.js",
+				"sap/ui/demokit/IndexPage.js",
+				"sap/ui/demokit/SimpleTree.js",
+				"sap/ui/demokit/SimpleTreeNode.js",
+				"sap/ui/demokit/SimpleTreeRenderer.js",
+				"sap/ui/demokit/Tag.js",
+				"sap/ui/demokit/TagCloud.js",
+				"sap/ui/demokit/TagCloudRenderer.js",
+				"sap/ui/demokit/UI5EntityCueCard.js",
+				"sap/ui/demokit/UI5EntityCueCardRenderer.js",
+				"sap/ui/demokit/UIAreaSubstitute.js",
+				"sap/ui/demokit/demoapps/Component.js",
+				"sap/ui/demokit/demoapps/all.js",
+				"sap/ui/demokit/demoapps/controller/App.controller.js",
+				"sap/ui/demokit/demoapps/manifest.json",
+				"sap/ui/demokit/demoapps/model/formatter.js",
+				"sap/ui/demokit/demoapps/model/libraryData.js",
+				"sap/ui/demokit/demoapps/model/sourceFileDownloader.js",
+				"sap/ui/demokit/demoapps/view/App.view.xml",
+				"sap/ui/demokit/demoapps/view/BlockLayoutCell.fragment.xml",
+				"sap/ui/demokit/demoapps/view/BlockLayoutHeadlineCell.fragment.xml",
+				"sap/ui/demokit/demoapps/view/BlockLayoutTeaserCell.fragment.xml",
+				"sap/ui/demokit/explored/Bootstrap.js",
+				"sap/ui/demokit/explored/Component.js",
+				"sap/ui/demokit/explored/data.js",
+				"sap/ui/demokit/explored/util/MyRouter.js",
+				"sap/ui/demokit/explored/util/ObjectSearch.js",
+				"sap/ui/demokit/explored/util/ToggleFullScreenHandler.js",
+				"sap/ui/demokit/explored/view/app.controller.js",
+				"sap/ui/demokit/explored/view/app.view.js",
+				"sap/ui/demokit/explored/view/appSettingsDialog.fragment.xml",
+				"sap/ui/demokit/explored/view/base.controller.js",
+				"sap/ui/demokit/explored/view/code.controller.js",
+				"sap/ui/demokit/explored/view/code.view.xml",
+				"sap/ui/demokit/explored/view/entity.controller.js",
+				"sap/ui/demokit/explored/view/entity.view.xml",
+				"sap/ui/demokit/explored/view/master.controller.js",
+				"sap/ui/demokit/explored/view/master.view.xml",
+				"sap/ui/demokit/explored/view/notFound.controller.js",
+				"sap/ui/demokit/explored/view/notFound.view.xml",
+				"sap/ui/demokit/explored/view/sample.controller.js",
+				"sap/ui/demokit/explored/view/sample.view.xml",
+				"sap/ui/demokit/explored/view/viewSettingsDialog.fragment.xml",
+				"sap/ui/demokit/explored/view/welcome.view.xml",
+				"sap/ui/demokit/library.js",
+				"sap/ui/demokit/manifest.json",
+				"sap/ui/demokit/util/APIInfo.js",
+				"sap/ui/demokit/util/JSDocUtil.js",
+				"sap/ui/demokit/util/jsanalyzer/ASTUtils.js",
+				"sap/ui/demokit/util/jsanalyzer/Doclet.js",
+				"sap/ui/demokit/util/jsanalyzer/ModuleAnalyzer.js"
+			]
+		},
+		{
+			"name": "library.dependencies.json",
+			"designtime": true
+		},
+		{
+			"name": "library.dependencies.xml",
+			"designtime": true
+		},
+		{
+			"name": "library.js",
+			"module": "sap/ui/demokit/library.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/Global.js",
+				"sap/ui/commons/library.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/library.js",
+				"sap/ui/demokit/js/highlight-query-terms.js"
+			],
+			"condRequired": [
+				"sap/ui/core/util/LibraryInfo.js"
+			]
+		},
+		{
+			"name": "library.templates.xml",
+			"designtime": true
+		},
+		{
+			"name": "manifest.json",
+			"module": "sap/ui/demokit/manifest.json"
+		},
+		{
+			"name": "resources.json"
+		},
+		{
+			"name": "themes/base/CodeSampleContainer.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/base/CodeViewer.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/base/DemokitApp.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/base/DemokitPage.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/base/FileUploadIntrospector.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/base/HexagonButton.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/base/HexagonButtonGroup.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/base/IndexLayout.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/base/Link.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/base/SimpleTree.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/base/TagCloud.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/base/UI5EntityCueCard.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/base/fonts/BusinessSuiteInAppSymbolsSmall.eot"
+		},
+		{
+			"name": "themes/base/fonts/BusinessSuiteInAppSymbolsSmall.ttf"
+		},
+		{
+			"name": "themes/base/highlight-query-terms.css"
+		},
+		{
+			"name": "themes/base/images/OpenUI5_new_small_size.png"
+		},
+		{
+			"name": "themes/base/images/bg_white_transparent.png"
+		},
+		{
+			"name": "themes/base/images/file.gif"
+		},
+		{
+			"name": "themes/base/images/hexagon-blue.gif"
+		},
+		{
+			"name": "themes/base/images/hexagon-gray.gif"
+		},
+		{
+			"name": "themes/base/images/hexagon-green.gif"
+		},
+		{
+			"name": "themes/base/images/hexagon-pink.gif"
+		},
+		{
+			"name": "themes/base/images/hexagon-red.gif"
+		},
+		{
+			"name": "themes/base/images/hexagon-yellow.gif"
+		},
+		{
+			"name": "themes/base/images/hexagon.svg"
+		},
+		{
+			"name": "themes/base/images/hexagon_blue_small.png"
+		},
+		{
+			"name": "themes/base/images/hexagon_grey_small.png"
+		},
+		{
+			"name": "themes/base/images/logo-SAPUI5-blue-446x140.png"
+		},
+		{
+			"name": "themes/base/library-RTL-dbg.css",
+			"isDebug": true
+		},
+		{
+			"name": "themes/base/library-RTL.css"
+		},
+		{
+			"name": "themes/base/library-dbg.css",
+			"isDebug": true
+		},
+		{
+			"name": "themes/base/library-parameters.json"
+		},
+		{
+			"name": "themes/base/library.css"
+		},
+		{
+			"name": "themes/base/library.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/base/library.source.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/base/shared.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/sap_belize/library-RTL-dbg.css",
+			"isDebug": true
+		},
+		{
+			"name": "themes/sap_belize/library-RTL.css"
+		},
+		{
+			"name": "themes/sap_belize/library-dbg.css",
+			"isDebug": true
+		},
+		{
+			"name": "themes/sap_belize/library-parameters.json"
+		},
+		{
+			"name": "themes/sap_belize/library.css"
+		},
+		{
+			"name": "themes/sap_belize/library.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/sap_belize/library.source.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/sap_belize_plus/library-RTL-dbg.css",
+			"isDebug": true
+		},
+		{
+			"name": "themes/sap_belize_plus/library-RTL.css"
+		},
+		{
+			"name": "themes/sap_belize_plus/library-dbg.css",
+			"isDebug": true
+		},
+		{
+			"name": "themes/sap_belize_plus/library-parameters.json"
+		},
+		{
+			"name": "themes/sap_belize_plus/library.css"
+		},
+		{
+			"name": "themes/sap_belize_plus/library.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/sap_belize_plus/library.source.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-RTL-dbg.css",
+			"isDebug": true
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-RTL.css"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-dbg.css",
+			"isDebug": true
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-parameters.json"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.css"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.source.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/sap_goldreflection/library-RTL-dbg.css",
+			"isDebug": true
+		},
+		{
+			"name": "themes/sap_goldreflection/library-RTL.css"
+		},
+		{
+			"name": "themes/sap_goldreflection/library-dbg.css",
+			"isDebug": true
+		},
+		{
+			"name": "themes/sap_goldreflection/library-parameters.json"
+		},
+		{
+			"name": "themes/sap_goldreflection/library.css"
+		},
+		{
+			"name": "themes/sap_goldreflection/library.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/sap_goldreflection/library.source.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/sap_hcb/library-RTL-dbg.css",
+			"isDebug": true
+		},
+		{
+			"name": "themes/sap_hcb/library-RTL.css"
+		},
+		{
+			"name": "themes/sap_hcb/library-dbg.css",
+			"isDebug": true
+		},
+		{
+			"name": "themes/sap_hcb/library-parameters.json"
+		},
+		{
+			"name": "themes/sap_hcb/library.css"
+		},
+		{
+			"name": "themes/sap_hcb/library.less",
+			"designtime": true
+		},
+		{
+			"name": "themes/sap_hcb/library.source.less",
+			"designtime": true
+		},
+		{
+			"name": "util/APIInfo-dbg.js",
+			"module": "sap/ui/demokit/util/APIInfo.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "util/APIInfo.js",
+			"module": "sap/ui/demokit/util/APIInfo.js",
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "util/JSDocUtil-dbg.js",
+			"module": "sap/ui/demokit/util/JSDocUtil.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"jquery.sap.strings.js"
+			]
+		},
+		{
+			"name": "util/JSDocUtil.js",
+			"module": "sap/ui/demokit/util/JSDocUtil.js",
+			"required": [
+				"jquery.sap.global.js",
+				"jquery.sap.strings.js"
+			]
+		},
+		{
+			"name": "util/jsanalyzer/ASTUtils-dbg.js",
+			"module": "sap/ui/demokit/util/jsanalyzer/ASTUtils.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/demokit/js/esprima.js"
+			]
+		},
+		{
+			"name": "util/jsanalyzer/ASTUtils.js",
+			"module": "sap/ui/demokit/util/jsanalyzer/ASTUtils.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/demokit/js/esprima.js"
+			]
+		},
+		{
+			"name": "util/jsanalyzer/Doclet-dbg.js",
+			"module": "sap/ui/demokit/util/jsanalyzer/Doclet.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "util/jsanalyzer/Doclet.js",
+			"module": "sap/ui/demokit/util/jsanalyzer/Doclet.js",
+			"required": [
+				"jquery.sap.global.js"
+			]
+		},
+		{
+			"name": "util/jsanalyzer/ModuleAnalyzer-dbg.js",
+			"module": "sap/ui/demokit/util/jsanalyzer/ModuleAnalyzer.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/base/ManagedObjectMetadata.js",
+				"sap/ui/demokit/js/esprima.js",
+				"sap/ui/demokit/util/jsanalyzer/ASTUtils.js",
+				"sap/ui/demokit/util/jsanalyzer/Doclet.js"
+			]
+		},
+		{
+			"name": "util/jsanalyzer/ModuleAnalyzer.js",
+			"module": "sap/ui/demokit/util/jsanalyzer/ModuleAnalyzer.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/base/ManagedObjectMetadata.js",
+				"sap/ui/demokit/js/esprima.js",
+				"sap/ui/demokit/util/jsanalyzer/ASTUtils.js",
+				"sap/ui/demokit/util/jsanalyzer/Doclet.js"
+			]
+		}
+	]
+}

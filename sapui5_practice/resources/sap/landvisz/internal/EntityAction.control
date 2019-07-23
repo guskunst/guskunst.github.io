@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>internal/EntityAction</name>
+    <derived/>
+    <documentation>A control to specify entity actions</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property group="Data" type="sap.ui.core/string" name="actionTooltip">
+            <documentation>Tooltip for the internal action</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/URI" name="iconSrc">
+            <documentation>Source of the icon</documentation>
+        </property>
+        <property group="Dimension" type="sap.ui.core/string" name="renderingSize">
+            <documentation>rendering size of the control</documentation>
+        </property>
+    </properties>
+    <events>
+        <event allowPreventDefault="false" name="press">
+            <documentation>on click fire press</documentation>
+        </event>
+    </events>
+</control>

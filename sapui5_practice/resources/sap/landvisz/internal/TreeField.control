@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>internal/TreeField</name>
+    <derived/>
+    <documentation>A control to render tree field in the control</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property group="Data" type="sap.ui.core/object" name="treeModel">
+            <documentation>treeModel to be rendered in the control</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="bindingName">
+            <documentation>binding name</documentation>
+        </property>
+        <property group="Dimension" type="sap.landvisz/EntityCSSSize" name="renderingSize">
+            <documentation>rendering size of the control</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation cardinality="0..n" type="sap.ui.commons/TreeNode" name="treeNode">
+            <documentation>aggregation on the tree field to render tree nodes</documentation>
+        </aggregation>
+    </aggregations>
+</control>

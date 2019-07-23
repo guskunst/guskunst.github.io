@@ -1,0 +1,28 @@
+{
+  "modules" : [
+    {
+      "name" : "sap/ui/demoapps/library-h2-preload.js",
+      "size" : 899,
+      "required" : [],
+      "includes" : ["sap/ui/demoapps/manifest.json"]
+    },
+    {
+      "name" : "sap/ui/demoapps/library-preload.js",
+      "size" : 849,
+      "required" : [],
+      "includes" : ["sap/ui/demoapps/manifest.json"]
+    },
+    {
+      "name" : "sap/ui/demoapps/library-preload.json",
+      "size" : 0,
+      "required" : ["sap/m/library-preload.json", "sap/ui/core/library-preload.json", "sap/ui/layout/library-preload.json", "sap/ushell/library-preload.json"],
+      "includes" : ["sap/ui/demoapps/manifest.json"]
+    },
+    {
+      "name" : "sap/ui/demoapps/manifest.json",
+      "size" : 939,
+      "required" : [],
+      "includes" : []
+    }
+  ]
+}

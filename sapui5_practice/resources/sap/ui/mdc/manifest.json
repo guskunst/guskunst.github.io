@@ -1,0 +1,101 @@
+{
+  "_version": "1.9.0",
+  "sap.app": {
+    "id": "sap.ui.mdc",
+    "type": "library",
+    "embeds": [],
+    "applicationVersion": {
+      "version": "1.66.0"
+    },
+    "title": "UI5 library: sap.ui.mdc",
+    "description": "UI5 library: sap.ui.mdc",
+    "ach": "CA-UI5-CMP",
+    "resources": "resources.json",
+    "offline": true
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "supportedThemes": [
+      "base",
+      "sap_belize",
+      "sap_belize_plus",
+      "sap_bluecrystal",
+      "sap_fiori_3"
+    ]
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.66",
+      "libs": {
+        "sap.ui.core": {
+          "minVersion": "1.66.0"
+        },
+        "sap.m": {
+          "minVersion": "1.66.0"
+        }
+      }
+    },
+    "library": {
+      "i18n": "messagebundle.properties",
+      "content": {
+        "controls": [
+          "sap.ui.mdc.Chart",
+          "sap.ui.mdc.Table",
+          "sap.ui.mdc.base.Field",
+          "sap.ui.mdc.base.FieldBase",
+          "sap.ui.mdc.base.FilterField",
+          "sap.ui.mdc.odata.v4.microchart.MicroChart",
+          "sap.ui.mdc.base.info.Panel",
+          "sap.ui.mdc.base.info.ContactDetails",
+          "sap.ui.mdc.base.filterbar.FilterBar"
+        ],
+        "elements": [
+          "sap.ui.mdc.Column",
+          "sap.ui.mdc.CreationRow",
+          "sap.ui.mdc.TableTypeBase",
+          "sap.ui.mdc.chart.DimensionItem",
+          "sap.ui.mdc.chart.MeasureItem",
+          "sap.ui.mdc.base.CustomFieldHelp",
+          "sap.ui.mdc.base.CustomFieldInfo",
+          "sap.ui.mdc.base.FieldHelpBase",
+          "sap.ui.mdc.base.FieldInfo",
+          "sap.ui.mdc.base.FieldInfoBase",
+          "sap.ui.mdc.base.FieldValueHelp",
+          "sap.ui.mdc.base.FieldValueHelpContentWrapperBase",
+          "sap.ui.mdc.base.FieldValueHelpMTableWrapper",
+          "sap.ui.mdc.base.ListFieldHelp",
+          "sap.ui.mdc.base.filterbar.FilterItemLayout",
+          "sap.ui.mdc.base.info.ContactDetailsAddressItem",
+          "sap.ui.mdc.base.info.ContactDetailsEmailItem",
+          "sap.ui.mdc.base.info.ContactDetailsItem",
+          "sap.ui.mdc.base.info.ContactDetailsPhoneItem",
+          "sap.ui.mdc.base.info.ContentHandler",
+          "sap.ui.mdc.base.info.LinkHandler",
+          "sap.ui.mdc.base.info.LinkItem",
+          "sap.ui.mdc.base.info.PanelItem",
+          "sap.ui.mdc.base.state.SelectOption",
+          "sap.ui.mdc.base.state.UiState",
+          "sap.ui.mdc.flp.info.LinkHandler",
+          "sap.ui.mdc.base.info.SemanticObjectUnavailableAction",
+          "sap.ui.mdc.base.info.SemanticObjectMapping",
+          "sap.ui.mdc.base.info.SemanticObjectMappingItem",
+          "sap.ui.mdc.base.InParameter",
+          "sap.ui.mdc.base.OutParameter"
+        ],
+        "types": [
+          "sap.ui.mdc.TableType",
+          "sap.ui.mdc.TableP13Mode",
+          "sap.ui.mdc.GrowingMode",
+          "sap.ui.mdc.RowCountMode",
+          "sap.ui.mdc.SelectionMode",
+          "sap.ui.mdc.TableRowAction",
+          "sap.ui.mdc.FieldDisplay",
+          "sap.ui.mdc.EditMode",
+          "sap.ui.mdc.FilterExpression",
+          "sap.ui.mdc.OutParameterMode"
+        ],
+        "interfaces": []
+      }
+    }
+  }
+}

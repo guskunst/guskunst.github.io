@@ -1,0 +1,132 @@
+{
+  "modules" : [
+    {
+      "name" : "sap/me/Calendar.js",
+      "description" : "Provides control sap.me.Calendar.",
+      "size" : 27383,
+      "compressedSize" : 12452,
+      "required" : ["sap/base/Log.js", "sap/m/library.js", "sap/me/CalendarDate.js", "sap/me/CalendarRenderer.js", "sap/me/library.js", "sap/ui/Device.js", "sap/ui/core/Control.js", "sap/ui/core/Icon.js", "sap/ui/core/IconPool.js", "sap/ui/core/LocaleData.js", "sap/ui/core/date/UniversalDate.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/me/CalendarDate.js",
+      "description" : "! SAPUI5\n\n        (c) Copyright 2009-2019 SAP SE. All rights reserved",
+      "size" : 7890,
+      "compressedSize" : 2233,
+      "required" : ["sap/base/Log.js", "sap/ui/base/Object.js", "sap/ui/core/date/UniversalDate.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/me/CalendarLegend.js",
+      "description" : "Provides control sap.me.CalendarLegend.",
+      "size" : 8283,
+      "compressedSize" : 4794,
+      "required" : ["sap/m/Label.js", "sap/me/CalendarLegendRenderer.js", "sap/me/library.js", "sap/ui/core/Control.js", "sap/ui/core/Icon.js", "sap/ui/core/IconPool.js", "sap/ui/core/theming/Parameters.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/me/CalendarLegendRenderer.js",
+      "description" : "! SAPUI5\n\n        (c) Copyright 2009-2019 SAP SE. All rights reserved",
+      "size" : 2814,
+      "compressedSize" : 1389,
+      "required" : ["ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/me/CalendarRenderer.js",
+      "description" : "! SAPUI5\n\n        (c) Copyright 2009-2019 SAP SE. All rights reserved",
+      "size" : 8155,
+      "compressedSize" : 3314,
+      "required" : ["sap/me/CalendarDate.js", "sap/ui/core/LocaleData.js", "sap/ui/core/date/UniversalDate.js", "sap/ui/core/format/DateFormat.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/me/OverlapCalendar.js",
+      "description" : "Provides control sap.me.OverlapCalendar.",
+      "size" : 23933,
+      "compressedSize" : 10207,
+      "required" : ["sap/base/Log.js", "sap/m/Label.js", "sap/me/Calendar.js", "sap/me/CalendarDate.js", "sap/me/OverlapCalendarRenderer.js", "sap/me/library.js", "sap/ui/Device.js", "sap/ui/core/Control.js", "sap/ui/core/date/UniversalDate.js", "sap/ui/core/theming/Parameters.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/me/OverlapCalendarEvent.js",
+      "description" : "Provides control sap.me.OverlapCalendarEvent.",
+      "size" : 2288,
+      "compressedSize" : 859,
+      "required" : ["sap/me/library.js", "sap/ui/core/Element.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/me/OverlapCalendarRenderer.js",
+      "description" : "! SAPUI5\n\n        (c) Copyright 2009-2019 SAP SE. All rights reserved",
+      "size" : 4122,
+      "compressedSize" : 2181,
+      "required" : ["ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/me/ProgressIndicator.js",
+      "description" : "Provides control sap.me.ProgressIndicator.",
+      "size" : 7091,
+      "compressedSize" : 3090,
+      "required" : ["sap/me/ProgressIndicatorRenderer.js", "sap/me/library.js", "sap/ui/core/Control.js", "sap/ui/core/library.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/me/ProgressIndicatorRenderer.js",
+      "description" : "Provides default renderer for control sap.ui.commons.ProgressIndicator",
+      "size" : 3984,
+      "compressedSize" : 1995,
+      "required" : ["sap/base/Log.js", "sap/base/security/encodeXML.js", "sap/base/util/Version.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/me/TabContainer.js",
+      "description" : "Provides control sap.me.TabContainer.",
+      "size" : 8938,
+      "compressedSize" : 5107,
+      "required" : ["sap/m/Label.js", "sap/m/ScrollContainer.js", "sap/me/TabContainerRenderer.js", "sap/me/library.js", "sap/ui/core/Control.js", "sap/ui/core/Icon.js", "sap/ui/core/IconPool.js", "sap/ui/core/theming/Parameters.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/me/TabContainerRenderer.js",
+      "description" : "! SAPUI5\n\n        (c) Copyright 2009-2019 SAP SE. All rights reserved",
+      "size" : 3437,
+      "compressedSize" : 1824,
+      "required" : ["sap/base/Log.js", "sap/base/util/Version.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/me/library-h2-preload.js",
+      "size" : 3863,
+      "required" : ["sap/base/Log.js", "sap/base/security/encodeXML.js", "sap/base/util/Version.js", "sap/m/Label.js", "sap/m/ScrollContainer.js", "sap/m/library.js", "sap/ui/Device.js", "sap/ui/base/Object.js", "sap/ui/core/Control.js", "sap/ui/core/Core.js", "sap/ui/core/Element.js", "sap/ui/core/Icon.js", "sap/ui/core/IconPool.js", "sap/ui/core/LocaleData.js", "sap/ui/core/date/UniversalDate.js", "sap/ui/core/format/DateFormat.js", "sap/ui/core/library.js", "sap/ui/core/theming/Parameters.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : ["sap/me/library.js", "sap/me/manifest.json", "sap/me/Calendar.js", "sap/me/CalendarDate.js", "sap/me/CalendarLegend.js", "sap/me/CalendarLegendRenderer.js", "sap/me/CalendarRenderer.js", "sap/me/OverlapCalendar.js", "sap/me/OverlapCalendarEvent.js", "sap/me/OverlapCalendarRenderer.js", "sap/me/ProgressIndicator.js", "sap/me/ProgressIndicatorRenderer.js", "sap/me/TabContainer.js", "sap/me/TabContainerRenderer.js"]
+    },
+    {
+      "name" : "sap/me/library-preload.js",
+      "size" : 50853,
+      "required" : ["sap/base/Log.js", "sap/base/security/encodeXML.js", "sap/base/util/Version.js", "sap/m/Label.js", "sap/m/ScrollContainer.js", "sap/m/library.js", "sap/ui/Device.js", "sap/ui/base/Object.js", "sap/ui/core/Control.js", "sap/ui/core/Core.js", "sap/ui/core/Element.js", "sap/ui/core/Icon.js", "sap/ui/core/IconPool.js", "sap/ui/core/LocaleData.js", "sap/ui/core/date/UniversalDate.js", "sap/ui/core/format/DateFormat.js", "sap/ui/core/library.js", "sap/ui/core/theming/Parameters.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : ["sap/me/Calendar.js", "sap/me/CalendarDate.js", "sap/me/CalendarLegend.js", "sap/me/CalendarLegendRenderer.js", "sap/me/CalendarRenderer.js", "sap/me/OverlapCalendar.js", "sap/me/OverlapCalendarEvent.js", "sap/me/OverlapCalendarRenderer.js", "sap/me/ProgressIndicator.js", "sap/me/ProgressIndicatorRenderer.js", "sap/me/TabContainer.js", "sap/me/TabContainerRenderer.js", "sap/me/library.js", "sap/me/manifest.json"]
+    },
+    {
+      "name" : "sap/me/library-preload.json",
+      "size" : 0,
+      "required" : ["sap/base/Log.js", "sap/base/security/encodeXML.js", "sap/base/util/Version.js", "sap/m/Label.js", "sap/m/ScrollContainer.js", "sap/m/library.js", "sap/ui/Device.js", "sap/ui/base/Object.js", "sap/ui/core/Control.js", "sap/ui/core/Core.js", "sap/ui/core/Element.js", "sap/ui/core/Icon.js", "sap/ui/core/IconPool.js", "sap/ui/core/LocaleData.js", "sap/ui/core/date/UniversalDate.js", "sap/ui/core/format/DateFormat.js", "sap/ui/core/library-preload.json", "sap/ui/core/library.js", "sap/ui/core/theming/Parameters.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : ["sap/me/Calendar.js", "sap/me/CalendarDate.js", "sap/me/CalendarLegend.js", "sap/me/CalendarLegendRenderer.js", "sap/me/CalendarRenderer.js", "sap/me/OverlapCalendar.js", "sap/me/OverlapCalendarEvent.js", "sap/me/OverlapCalendarRenderer.js", "sap/me/ProgressIndicator.js", "sap/me/ProgressIndicatorRenderer.js", "sap/me/TabContainer.js", "sap/me/TabContainerRenderer.js", "sap/me/library.js", "sap/me/manifest.json"]
+    },
+    {
+      "name" : "sap/me/library.js",
+      "description" : "Initialization Code and shared classes of library sap.me.",
+      "size" : 2975,
+      "compressedSize" : 817,
+      "required" : ["sap/ui/core/Core.js", "sap/ui/core/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/me/manifest.json",
+      "size" : 1298,
+      "required" : [],
+      "includes" : []
+    }
+  ]
+}

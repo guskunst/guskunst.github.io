@@ -1,0 +1,68 @@
+{
+
+    "OrderOfLoadingBlocks": [
+        "AfterLoadPluginsCall",
+        "FLPPlugins"
+    ],
+    "LoadingBlocks": {
+        "AfterLoadPluginsCall": {
+            "LoadingSteps": [
+                {
+                    "LoadingStep": "StartScheduler",
+                    "canBeLoadedAsync": false
+                },
+                {
+                    "LoadingStep": "LoadRendererExtensions",
+                    "canBeLoadedAsync": true
+                },
+                {
+                    "LoadingStep": "MessagePopoverInit",
+                    "canBeLoadedAsync": true
+                },
+                {
+                    "LoadingStep": "UsageAnalytics",
+                    "canBeLoadedAsync": true
+                }
+            ],
+            "maxWaitInMs": 3000
+        },
+        "FLPPlugins": {
+            "LoadingSteps": [
+                {
+                    "LoadingStep": "ConditionalWaitForAppLoading",
+                    "canBeLoadedAsync": false
+                },
+                {
+                    "LoadingStep": "Notifications",
+                    "canBeLoadedAsync": false
+                },
+                {
+                    "LoadingStep": "UserImage",
+                    "canBeLoadedAsync": false
+                },
+                {
+                    "LoadingStep": "Search",
+                    "canBeLoadedAsync": false
+                },
+                {
+                    "LoadingStep": "MeArea",
+                    "canBeLoadedAsync": false
+                },
+                {
+                    "LoadingStep": "UserSettings",
+                    "canBeLoadedAsync": false
+                },
+                {
+                    "LoadingStep": "FirstSegmentCompleteLoaded",
+                    "canBeLoadedAsync": false
+                },
+                {
+                    "LoadingStep": "WarmupPlugins",
+                    "canBeLoadedAsync": true
+                }
+            ],
+            "maxWaitInMs": 0
+        }
+    }
+}
+

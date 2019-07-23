@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Option</name>
+    <derived/>
+    <documentation>Options for solution entities</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property group="Identification" type="sap.ui.core/string" name="type">
+            <documentation>type of main entity which has a replacement</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="currentEntity">
+            <documentation>Entity on which options are applicable</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation cardinality="0..n" type="sap.landvisz/OptionEntity" name="optionEntities">
+            <documentation>Entity to be rendered as options</documentation>
+        </aggregation>
+    </aggregations>
+</control>

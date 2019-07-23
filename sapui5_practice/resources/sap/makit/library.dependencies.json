@@ -1,0 +1,408 @@
+{
+  "modules" : [
+    {
+      "name" : "sap/makit/Axis.js",
+      "description" : "Provides element sap.makit.Axis.",
+      "size" : 1955,
+      "compressedSize" : 574,
+      "required" : ["sap/makit/library.js", "sap/ui/core/Element.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/Category.js",
+      "description" : "Provides element sap.makit.Category.",
+      "size" : 1678,
+      "compressedSize" : 427,
+      "required" : ["sap/makit/library.js", "sap/ui/core/Element.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/CategoryAxis.js",
+      "description" : "Provides element sap.makit.CategoryAxis.",
+      "size" : 1797,
+      "compressedSize" : 550,
+      "required" : ["sap/makit/Axis.js", "sap/makit/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/Chart.js",
+      "description" : "Provides control sap.makit.Chart.",
+      "size" : 38607,
+      "compressedSize" : 19719,
+      "required" : ["sap/base/Log.js", "sap/base/assert.js", "sap/makit/CategoryAxis.js", "sap/makit/ChartRenderer.js", "sap/makit/MakitLib.js", "sap/makit/Row.js", "sap/makit/ValueAxis.js", "sap/makit/ValueBubble.js", "sap/makit/library.js", "sap/ui/core/Control.js", "sap/ui/core/Element.js", "sap/ui/core/RenderManager.js", "sap/ui/core/ResizeHandler.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/ChartRenderer.js",
+      "description" : "Provides default renderer for control sap.makit.Chart.",
+      "size" : 1019,
+      "compressedSize" : 423,
+      "required" : ["ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/Column.js",
+      "description" : "Provides element sap.makit.Column.",
+      "size" : 1516,
+      "compressedSize" : 426,
+      "required" : ["sap/makit/library.js", "sap/ui/core/Element.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/CombinationChart.js",
+      "description" : "Provides control sap.makit.CombinationChart.",
+      "size" : 33228,
+      "compressedSize" : 16698,
+      "required" : ["sap/base/assert.js", "sap/makit/CategoryAxis.js", "sap/makit/CombinationChartRenderer.js", "sap/makit/MakitLib.js", "sap/makit/ValueAxis.js", "sap/makit/ValueBubble.js", "sap/makit/library.js", "sap/ui/core/Control.js", "sap/ui/core/Element.js", "sap/ui/core/RenderManager.js", "sap/ui/core/ResizeHandler.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/CombinationChartRenderer.js",
+      "description" : "Provides default renderer for control sap.makit.CombinationChart.",
+      "size" : 1002,
+      "compressedSize" : 423,
+      "required" : ["ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/Layer.js",
+      "description" : "Provides element sap.makit.Layer.",
+      "size" : 14024,
+      "compressedSize" : 6869,
+      "required" : ["sap/base/Log.js", "sap/base/assert.js", "sap/makit/MakitLib.js", "sap/makit/Row.js", "sap/makit/library.js", "sap/ui/core/Element.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/MakitLib.js",
+      "description" : "Provides element sap.makit.MakitLib.",
+      "size" : 3264,
+      "compressedSize" : 1515,
+      "required" : ["sap/base/Log.js", "sap/makit/js/SybaseMA.js", "sap/makit/library.js", "sap/makit/localization/jQueryCoreLang.js", "sap/makit/localization/jQueryGlobalization.js", "sap/ui/core/Element.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/Row.js",
+      "description" : "Provides element sap.makit.Row.",
+      "size" : 2294,
+      "compressedSize" : 996,
+      "required" : ["sap/makit/library.js", "sap/ui/core/Element.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/Series.js",
+      "description" : "Provides element sap.makit.Series.",
+      "size" : 1620,
+      "compressedSize" : 431,
+      "required" : ["sap/makit/library.js", "sap/ui/core/Element.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/Value.js",
+      "description" : "Provides element sap.makit.Value.",
+      "size" : 2615,
+      "compressedSize" : 482,
+      "required" : ["sap/makit/library.js", "sap/ui/core/Element.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/ValueAxis.js",
+      "description" : "Provides element sap.makit.ValueAxis.",
+      "size" : 1695,
+      "compressedSize" : 434,
+      "required" : ["sap/makit/Axis.js", "sap/makit/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/ValueBubble.js",
+      "description" : "Provides control sap.makit.ValueBubble.",
+      "size" : 3338,
+      "compressedSize" : 1391,
+      "required" : ["sap/makit/library.js", "sap/ui/core/Element.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/library-h2-preload.js",
+      "size" : 4363,
+      "required" : ["sap/base/Log.js", "sap/base/assert.js", "sap/makit/js/SybaseMA.js", "sap/makit/localization/jQueryCoreLang.js", "sap/makit/localization/jQueryGlobalization.js", "sap/ui/core/Control.js", "sap/ui/core/Core.js", "sap/ui/core/Element.js", "sap/ui/core/RenderManager.js", "sap/ui/core/ResizeHandler.js", "sap/ui/core/library.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : ["sap/makit/library.js", "sap/makit/manifest.json", "sap/makit/Axis.js", "sap/makit/Category.js", "sap/makit/CategoryAxis.js", "sap/makit/Chart.js", "sap/makit/ChartRenderer.js", "sap/makit/Column.js", "sap/makit/CombinationChart.js", "sap/makit/CombinationChartRenderer.js", "sap/makit/Layer.js", "sap/makit/MakitLib.js", "sap/makit/Row.js", "sap/makit/Series.js", "sap/makit/Value.js", "sap/makit/ValueAxis.js", "sap/makit/ValueBubble.js"]
+    },
+    {
+      "name" : "sap/makit/library-preload.js",
+      "size" : 53297,
+      "required" : ["sap/base/Log.js", "sap/base/assert.js", "sap/makit/js/SybaseMA.js", "sap/makit/localization/jQueryCoreLang.js", "sap/makit/localization/jQueryGlobalization.js", "sap/ui/core/Control.js", "sap/ui/core/Core.js", "sap/ui/core/Element.js", "sap/ui/core/RenderManager.js", "sap/ui/core/ResizeHandler.js", "sap/ui/core/library.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : ["sap/makit/Axis.js", "sap/makit/Category.js", "sap/makit/CategoryAxis.js", "sap/makit/Chart.js", "sap/makit/ChartRenderer.js", "sap/makit/Column.js", "sap/makit/CombinationChart.js", "sap/makit/CombinationChartRenderer.js", "sap/makit/Layer.js", "sap/makit/MakitLib.js", "sap/makit/Row.js", "sap/makit/Series.js", "sap/makit/Value.js", "sap/makit/ValueAxis.js", "sap/makit/ValueBubble.js", "sap/makit/library.js", "sap/makit/manifest.json"]
+    },
+    {
+      "name" : "sap/makit/library-preload.json",
+      "size" : 0,
+      "required" : ["sap/base/Log.js", "sap/base/assert.js", "sap/makit/js/SybaseMA.js", "sap/makit/localization/jQueryCoreLang.js", "sap/makit/localization/jQueryGlobalization.js", "sap/ui/core/Control.js", "sap/ui/core/Core.js", "sap/ui/core/Element.js", "sap/ui/core/RenderManager.js", "sap/ui/core/ResizeHandler.js", "sap/ui/core/library-preload.json", "sap/ui/core/library.js", "sap/ui/thirdparty/jquery.js", "ui5loader-autoconfig.js"],
+      "includes" : ["sap/makit/Axis.js", "sap/makit/Category.js", "sap/makit/CategoryAxis.js", "sap/makit/Chart.js", "sap/makit/ChartRenderer.js", "sap/makit/Column.js", "sap/makit/CombinationChart.js", "sap/makit/CombinationChartRenderer.js", "sap/makit/Layer.js", "sap/makit/MakitLib.js", "sap/makit/Row.js", "sap/makit/Series.js", "sap/makit/Value.js", "sap/makit/ValueAxis.js", "sap/makit/ValueBubble.js", "sap/makit/library.js", "sap/makit/manifest.json"]
+    },
+    {
+      "name" : "sap/makit/library.js",
+      "description" : "Initialization Code and shared classes of library sap.makit.",
+      "size" : 5306,
+      "compressedSize" : 1280,
+      "required" : ["sap/ui/core/Core.js", "sap/ui/core/library.js", "ui5loader-autoconfig.js"],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/manifest.json",
+      "size" : 1479,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle.properties",
+      "size" : 700,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_ar.properties",
+      "size" : 798,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_bg.properties",
+      "size" : 669,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_ca.properties",
+      "size" : 621,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_cs.properties",
+      "size" : 625,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_da.properties",
+      "size" : 627,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_de.properties",
+      "size" : 624,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_el.properties",
+      "size" : 686,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_en.properties",
+      "size" : 621,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_en_US_sappsd.properties",
+      "size" : 906,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_en_US_saptrc.properties",
+      "size" : 759,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_es.properties",
+      "size" : 620,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_et.properties",
+      "size" : 619,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_fi.properties",
+      "size" : 627,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_fr.properties",
+      "size" : 622,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_hi.properties",
+      "size" : 753,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_hr.properties",
+      "size" : 646,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_hu.properties",
+      "size" : 635,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_it.properties",
+      "size" : 621,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_iw.properties",
+      "size" : 683,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_ja.properties",
+      "size" : 640,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_kk.properties",
+      "size" : 688,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_ko.properties",
+      "size" : 634,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_lt.properties",
+      "size" : 635,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_lv.properties",
+      "size" : 634,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_ms.properties",
+      "size" : 625,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_nl.properties",
+      "size" : 623,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_no.properties",
+      "size" : 627,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_pl.properties",
+      "size" : 629,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_pt.properties",
+      "size" : 621,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_ro.properties",
+      "size" : 624,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_ru.properties",
+      "size" : 683,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_sh.properties",
+      "size" : 640,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_sk.properties",
+      "size" : 624,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_sl.properties",
+      "size" : 621,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_sv.properties",
+      "size" : 627,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_th.properties",
+      "size" : 676,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_tr.properties",
+      "size" : 626,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_uk.properties",
+      "size" : 670,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_vi.properties",
+      "size" : 700,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_zh_CN.properties",
+      "size" : 672,
+      "required" : [],
+      "includes" : []
+    },
+    {
+      "name" : "sap/makit/messagebundle_zh_TW.properties",
+      "size" : 666,
+      "required" : [],
+      "includes" : []
+    }
+  ]
+}

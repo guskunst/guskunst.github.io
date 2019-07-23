@@ -1,0 +1,151 @@
+{
+    "StartScheduler": {
+        "loadingMode": "continueOnEvent",
+
+        "continueOnEvent": {
+            "eventName": "startScheduler"
+        },
+        "userCanTrigger": false,
+        "canBeInterrupted": false
+    },
+    "LoadRendererExtensions": {
+        "loadingMode": "byEvent",
+
+        "byEvent": {
+            "eventName": "loadRendererExtensions",
+            "eventData": ""
+        },
+        "Dependencies": []
+    },
+    "MessagePopoverInit": {
+        "loadingMode": "byEvent",
+
+        "byEvent": {
+            "eventName": "initMessagePopover",
+            "eventData": ""
+        },
+        "Dependencies": ["LoadRendererExtensions"]
+    },
+    "UsageAnalytics": {
+        "loadingMode": "byEvent",
+
+        "byEvent": {
+            "eventName": "loadUsageAnalytics",
+            "eventData": ""
+        },
+        "Dependencies": ["LoadRendererExtensions"]
+    },
+    "Notifications": {
+        "loadingMode": "byComponentCreate",
+
+        "excludedFLPStates": ["lean", "lean-home"],
+
+        "byComponentCreate": {
+            "enabled": true,
+            "ui5ComponentOptions": {
+                "name": "sap.ushell.components.shell.Notifications.fiori3",
+                "manifest": false
+            },
+            "url": "sap/ushell/components/shell/Notifications/fiori3"
+        },
+
+        "configSwitch": [
+            {
+                "path": "/core/shell/model/enableNotifications",
+                "assertionValue": true
+            }
+        ],
+
+        "userCanTrigger": false,
+        "canBeInterrupted": false
+    },
+    "MeArea": {
+        "loadingMode": "byComponentCreate",
+
+        "byComponentCreate": {
+            "enabled": true,
+            "ui5ComponentOptions": {
+                "name": "sap.ushell.components.shell.MeArea.fiori3",
+                "manifest": false
+            },
+            "url": "sap/ushell/components/shell/MeArea/fiori3"
+        },
+        "userCanTrigger": false,
+        "canBeInterrupted": false
+    },
+    "UserSettings": {
+        "loadingMode": "byComponentCreate",
+
+        "byComponentCreate": {
+            "enabled": true,
+            "ui5ComponentOptions": {
+                "name": "sap.ushell.components.shell.UserSettings",
+                "manifest": false
+            },
+            "url": "sap/ushell/components/shell/UserSettings"
+        },
+        "userCanTrigger": false,
+        "canBeInterrupted": false
+    },
+    "UserImage" : {
+        "loadingMode":"byComponentCreate",
+
+        "byComponentCreate": {
+            "enabled": true,
+            "ui5ComponentOptions": {
+                "name": "sap.ushell.components.shell.UserImage",
+                "manifest": false
+            },
+            "url": "sap/ushell/components/shell/UserImage"
+        },
+
+        "userCanTrigger": false,
+        "canBeInterrupted": false
+    },
+    "Search": {
+        "loadingMode":"byComponentCreate",
+
+        "excludedFLPStates": ["lean", "lean-home"],
+
+        "byComponentCreate": {
+            "enabled": true,
+            "ui5ComponentOptions": {
+                "name": "sap.ushell.components.shell.Search",
+                "manifest": false
+            },
+            "url": "sap/ushell/components/shell/Search"
+        },
+
+        "userCanTrigger": false,
+        "canBeInterrupted": false
+    },
+
+    "FirstSegmentCompleteLoaded": {
+        "loadingMode": "continueOnEvent",
+
+        "continueOnEvent": {
+            "eventName": "firstSegmentCompleteLoaded"
+        },
+        "userCanTrigger": false,
+        "canBeInterrupted": false
+    },
+    "WarmupPlugins": {
+        "loadingMode": "byEvent",
+
+        "byEvent": {
+            "eventName": "loadWarmupPlugins",
+            "eventData": ""
+        },
+        "Dependencies": ["FirstSegmentCompleteLoaded", "LoadRendererExtensions"]
+    },
+    "ConditionalWaitForAppLoading": {
+        "loadingMode": "waitInMs",
+
+        "waitInMs": {
+            "waitingTime": 3000
+        },
+
+        "mandatoryFLPStates": ["app"]
+    }
+
+}

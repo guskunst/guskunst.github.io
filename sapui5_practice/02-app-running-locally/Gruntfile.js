@@ -16,10 +16,10 @@ module.exports = function(grunt) {
 		openui5_connect: {
 			options: {
 				resources: [
-					'sdk/sapui5-sdk-1.52.8/resources',
+					'../sdk/sapui5-sdk-1.66.0/resources',
 				],
 				testresources: [
-					'sdk/sapui5-sdk-1.52.8/test-resources',
+					'../sdk/sapui5-sdk-1.66.0/test-resources',
 				]
 			},
 			src: {

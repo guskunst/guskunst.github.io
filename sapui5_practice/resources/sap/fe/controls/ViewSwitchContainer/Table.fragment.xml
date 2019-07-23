@@ -1,0 +1,42 @@
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns="sap.m"
+	xmlns:macro="sap.ui.mdc.odata.v4"
+	xmlns:core="sap.ui.core"
+	xmlns:unittest="http://schemas.sap.com/sapui5/preprocessorextension/sap.fe.unittesting/1"
+	template:require="{
+		ID: 'sap/ui/mdc/odata/v4/StableIdHelper',
+		CORE: 'sap/fe/core/AnnotationHelper',
+		COMMON: 'sap/ui/mdc/odata/v4/CommonHelper'
+	}">
+	<template:with path="collection>" helper="COMMON.getTargetCollection" var="targetCollection" >
+		<macro:Table
+				unittest:id="TablePropertyExpressionTest"
+				id="{= ID.generate(['fe', 'table', ${collection>@sapui.name}, ${annotationPath>@sapui.name}.replace(RegExp('.*\\.'), '')]) }"
+				metadataContexts="{ model: 'collection', path:'',  name: 'collection'}{model: 'presentation', path:'',  name: 'presentation'}"
+				editMode="{= (${collection>$kind} === 'EntitySet') ? 'Display' : '{ui>/editable}'}"
+				busy="{= ${collection>$kind} === 'EntitySet' ? '{ui>/busy}' : '{ui>/busyLocal/' + ID.generate(['fe', 'table', ${collection>@sapui.name}, ${annotationPath>@sapui.name}.replace(RegExp('.*\\.'), '')]) + '}' }"
+				type="{= ${viewData>/_tableType} || 'ResponsiveTable'}"
+				rowPress="{=  ${viewData>/navigation} &amp;&amp; ${viewData>/navigation}[${collection>@sapui.name}] &amp;&amp; ${viewData>/navigation}[${collection>@sapui.name}]['detail']
+								? ${viewData>/navigation}[${collection>@sapui.name}]['detail']['outbound']
+									? '.routing.navigateOutbound(\'' + ${viewData>/navigation/detail/outbound} + '\', ${$parameters>bindingContext})'
+									: ( ${viewData>/navigation}[${collection>@sapui.name}]['detail']['route']
+										? ('.routing.navigateToContext(${$parameters>bindingContext}, { editable : ' + (${collection>@com.sap.vocabularies.Common.v1.DraftRoot} || ${collection>@com.sap.vocabularies.Common.v1.DraftNode} ? '!${$parameters>bindingContext}.getProperty(\'IsActiveEntity\')' : undefined) + '})')
+										: undefined )
+								: undefined }"
+				rowAction="{= ${viewData>/navigation} &amp;&amp; ${viewData>/navigation}[${collection>@sapui.name}] &amp;&amp; ${viewData>/navigation}[${collection>@sapui.name}]['detail'] ? 'Navigation' : undefined }"
+				selectionMode="{= (!(${targetCollection>@Org.OData.Capabilities.V1.DeleteRestrictions/Deletable} === false) ) || CORE.checkForActions(${visualizationPath>})  ? (${collection>$kind} === 'EntitySet' ? 'Multi' : '{= ${ui>/editable} === \'Editable\' ? \'Multi\' : \'None\'}') : 'None'}"
+				onCallAction=".transaction.onCallAction"
+				onCreate=".editFlow.createDocument"
+				showCreate="{= (${collection>$kind} === 'EntitySet') ? undefined : (CORE.isNavigationPropertyInsertable(${collection>@sapui.name}, ${entitySet>@Org.OData.Capabilities.V1.NavigationRestrictions/RestrictedProperties}, ${targetCollection>@Org.OData.Capabilities.V1.InsertRestrictions/Insertable}) ? '{= ${ui>/editable} === \'Editable\' }'  : false)}"
+				showDelete="{= ${collection>$kind} === 'EntitySet' || '{= ${ui>/editable} === \'Editable\'}'}"
+				onDelete=".editFlow.deleteDocument"
+				selectedContextsModel="ui"
+				groupId="$auto.associations"
+				threshold="{= ${collection>$kind} !== 'EntitySet' ? (${viewData>/_tableType} === 'GridTable' ? '30' : '10') : undefined}"
+				onDataReceived=".editFlow.handleErrorOfTable"
+				noDataText="{= ${collection>$kind} === 'EntitySet' ? ${sap.fe.i18n>TABLE_NO_DATA_TEXT} : undefined}"
+				creationMode="NewPage"
+		>
+		</macro:Table>
+	</template:with>
+</core:FragmentDefinition>

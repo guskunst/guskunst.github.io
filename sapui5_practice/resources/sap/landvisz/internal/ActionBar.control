@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>internal/ActionBar</name>
+    <derived/>
+    <documentation>A control that render actions of a system</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property group="Data" type="sap.ui.core/string" name="actionLabel">
+            <documentation>label for action</documentation>
+        </property>
+        <property group="Dimension" defaultValue="Regular" type="sap.landvisz/EntityCSSSize" name="renderingSize">
+            <documentation>Property that determines the size of the entity rendered</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/URI" name="iconSrc">
+            <documentation>source for the icon rendered</documentation>
+        </property>
+        <property group="Data" defaultValue="NORMAL" type="sap.landvisz/ActionType" name="actionType">
+            <documentation>type of the action</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/object" name="menuData">
+            <documentation>data of menu items and sub items</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="actionTooltip">
+            <documentation>Tooltip for the action</documentation>
+        </property>
+        <property group="Identification" defaultValue="true" type="sap.ui.core/boolean" name="enable">
+            <documentation>property to enable/disable actions</documentation>
+        </property>
+        <property group="Identification" defaultValue="false" type="sap.ui.core/boolean" name="changeView">
+            <documentation>new type of view is loaded while performing the action.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event allowPreventDefault="false" name="select">
+            <documentation>click on the action bar</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation cardinality="0..n" type="sap.ui.commons/Menu" name="menu">
+            <documentation>aggregation for menu items</documentation>
+        </aggregation>
+    </aggregations>
+</control>

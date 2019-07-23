@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>LandscapeEntity</name>
+    <derived/>
+    <documentation>A control to render the system</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property group="Data" type="sap.ui.core/string" name="systemName">
+            <documentation>name of the system</documentation>
+        </property>
+        <property group="Data" type="sap.landvisz/LandscapeObject" name="type">
+            <documentation>type of the system rendered</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="qualifierText">
+            <documentation>text of qualifier icon</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="qualifierTooltip">
+            <documentation>tooltip for qualifier icon</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="qualifierType">
+            <documentation>text of the qualifier that specifies the server</documentation>
+        </property>
+        <property group="Dimension" defaultValue="Regular" type="sap.landvisz/EntityCSSSize" name="renderingSize">
+            <documentation>rendering size of a system</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="defaultState">
+            <documentation>default state of the system</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="description">
+            <documentation>description of the identification region</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/object" name="actions">
+            <documentation>actions of entity</documentation>
+        </property>
+        <property group="Data" defaultValue="NORMAL" type="sap.landvisz/ModelingStatus" name="systemStatus">
+            <documentation>Modeling status of the entity</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="statusTooltip">
+            <documentation>tooltip for modelling status</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/CSSSize" name="explodeViewWidth">
+            <documentation>Width of the show all view</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/CSSSize" name="explodeViewHeight">
+            <documentation>Height of the show all view</documentation>
+        </property>
+        <property group="Identification" defaultValue="true" type="sap.ui.core/boolean" name="showCustomActions">
+            <documentation>determines the visiblity of custom actions</documentation>
+        </property>
+        <property group="Data" defaultValue="true" type="sap.ui.core/boolean" name="showEntityActions">
+            <documentation>determines the visiblity of entityactions</documentation>
+        </property>
+        <property group="Identification" type="sap.ui.core/string" name="systemId">
+            <documentation>System entity ID</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="stateIconSrc">
+            <documentation>Icon source of the state of entity</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="stateIconTooltip">
+            <documentation>tooltip of modelling status icon</documentation>
+        </property>
+        <property group="Identification" type="sap.landvisz/ComponentType" name="componentType">
+            <documentation>Type of a soution component/deployment type entity</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="componentTypeTooltip">
+            <documentation>Tooltip for component type</documentation>
+        </property>
+        <property group="Misc" type="sap.ui.core/string" name="trackSystemCount">
+            <documentation>Systems count in the track</documentation>
+        </property>
+    </properties>
+    <events>
+        <event allowPreventDefault="false" name="mouseOverIdenIcon">
+            <documentation>fires an event on hovering over identification system icon</documentation>
+        </event>
+        <event allowPreventDefault="false" name="statusSelect">
+            <documentation>fires an event on clicking the modelling status</documentation>
+        </event>
+        <event allowPreventDefault="false" name="trackInfoPress">
+            <documentation>Fired when info Icon of track entity clicked</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation cardinality="0..n" type="sap.landvisz/internal/DataContainer" name="dataContainers">
+            <documentation>aggregations for data container</documentation>
+        </aggregation>
+        <aggregation cardinality="0..n" type="sap.landvisz/internal/ActionBar" name="actionBar">
+            <documentation>aggregation on action bar control</documentation>
+        </aggregation>
+        <aggregation cardinality="0..1" type="sap.ui.commons/Image" name="entityStatus">
+            <documentation>Modeling status icon</documentation>
+        </aggregation>
+    </aggregations>
+</control>

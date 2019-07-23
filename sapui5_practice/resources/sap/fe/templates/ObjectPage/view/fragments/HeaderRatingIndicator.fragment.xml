@@ -1,0 +1,37 @@
+<core:FragmentDefinition
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:unittest="http://schemas.sap.com/sapui5/preprocessorextension/sap.fe.unittesting/1"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	template:require="{
+	MODEL: 'sap/ui/model/odata/v4/AnnotationHelper',
+		MESSAGE: 'sap/base/strings/formatMessage'
+	}"
+>
+	<VBox>
+		<items>
+			<Title text="{dataPoint>Title@@MODEL.value}"/>
+			<Label text="{= ${dataPoint>SampleSize} ? ${path: 'dataPoint>SampleSize', formatter: 'AH.buildRatingIndicatorSubtitleExpression'} : ${path: 'dataPoint>Description@MODEL.value'}}"
+				   visible="{= (${dataPoint>SampleSize} || ${dataPoint>Description}) ? true : false}">
+				<template:with path="dataPoint>SampleSize" var="sampleSizeTarget">
+					<template:if test="{= ${dataPoint>SampleSize} &amp;&amp; ${sampleSizeTarget>$Path@com.sap.vocabularies.Common.v1.Label}}">
+						<template:then>
+							<customData>
+								<core:CustomData key="Subtitle" value="{path: 'sampleSizeTarget>$Path@com.sap.vocabularies.Common.v1.Label@MODEL.value'}"/>
+							</customData>
+						</template:then>
+					</template:if>
+				</template:with>
+			</Label>
+			<RatingIndicator enabled="true"
+							 editable="false"
+							 maxValue="{dataPoint>TargetValue@@MODEL.value}"
+							 value="{dataPoint>Value@@MODEL.value}"
+							 iconSize="1.375rem"
+							 class="sapUiTinyMarginTopBottom" />
+			<Label unittest:id="a" text="{= MESSAGE(${sap.fe.i18n>RATING_INDICATOR_FOOTER}, ${dataPoint>Value@@MODEL.value}, ${dataPoint>TargetValue@@MODEL.value} || '5') }"
+				   visible="{= !!${dataPoint>SampleSize}}">
+			</Label>
+		</items>
+	</VBox>
+</core:FragmentDefinition>

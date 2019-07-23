@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>internal/IdentificationBar</name>
+    <derived/>
+    <documentation>Acontrol to render identification bar of a system</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property group="Data" type="sap.ui.core/string" name="text">
+            <documentation>text that identifies a system</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="type">
+            <documentation>type of system rendered</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="qualifierText">
+            <documentation>text that identifies the server</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="qualifierTooltip">
+            <documentation>tooltip to identify the server</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="qualifierType">
+            <documentation>icon to identify the server</documentation>
+        </property>
+        <property group="Dimension" defaultValue="Regular" type="sap.landvisz/EntityCSSSize" name="renderingSize">
+            <documentation>rendering size of the control</documentation>
+        </property>
+        <property group="Misc" type="sap.ui.core/string" name="defaultState">
+            <documentation>determines the default state of the control</documentation>
+        </property>
+        <property group="Data" type="sap.ui.core/string" name="description">
+            <documentation>despriction of the identification region of a control</documentation>
+        </property>
+        <property group="Identification" type="sap.landvisz/ComponentType" name="componentType">
+            <documentation>Component type of the entity</documentation>
+        </property>
+    </properties>
+    <events>
+        <event allowPreventDefault="false" name="select">
+            <documentation>fires click event on selection</documentation>
+        </event>
+    </events>
+    <methods>
+        <method type="sap.ui.core/void" name="init">
+            <documentation>returns identification properties</documentation>
+        </method>
+    </methods>
+</control>
